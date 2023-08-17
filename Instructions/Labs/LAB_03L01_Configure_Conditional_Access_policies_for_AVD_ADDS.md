@@ -464,3 +464,19 @@ The main tasks for this exercise are as follows:
 10. Within the Remote Desktop session to **az140-cl-vm11**, click **Start**, in the vertical bar directly above the **Start** button, click the icon representing the signed in user account, and, in the pop-up menu, click **Sign out**.
 
       ![](./images/module3.png)
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+- Click the Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
+- Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+- If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+## Review
+
+In this lab, you have:
+
+- Setup Azure AD Connect.
+- Prepared for Azure AD-based Conditional Access for Azure Virtual Desktop.
+- Implemented Azure AD-based Conditional Access for Azure Virtual Desktop.
+
+## You have successfully completed the lab
