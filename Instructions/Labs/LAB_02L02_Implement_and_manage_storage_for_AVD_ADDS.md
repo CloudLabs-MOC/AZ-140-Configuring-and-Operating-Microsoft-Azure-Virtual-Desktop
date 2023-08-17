@@ -260,3 +260,22 @@ The main tasks for this exercise are as follows:
 
    ![](./images/AZ-140-4.png)
    >**Note**: Alternatively, you could set permissions by using File Explorer.
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+   > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
+   > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+   > - If you need any assistance, please contact us at labs-support@spektrasystems.com. 
+
+## Review
+
+In this lab, you have:
+
+- Setup Azure AD Connect.
+- Created an Azure Storage account.
+- Created an Azure Files share.
+- Enabled AD DS authentication for the Azure Storage account.
+- Configured the Azure Files RBAC-based permissions.
+- Configured the Azure Files file system permissions.
+
+## You have successfully completed the lab

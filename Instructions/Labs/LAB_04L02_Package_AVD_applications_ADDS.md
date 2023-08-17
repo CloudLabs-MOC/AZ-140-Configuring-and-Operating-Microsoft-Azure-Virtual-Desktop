@@ -463,4 +463,13 @@ The main tasks for this exercise are as follows:
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
 
-**You have successfully completed the lab**
+
+## Review
+
+In this lab, you have:
+
+- Prepared for and create MSIX app packages.
+- Implemented an MSIX app attach image for Azure Virtual Desktop in Azure AD DS environment.
+- Implemented MSIX app attach on Azure Virtual Desktop session hosts.
+
+## You have successfully completed the lab

@@ -385,3 +385,24 @@ The main tasks for this exercise are as follows:
 
 27. Switch back to the Remote Desktop session to **az140-cl-vm11**, in the **Remote Desktop** window, double-click the **SessionDesktop** icon, when prompted for the password, type the password **Pa55w.rd1234**, click **OK**, and verify that you can successfully sign in to the assigned host.
 
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+   > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
+   > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+   > - If you need any assistance, please contact us at labs-support@spektrasystems.com. 
+
+## Review
+
+In this lab, you have:
+
+- Setup Azure AD Connect.
+- Prepared for deployment of an Azure Virtual Desktop host pool by using an Azure Resource Manager template.
+- Deployed an Azure Virtual Desktop host pool and hosts by using an Azure Resource Manager template.
+- Verified deployment of the Azure Virtual Desktop host pool and hosts.
+- Prepared for adding of hosts to the existing Azure Virtual Desktop host pool by using an Azure Resource Manager template.
+- Added hosts to the existing Azure Virtual Desktop host pool by using an Azure Resource Manager template.
+- Verified changes to the Azure Virtual Desktop host pool.
+- Managed personal desktop assignments in the Azure Virtual Desktop host pool.
+
+## You have successfully completed the lab
