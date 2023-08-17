@@ -168,6 +168,10 @@ The main tasks for this exercise are as follows:
       -OrganizationalUnitDistinguishedName 'OU=WVDInfra,DC=adatum,DC=com'
    ```
     >**Note**: If you receive an error when running this script block, ensure that you are in the same directory as the CopyToPSPath.ps1 script. Depending on how the   files were extracted earlier in this lab, they might be in a sub-folder named AzFilesHybrid. In the PowerShell context, change directories to the folder using **cd  AzFilesHybrid**.
+    
+    >**Note**: If you receive an error when running the script block stating **Service Principal already exists within AD** then you need to add  **-OverwriteExistingADObject** at the last of the script.
+    
+    >**Note**: If you get a **Set password on AD object storage****** popup. Select **Yes to All**.
 
 6. Within the Remote Desktop session to **az140-dc-vm11**, from the **Administrator: Windows PowerShell ISE** script pane, run the following to verify that the AD DS authentication is enabled on the Azure Storage account:
 
@@ -208,7 +212,7 @@ The main tasks for this exercise are as follows:
    |---|---|
    |Role|**Storage File Data SMB Share Contributor**|
    |Assign access to|**User, group, or service principal**|
-   |Select|**az140-wvd-users**|
+   |Members|select **az140-wvd-users**|
 
 1. On the **Access Control (IAM)** blade of the storage account, select **+ Add** and, in the drop-down menu, select **Add role assignment**, 
 1. On the **Add role assignment** blade, specify the following settings and select **Review + assign**:
@@ -217,7 +221,7 @@ The main tasks for this exercise are as follows:
    |---|---|
    |Role|**Storage File Data SMB Share Elevated Contributor**|
    |Assign access to|**User, group, or service principal**|
-   |Select|**az140-wvd-admins**|
+   |Members|select **az140-wvd-admins**|
 
 ### Task 5: Configure the Azure Files file system permissions
 
@@ -279,3 +283,4 @@ In this lab, you have:
 - Configured the Azure Files file system permissions.
 
 ## You have successfully completed the lab
+

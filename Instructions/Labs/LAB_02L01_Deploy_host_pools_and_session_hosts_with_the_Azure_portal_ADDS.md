@@ -390,7 +390,7 @@ The main tasks for this exercise are as follows:
    
 1. On the **Azure Virtual Desktop \| Workspaces** blade, select **+ Create**.
    
-1. On the **Basics** tab of the **Create a workspace** blade, specify the following settings and select **Next: Application groups >**:
+1. On the **Basics** tab of the **Create a workspace** blade, specify the following settings and select **Next: Networking >** review the preconfigured settings and select **Next: Application groups>**:
 
    |Setting|Value|
    |---|---|
