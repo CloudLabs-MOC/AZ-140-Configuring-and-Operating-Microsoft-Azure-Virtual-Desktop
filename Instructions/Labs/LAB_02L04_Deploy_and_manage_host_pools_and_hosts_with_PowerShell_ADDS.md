@@ -376,10 +376,22 @@ The main tasks for this exercise are as follows:
    
 1. On the **az140-24-hp3-Office365-RAG** blade, verify the configuration of the application group, including the applications and assignments.
 
-    **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-     > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
-     > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
-     > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-     > - If you need any assistance, please contact us at labs-support@spektrasystems.com. 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+- Click the Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
+- Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+- If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-    **You have successfully completed the lab**
+## Review
+
+In this lab, you have:
+
+- Setup Azure AD Connect.
+- Prepared for deployment of Azure Virtual Desktop host pool by using PowerShell.
+- Created a Azure Virtual Desktop host pool by using PowerShell.
+- Performed a template-based deployment of an Azure VM running Windows 10 Enterprise by using PowerShell.
+- Added an Azure VM running Windows 10 Enterprise as a session host to the Azure Virtual Desktop host pool by using PowerShell.
+- Verified the deployment of the Azure Virtual Desktop session host.
+- Managed app groups using PowerShell
+
+## You have successfully completed the lab
