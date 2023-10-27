@@ -39,12 +39,18 @@
 1. On **Sign in to Microsoft Azure** blade, you will see a login screen, in that enter the following email/username and then click on **Next**. 
    * Email/Username: <inject key="AzureAdUserEmail"></inject>
 
+    ![](images/portalsignin-1.png)
+
 1. Now enter the following password and click on **Sign in**.
    * Password: <inject key="AzureAdUserPassword"></inject>
+
+    ![](images/portalsignin-2.png)
    
 1. If you see the pop-up Action Required, click **Ask Later**.
 
 1. If you see the pop-up **Stay Signed in?**, click **Yes**.
+
+    ![](images/portalsignin-3.png)
 
 1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
 
