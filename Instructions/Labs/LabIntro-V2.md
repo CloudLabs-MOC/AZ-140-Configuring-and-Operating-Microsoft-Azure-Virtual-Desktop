@@ -69,7 +69,7 @@ Now you're all set to explore the powerful world of technology. Feel free to rea
 
 
 
-   ![Bastion close clipboard](./images/bastion-copy-paste.png)
+   ![Bastion close clipboard](./images/bastion-copy-paste-1.png)
  
    
        
