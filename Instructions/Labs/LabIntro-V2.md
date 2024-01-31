@@ -5,8 +5,6 @@ Welcome to your AZ-140: Configuring and Operating Microsoft Azure Virtual Deskto
 ## Accessing Your Lab Environment
  
 Once you're ready to dive in, your virtual machine and lab guide will be right at your fingertips within your web browser.
- 
-![Access Your VM and Lab Guide](images/labguide.png)
 
 ### Virtual Machine & Lab Guide
  
@@ -15,8 +13,6 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
 ## Exploring Your Lab Resources
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment Details** tab.
- 
-![Explore Lab Resources](images/env.png)
  
 ## Utilizing the Split Window Feature
  
@@ -48,7 +44,7 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
  
 1. On your virtual machine, click on the Azure Portal icon as shown below:
  
-   ![Launch Azure Portal](images/sc900-image(1).png)
+   ![Launch Azure Portal](images/image(1).png)
 
  
 2. You'll see the **Sign into Microsoft Azure** tab. Here, enter your credentials:
@@ -79,7 +75,7 @@ Now you're all set to explore the powerful world of technology. Feel free to rea
 1. If you are unable to copy and paste content within the bastion session to **az140-dc-vm11** or any other VMs in the  labs, then click the arrows **>>** in the left part, and in the **Clipboard** paste the content in the blank area ***(1)*** and copy it and paste in the bastion session to the respected VM. Then, close the **Clipboard** by selecting the back arrows **<<** ***(2)***.
 
 
-   ![Bastion open clipboard](./images/bastion-arrow-out.png)
+   ![Bastion open clipboard](./images/image(2).png)
 
    ![Bastion close clipboard](./images/bastion-copy-paste-1.png)
  
