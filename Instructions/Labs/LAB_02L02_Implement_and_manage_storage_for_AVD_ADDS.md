@@ -262,9 +262,9 @@ The main tasks for this exercise are as follows:
     ![](./images/AZ-140-2.png)
   
 
-9. Within the Remote Desktop session to **az140-dc-vm11**, switch to the Microsoft Edge window displaying the Azure portal, on the blade displaying the storage account, select **File shares** and verify that the **Active Directory(SMB)** setting is **Configured**.
+9. Within the Remote Desktop session to **az140-dc-vm11**, switch to the Microsoft Edge window displaying the Azure portal, on the blade displaying the storage account, select **File shares** and verify that the **Identity-based access** setting is **Configured**.
 
-    ![](./images/03.png)
+    ![](./images/1-3.png)
 
    >**Note**: You might have to refresh the browser page for the change to be reflected within the Azure portal.
 
