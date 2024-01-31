@@ -46,7 +46,7 @@ After completing this lab, you will be able to deploy Azure Virtual Desktop host
 
     ![](./images/16.png) 
 
-   **Note**: If you are prompted **See text and images copied to the clipboard**, select **Allow**.
+    **Note**: If you are prompted **See text and images copied to the clipboard**, select **Allow**.
 
 5. Once logged in, a logon task will start executing. When prompted **Do you want PowerShell to install and import the Nuget provider now?** enter **Y** and hit enter.
    
