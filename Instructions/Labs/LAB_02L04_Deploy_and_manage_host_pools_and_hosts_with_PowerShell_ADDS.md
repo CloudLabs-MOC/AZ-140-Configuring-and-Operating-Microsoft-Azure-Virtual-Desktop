@@ -32,11 +32,11 @@ After completing this lab, you will be able to:
 
    |Setting|Value|
    |---|---|
-   |Username|**Student (1)**|
-   |Authentication Type|**VM Password (2)**|    
+   |Authentication Type|**VM Password (1)**|
+   |Username|**Student (2)**|   
    |Password|**Pa55w.rd1234 (3)**|
 
-    ![](./images/10.png)
+    ![](./images/Az-140-Lab04-05-connectionsettings.png) 
 
    >**Note**: On clicking **Connect**, if you encounter an error **A popup blocker is preventing new window from opening. Please allow popups and retry**, then select the popup blocker icon at the top, select **Always allow pop-ups and redirects from https://portal.azure.com** and click on **Done**, and try connecting to the VM again.
   
