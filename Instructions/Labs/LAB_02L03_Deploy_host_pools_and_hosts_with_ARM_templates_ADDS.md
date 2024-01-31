@@ -41,12 +41,11 @@ After completing this lab, you will be able to deploy Azure Virtual Desktop host
 
     ![](./images/Az-140-Lab04-05-connectionsettings.png)
 
-
-    **Note**: On clicking **Connect**, if you encounter an error: **A popup blocker is preventing new window from opening. Please allow popups and retry**, then select the popup blocker icon at the top, select **Always allow pop-ups and redirects from https://portal.azure.com** and click on **Done**, and try connecting to the VM again.
+     **Note**: On clicking **Connect**, if you encounter an error: **A popup blocker is preventing new window from opening. Please allow popups and retry**, then select the popup blocker icon at the top, select **Always allow pop-ups and redirects from https://portal.azure.com** and click on **Done**, and try connecting to the VM again.
 
     ![](./images/16.png) 
 
-    **Note**: If you are prompted **See text and images copied to the clipboard**, select **Allow**.
+     **Note**: If you are prompted **See text and images copied to the clipboard**, select **Allow**.
 
 5. Once logged in, a logon task will start executing. When prompted **Do you want PowerShell to install and import the Nuget provider now?** enter **Y** and hit enter.
    
