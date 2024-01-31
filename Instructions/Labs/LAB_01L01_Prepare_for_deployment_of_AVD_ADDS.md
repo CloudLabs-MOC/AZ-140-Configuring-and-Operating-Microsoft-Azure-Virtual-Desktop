@@ -9,7 +9,7 @@ You need to prepare for deployment of an Active Directory Domain Services (Micro
 After completing this lab, you will be able to:
 
 - Deploy an Active Directory Domain Services (Microsoft Entra DS) single-domain forest by using Azure VMs
-- Integrate an Microsoft Entra DS forest with an Microsoft Entra ID tenant
+- Integrate an AD DS forest with an Microsoft Entra ID tenant
 
 
 ## Estimated Timing: 60 minutes
