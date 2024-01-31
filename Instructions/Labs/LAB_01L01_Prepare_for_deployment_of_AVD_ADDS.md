@@ -172,7 +172,6 @@ The main tasks for this exercise are as follows:
 1. Configure AD DS UPN suffix
 1. Create an Microsoft Entra ID user that will be used to configure synchronization with Microsoft Entra ID
 1. Install Azure AD Connect
-1. Configure hybrid Azure AD join
 
 #### Task 1: Create AD DS users and groups that will be synchronized to Microsoft Entra ID
 
@@ -216,7 +215,7 @@ The main tasks for this exercise are as follows:
 
    ![Bastion close clipboard](./images/bastion-copy-paste.png)
 
-6. From the **Administrator: Windows PowerShell ISE** console, run the following to create an AD DS organizational unit that will contain objects included in the scope of synchronization to the Azure AD tenant used in this lab:
+6. From the **Administrator: Windows PowerShell ISE** console, run the following to create an AD DS organizational unit that will contain objects included in the scope of synchronization to the Microsoft Entra tenant used in this lab:
 
    ```powershell
    New-ADOrganizationalUnit 'ToSync' -path 'DC=adatum,DC=com' -ProtectedFromAccidentalDeletion $false
@@ -228,7 +227,7 @@ The main tasks for this exercise are as follows:
    New-ADOrganizationalUnit 'WVDClients' -path 'DC=adatum,DC=com' -ProtectedFromAccidentalDeletion $false
    ```
 
-8. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create AD DS user accounts that will be synchronized to the Azure AD tenant used in this lab (replace the `<password>` placeholder with the password **Pa55w.rd1234** in line 9 and 16):
+8. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create AD DS user accounts that will be synchronized to the Microsoft Entra tenant used in this lab (replace the `<password>` placeholder with the password **Pa55w.rd1234** in line 9 and 16):
 
    > **Note**: You can provide the password of your choice in DevTest/Producion scenarious. But for the purpose of this lab, we are going to use the above password. Ensure that you remember the password you used. You will need it later in this and subsequent labs.
 
@@ -255,7 +254,7 @@ The main tasks for this exercise are as follows:
 
    > **Note**: The script creates nine non-privileged user accounts named **aduser1** - **aduser9** and one privileged account that is a member of the **ADATUM\\Domain Admins** group named **wvdadmin1**.
 
-9. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create AD DS group objects that will be synchronized to the Azure AD tenant used in this lab:
+9. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create AD DS group objects that will be synchronized to the Microsoft Entra tenant used in this lab:
 
    ```powershell
    New-ADGroup -Name 'az140-wvd-pooled' -GroupScope 'Global' -GroupCategory Security -Path $ouPath
@@ -336,7 +335,7 @@ The main tasks for this exercise are as follows:
    Get-ADForest|Set-ADForest -UPNSuffixes @{add="$aadDomainName"}
    ```
 
-1. From the **Administrator: Windows PowerShell ISE** script pane, run the following to assign the primary DNS domain name of the Azure ADMicrosoft Entra ID tenant associated with your Azure subscription as the UPN suffix of all users in the AD DS domain:
+1. From the **Administrator: Windows PowerShell ISE** script pane, run the following to assign the primary DNS domain name of the Microsoft Entra ID tenant associated with your Azure subscription as the UPN suffix of all users in the AD DS domain:
 
    ```powershell
    $domainUsers = Get-ADUser -Filter {UserPrincipalName -like '*adatum.com'} -Properties userPrincipalName -ResultSetSize $null
