@@ -29,7 +29,7 @@ After completing this lab, you will be able to:
 
 3. On the **az140-dc-vm11** blade, select **Connect**.
 
-4. On the **az140-dc-vm11| Connect** blade, select **Connect via Bastion**.
+4. On the **az140-dc-vm11| Connect** blade, select **Go To Bastion**.
 
    ![](./images/11.png)
 
