@@ -37,9 +37,9 @@ After completing this lab, you will be able to:
 
    |Setting|Value|
    |---|---|
-   |Authentication Type|**VM Password (2)**|
-   |Username|**Student (1)**|   
-   |Password|**Pa55w.rd1234 (3)**|
+   |Authentication Type|**VM Password**|
+   |Username|**Student**|   
+   |Password|**Pa55w.rd1234**|
 
     ![](./images/1-1.png)
 
