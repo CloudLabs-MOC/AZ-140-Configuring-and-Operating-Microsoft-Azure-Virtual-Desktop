@@ -423,9 +423,9 @@ The main tasks for this exercise are as follows:
 
 1. On the **Security \| Getting started** blade, in the vertical menu on the left side, in the **Protect** section, click **Conditional Access**.
 
->**Note:** Before you create a policy, ensure the **Security Default** is disabled. Navigate to Microsoft Entra ID and disable.
+   >**Note:** Before you create a policy, ensure the **Security Default** is disabled. Navigate to Microsoft Entra ID and disable.
 
-  ![](./images/1-5.png)
+     ![](./images/1-6.png)
 
 1. On the **Conditional Access**, select **Policies**, in the toolbar, click **Create New Policy**.
 
