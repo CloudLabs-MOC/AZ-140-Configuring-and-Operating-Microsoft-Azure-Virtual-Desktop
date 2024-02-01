@@ -119,7 +119,7 @@ After completing this lab, you will be able to deploy Azure Virtual Desktop host
 
 22. In the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page, search for and navigate to the **Microsoft Entra ID** blade and, on your Azure AD tenant blade, in the **Overview** section of the hub menu, select **Users**.
 
-23. On the **Users** blade, note that the list of user objects includes the listing of AD DS user accounts you created earlier in this lab, with the **No** entry appearing in the **On-premises sync enabled** column.
+23. On the **Users** blade, note that the list of user objects includes the listing of AD DS user accounts you created earlier in this lab, with the **Yes** entry appearing in the **On-premises sync enabled** column.
 
       > **Note**: You might have to wait a few minutes and refresh the browser page for the AD DS user accounts to appear. Proceed to the next step only if you are able to see the listing of AD DS user accounts you created. 
 
