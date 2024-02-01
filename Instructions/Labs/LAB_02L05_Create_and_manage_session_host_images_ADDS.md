@@ -23,7 +23,7 @@ After completing this lab, you will be able to:
    
 2. On the **az140-dc-vm11** blade, select **Connect**, and then select **Go to Bastion**.
    
-![](./images/e1s2.jpg)
+![](./images/1-2.png)
 
 3. On the **Bastion** tab of the **az140-dc-vm11**, when prompted, provide the following credentials and select **Connect**:
 
@@ -32,11 +32,11 @@ After completing this lab, you will be able to:
    |User Name|**Student**|
    |Password|**Pa55w.rd1234**|
 
+![](./images/1-1.png)
+
    >**Note**: On clicking **Connect**, if you encounter an error **A popup blocker is preventing new window from opening. Please allow popups and retry**, then select the popup blocker icon at the top, select **Always allow pop-ups and redirects from https://portal.azure.com** and click on **Done**, and try connecting to the VM again.
   
    >**Note**: If you are prompted **See text and images copied to the clipboard**, select **Allow**. 
-
-![](./images/e1s3.jpg)
 
 4. Once logged in, a logon task will start executing. When prompted **Do you want PowerShell to install and import the Nuget provider now?** enter **Y** and hit enter.
    
