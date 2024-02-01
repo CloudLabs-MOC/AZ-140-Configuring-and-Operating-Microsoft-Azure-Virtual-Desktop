@@ -1,4 +1,4 @@
-# Module 07 - Configure Conditional Access policies for WVD (AD DS)
+# Module 07 - Configure Conditional Access policies for AVD (AD DS)
 
 ## Lab scenario
 
@@ -192,13 +192,17 @@ After completing this lab, you will be able to:
    
 40. On the **Applications** tab of the **Create an application group** blade, select **+ Add applications**.
 
-41. On the **Add application** blade, specify the following settings and select **Save**:
+    >**Note :** The **Add** option might take a while to appear until the health state of the session hosts is in **Available** state. Navigate to Host pools > Virtual Machines to check the availablity.
+
+    ![](./images/1-4.png)
+
+41. On the **Add application** blade, specify the following settings and select **Review + Add**:
 
       |Setting|Value|
       |---|---|
       |Application source|**File path**|
       |Application path|**C:\Windows\system32\cmd.exe**|
-      |Application name|**Command Prompt**|
+      |Application Identifier|**Command Prompt**|
       |Display name|**Command Prompt**|
       |Icon path|**C:\Windows\system32\cmd.exe**|
       |Icon index|**0**|
@@ -249,7 +253,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Users | All users** blade, select **aduser5**.
 
-1. On the **aduser5** blade, in the toolbar, click **Edit properties**, in the **Settings** section, in the **Usage location** dropdown list, select country where the lab environment is located and, in the toolbar, click **Save**.
+1. On the **aduser5** blade, in the toolbar, click **Edit properties**, in the **Settings** section, in the **Usage location** dropdown list, select **United States**, click **Save**.
 
 1. On the **aduser5** blade, in the **Overview** section, identify the user principal name of the **aduser5** account.
 
@@ -267,15 +271,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Licenses | Overview** blade, in the vertical menu bar on the left side, in the **Manage** section, click **All products**.
 
-1. On the **Licenses | All products** blade, in the toolbar, click **+ Try/Buy**.
-
-1. On the **Activate** blade, click **Free trial** in the **ENTERPRISE MOBILITY + SECURITY E5** section and then click **Activate**. 
-
-1. While on the **Licenses | Overview** blade, refresh the browser window to verify that the activation was successful. 
-
-1. On the **Licenses - All products** blade, select the **Enterprise Mobility + Security E5** entry. 
-
-1. On the **Enterprise Mobility + Security E5** blade, in the toolbar, click **+ Assign**.
+1. On the **Licenses | All products** blade, select the **Enterprise Mobility + Security E5** entry and click **+ Assign**.
 
 1. On the **Assign license** blade, click **+ Add users and groups**, on the **Add users and groups** blade, select **aduser5** and your user account, and click **Select**.
 
@@ -405,7 +401,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Devices**, select **All devices**, review the list of devices and verify that the **az140-cl-vm11** device is listed with the **Hybrid  Microsoft Entra ID joined** entry in the **Join Type** column.
 
-   > **Note**: You have to wait sometime for the synchronization to take effect before the device appears in the Azure portal.
+   > **Note**: It might take an hour for the synchronization to take effect before the device appears in the Azure portal. Please proceed with the next exercise.
 
 ## Exercise 3: Implement  Microsoft Entra ID-based Conditional Access for Azure Virtual Desktop
 
@@ -427,6 +423,10 @@ The main tasks for this exercise are as follows:
 
 1. On the **Security \| Getting started** blade, in the vertical menu on the left side, in the **Protect** section, click **Conditional Access**.
 
+   >**Note:** Before you create a policy, ensure the **Security Default** is disabled. Navigate to Microsoft Entra ID and disable.
+
+     ![](./images/1-6.png)
+
 1. On the **Conditional Access**, select **Policies**, in the toolbar, click **Create New Policy**.
 
 1. On the **New** blade, configure the following settings:
@@ -445,7 +445,7 @@ The main tasks for this exercise are as follows:
    
    - Set the **Enable policy** switch to **On**.
 
-1. On the **New** blade, click **Create**. 
+1. On the **New** blade, click **Create**.
 
 ### Task 2: Test the  Microsoft Entra ID-based Conditional Access policy for all Azure Virtual Desktop connections
 
