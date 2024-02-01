@@ -198,7 +198,7 @@ After completing this lab, you will be able to:
       |---|---|
       |Application source|**File path**|
       |Application path|**C:\Windows\system32\cmd.exe**|
-      |Application name|**Command Prompt**|
+      |Application Identifier|**Command Prompt**|
       |Display name|**Command Prompt**|
       |Icon path|**C:\Windows\system32\cmd.exe**|
       |Icon index|**0**|
