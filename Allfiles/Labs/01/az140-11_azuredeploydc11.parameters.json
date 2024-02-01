@@ -15,7 +15,13 @@
       "value": "Standard_D2s_v3"
     },
     "_artifactsLocation": {
-      "value": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/application-workloads/active-directory/active-directory-new-domain/"
+      "value": "https://raw.githubusercontent.com/az140mp/azure-quickstart-templates/master/application-workloads/active-directory/active-directory-new-domain/"
+    },
+    "_artifactsLocationSasToken": {
+      "value": null
+    },
+    "location": {
+      "value": "[resourceGroup().location]"
     },
     "virtualMachineName": {
       "value": "az140-dc-vm11"

@@ -2,13 +2,13 @@
 
 ## Lab scenario
 
-You need to prepare for deployment of an Active Directory Domain Services (AD DS) environment
+You need to prepare for deployment of an Active Directory Domain Services (Microsoft Entra DS) environment
 
 ## Lab Objectives
   
 After completing this lab, you will be able to:
 
-- Deploy an Active Directory Domain Services (AD DS) single-domain forest by using Azure VMs
+- Deploy an Active Directory Domain Services (Microsoft Entra DS) single-domain forest by using Azure VMs
 - Integrate an AD DS forest with an Microsoft Entra ID tenant
 
 
@@ -19,7 +19,7 @@ After completing this lab, you will be able to:
   ![](./images/az-140-mod01.png)
 
 
-### Exercise 1: Deploy an Active Directory Domain Services (AD DS) domain
+### Exercise 1: Deploy an Active Directory Domain Services (Microsoft Entra DS) domain
 
 The main tasks for this exercise are as follows:
 
@@ -32,15 +32,17 @@ The main tasks for this exercise are as follows:
 
 1. In the web browser displaying the Azure portal, navigate to the **Overview** blade of the Microsoft Entra ID tenant and, in the vertical menu on the left side, in the **Manage** section, click **Properties**.
 2. On the **Properties** blade of your Microsoft Entra ID tenant, at the very bottom of the blade, select the **Manage security defaults** link.
-3. On the **Security defaults** blade, if it is enabled, Click on the dropdown and select **Disabled(not recommebded)** and Click on **Save**
+3. On the **Security defaults** blade, if it is enabled, Click on the dropdown and select **Disabled(not recommebded)**, select any **Reason for disabling** and Click on **Save** then **Disable**.
 
-![](./images/t1s2.png)
+   ![](./images/t1s2.png)
+   ![](./images/tt11ss22.png)
+    
+   
+5. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
-4. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
+   ![](./images/cloudshell.png)
 
-![](./images/cloudshell.png)
-
-5. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**. 
+6. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**. 
 
     >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
 
@@ -61,7 +63,7 @@ The main tasks for this exercise are as follows:
 
 4. On the **Create a new Windows VM and create a new AD Forest, Domain and DC** page, select **Deploy to Azure**. This will automatically redirect the browser to the **Custom depolyment** blade in the Azure portal.
 
-  ![](./images/t2s4.png)
+   ![](./images/t2s4.png)
 
 5. On the **Custom deployment** blade, select **Edit parameters**.
 6. On the **Edit parameters** blade, select **Load file**, in the **Open** dialog box, navigate to the path **C:\AllFiles\AZ-140-Configuring-and-Operating-Microsoft-Azure-Virtual-Desktop\Allfiles\Labs\01** and select the file **az140-11_azuredeploydc11.parameters.json**, select **Open**, and then select **Save**. 
@@ -73,7 +75,7 @@ The main tasks for this exercise are as follows:
    |Resource group|**az140-11-RG**|
    |Domain Name|**adatum.com**|
 
-  ![](./images/t2s8.png)
+   ![](./images/t2s8.png)
 
 8. On the **Custom deployment** blade, select **Review + create** and select **Create**.
 
@@ -150,9 +152,9 @@ The main tasks for this exercise are as follows:
    |Public IP address|**Create new**|
    |Public IP name|**az140-adds-vnet11-ip**|
 
- ![](./images/T4S6.1.png)
+   ![](./images/T4S6.1.png)
 
- ![](./images/T4S6.2.png)
+   ![](./images/T4S6.2.png)
 
 7. On the **Review + create** tab of the **Create a Bastion** blade, select **Create**:
 
@@ -172,14 +174,13 @@ The main tasks for this exercise are as follows:
 1. Configure AD DS UPN suffix
 1. Create an Microsoft Entra ID user that will be used to configure synchronization with Microsoft Entra ID
 1. Install Azure AD Connect
-1. Configure hybrid Azure AD join
 
 #### Task 1: Create AD DS users and groups that will be synchronized to Microsoft Entra ID
 
 1. On the lab computer, in the web browser displaying the Azure portal, search for and select **Virtual machines** and, from the **Virtual machines** blade, select **az140-dc-vm11**.
 2. On the **az140-dc-vm11** blade, select **Connect**, then select **More ways to connect(3)** select **Go to Bastion**.
 
- ![](./images/e2t1s2.1.png)
+   ![](./images/e2t1s2.1.png)
 
    > **Note:** Ensure you are using **az140-dc-vm11** and not **az140-cl-vm11**.
 
@@ -190,7 +191,7 @@ The main tasks for this exercise are as follows:
    |User Name|**Student**|
    |Password|**Pa55w.rd1234**|
 
- ![](./images/e2t1s3.png)
+   ![](./images/e2t1s3.png)
 
    > **Note**: On clicking **Connect**, if you encounter an error **A popup blocker is preventing new window from opening. Please allow popups and retry**, then select the popup blocker icon at the top, select **Always allow pop-ups and redirects from https://portal.azure.com** and click on **Done**, and try connecting to the VM again.
    
@@ -216,7 +217,7 @@ The main tasks for this exercise are as follows:
 
    ![Bastion close clipboard](./images/bastion-copy-paste.png)
 
-6. From the **Administrator: Windows PowerShell ISE** console, run the following to create an AD DS organizational unit that will contain objects included in the scope of synchronization to the Azure AD tenant used in this lab:
+6. From the **Administrator: Windows PowerShell ISE** console, run the following to create an AD DS organizational unit that will contain objects included in the scope of synchronization to the Microsoft Entra tenant used in this lab:
 
    ```powershell
    New-ADOrganizationalUnit 'ToSync' -path 'DC=adatum,DC=com' -ProtectedFromAccidentalDeletion $false
@@ -228,7 +229,7 @@ The main tasks for this exercise are as follows:
    New-ADOrganizationalUnit 'WVDClients' -path 'DC=adatum,DC=com' -ProtectedFromAccidentalDeletion $false
    ```
 
-8. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create AD DS user accounts that will be synchronized to the Azure AD tenant used in this lab (replace the `<password>` placeholder with the password **Pa55w.rd1234** in line 9 and 16):
+8. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create AD DS user accounts that will be synchronized to the Microsoft Entra tenant used in this lab (replace the `<password>` placeholder with the password **Pa55w.rd1234** in line 9 and 16):
 
    > **Note**: You can provide the password of your choice in DevTest/Producion scenarious. But for the purpose of this lab, we are going to use the above password. Ensure that you remember the password you used. You will need it later in this and subsequent labs.
 
@@ -255,7 +256,7 @@ The main tasks for this exercise are as follows:
 
    > **Note**: The script creates nine non-privileged user accounts named **aduser1** - **aduser9** and one privileged account that is a member of the **ADATUM\\Domain Admins** group named **wvdadmin1**.
 
-9. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create AD DS group objects that will be synchronized to the Azure AD tenant used in this lab:
+9. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create AD DS group objects that will be synchronized to the Microsoft Entra tenant used in this lab:
 
    ```powershell
    New-ADGroup -Name 'az140-wvd-pooled' -GroupScope 'Global' -GroupCategory Security -Path $ouPath
@@ -336,7 +337,7 @@ The main tasks for this exercise are as follows:
    Get-ADForest|Set-ADForest -UPNSuffixes @{add="$aadDomainName"}
    ```
 
-1. From the **Administrator: Windows PowerShell ISE** script pane, run the following to assign the primary DNS domain name of the Azure ADMicrosoft Entra ID tenant associated with your Azure subscription as the UPN suffix of all users in the AD DS domain:
+1. From the **Administrator: Windows PowerShell ISE** script pane, run the following to assign the primary DNS domain name of the Microsoft Entra ID tenant associated with your Azure subscription as the UPN suffix of all users in the AD DS domain:
 
    ```powershell
    $domainUsers = Get-ADUser -Filter {UserPrincipalName -like '*adatum.com'} -Properties userPrincipalName -ResultSetSize $null
@@ -436,13 +437,13 @@ The main tasks for this exercise are as follows:
 13. Back on the **Connect your directories** page, ensure that the **adatum.com** entry appears as a configured directory and select **Next**
 14. On the **Azure AD sign-in configuration** page, note the warning stating **Users will not be able to sign-in to Azure AD with on-premises credentials if the UPN suffix does not match a verified domain name**, enable the checkbox **Continue without matching all UPN suffixes to verified domain**, and select **Next**.
 
-  ![](./images/adconnect.png)
+    ![](./images/adconnect.png)
 
-  > **Note**: This is expected, since the Azure AD tenant does not have a verified custom DNS domain matching one of the UPN suffixes of the **adatum.com** AD DS.
+    > **Note**: This is expected, since the Azure AD tenant does not have a verified custom DNS domain matching one of the UPN suffixes of the **adatum.com** AD DS.
 
 15. On the **Domain and OU filtering** page, select the option **Sync selected domains and OUs**, expand the adatum.com node, clear all checkboxes, select only the checkbox next to the **ToSync** OU, and select **Next**.
 
-![](./images/adconnect1.png)
+    ![](./images/adconnect1.png)
 
 16. On the **Uniquely identifying your users** page, accept the default settings, and select **Next**.
 17. On the **Filter users and devices** page, accept the default settings, and select **Next**.
@@ -453,7 +454,7 @@ The main tasks for this exercise are as follows:
 
 20. Review the information on the **Configuration complete** page and select **Exit** to close the **Microsoft Azure Active Directory Connect** window.
 
-![](./images/adconnect2.png)
+    ![](./images/adconnect2.png)
 
 21. In Microsoft Edge browser, navigate to the [Azure portal](https://portal.azure.com). If prompted, sign in by using the Azure AD credentials of the user account with the Owner role in the subscription you are using in this lab.
 21. In the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page, search for and navigate to the **Azure Active Directory** blade and, on your Azure AD tenant blade, in the **Manage** section of the hub menu, select **Users**.
