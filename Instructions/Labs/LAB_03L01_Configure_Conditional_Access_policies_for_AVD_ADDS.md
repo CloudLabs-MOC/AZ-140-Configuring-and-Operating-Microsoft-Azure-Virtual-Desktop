@@ -401,7 +401,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Devices**, select **All devices**, review the list of devices and verify that the **az140-cl-vm11** device is listed with the **Hybrid  Microsoft Entra ID joined** entry in the **Join Type** column.
 
-   > **Note**: You have to wait sometime for the synchronization to take effect before the device appears in the Azure portal.
+   > **Note**: It might take an hour for the synchronization to take effect before the device appears in the Azure portal. Please proceed with the next exercise.
 
 ## Exercise 3: Implement  Microsoft Entra ID-based Conditional Access for Azure Virtual Desktop
 
@@ -423,6 +423,10 @@ The main tasks for this exercise are as follows:
 
 1. On the **Security \| Getting started** blade, in the vertical menu on the left side, in the **Protect** section, click **Conditional Access**.
 
+>**Note:** Before you create a policy, ensure the **Security Default** is disabled. Navigate to Microsoft Entra ID and disable.
+
+  ![](./images/1-5.png)
+
 1. On the **Conditional Access**, select **Policies**, in the toolbar, click **Create New Policy**.
 
 1. On the **New** blade, configure the following settings:
@@ -441,7 +445,7 @@ The main tasks for this exercise are as follows:
    
    - Set the **Enable policy** switch to **On**.
 
-1. On the **New** blade, click **Create**. 
+1. On the **New** blade, click **Create**.
 
 ### Task 2: Test the  Microsoft Entra ID-based Conditional Access policy for all Azure Virtual Desktop connections
 
