@@ -271,15 +271,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Licenses | Overview** blade, in the vertical menu bar on the left side, in the **Manage** section, click **All products**.
 
-1. On the **Licenses | All products** blade, in the toolbar, click **+ Try/Buy**.
-
-1. On the **Activate** blade, click **Free trial** in the **ENTERPRISE MOBILITY + SECURITY E5** section and then click **Activate**. 
-
-1. While on the **Licenses | Overview** blade, refresh the browser window to verify that the activation was successful. 
-
-1. On the **Licenses - All products** blade, select the **Enterprise Mobility + Security E5** entry. 
-
-1. On the **Enterprise Mobility + Security E5** blade, in the toolbar, click **+ Assign**.
+1. On the **Licenses | All products** blade, select the **Enterprise Mobility + Security E5** entry and click **+ Assign**.
 
 1. On the **Assign license** blade, click **+ Add users and groups**, on the **Add users and groups** blade, select **aduser5** and your user account, and click **Select**.
 
