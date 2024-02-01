@@ -249,7 +249,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Users | All users** blade, select **aduser5**.
 
-1. On the **aduser5** blade, in the toolbar, click **Edit properties**, in the **Settings** section, in the **Usage location** dropdown list, select country where the lab environment is located and, in the toolbar, click **Save**.
+1. On the **aduser5** blade, in the toolbar, click **Edit properties**, in the **Settings** section, in the **Usage location** dropdown list, select **United States**, click **Save**.
 
 1. On the **aduser5** blade, in the **Overview** section, identify the user principal name of the **aduser5** account.
 
