@@ -68,16 +68,14 @@ After completing this lab, you will be able to:
 
    ![](./images/e1s9.jpg)
 
-   >**Note:** On the **Sign in** pop-up, enter the userPrincipalName, and select **Next**. 
-
 10. On the **Connect your Directories** page, select the **Add Directory** button to the right of the **adatum.com** forest entry.
    
-11. In the **AD forest account** window, ensure that the option to **Create new AD account** is selected, specify the following credentials, and select **OK**:
+11. In the **AD forest account** window, ensure that the option to **Create new AD account (1)** is selected, specify the following credentials, and select **OK (4)**:
 
     |Setting|Value|
     |---|---|
-    |User Name|**ADATUM\Student**|
-    |Password|**Pa55w.rd1234**|
+    |User Name|**ADATUM\Student (2)**|
+    |Password|**Pa55w.rd1234 (3)**|
 
       ![](./images/e1s10.jpg)
 
@@ -361,7 +359,7 @@ The main tasks for this exercise are as follows:
    |Description|**Microsoft Word (3)**|
    |Require command line|**No (4)**|
 
-   ![](./images/word.jpg)
+      ![](./images/word.png)
 
 1. On the **Review + add** tab, select **Add**.
 
@@ -399,7 +397,7 @@ The main tasks for this exercise are as follows:
    
 1. On the **Assignments** tab of the **Create an application group** blade, select **+ Add Microsoft Entra users or user groups**.
    
-1. On the **Select Microsoft Entra users or user groups** blade, search for ****az140-wvd-remote-app (1)** and select **az140-wvd-remote-app (2)** and click **Select (3)**.
+1. On the **Select Microsoft Entra users or user groups** blade, search for **az140-wvd-remote-app (1)** and select **az140-wvd-remote-app (2)** and click **Select (3)**.
   
       ![](./images/e2t4s16.jpg)
  
