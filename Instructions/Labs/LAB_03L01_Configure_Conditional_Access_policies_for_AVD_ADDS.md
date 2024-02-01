@@ -192,7 +192,7 @@ After completing this lab, you will be able to:
    
 40. On the **Applications** tab of the **Create an application group** blade, select **+ Add applications**.
 
-41. On the **Add application** blade, specify the following settings and select **Save**:
+41. On the **Add application** blade, specify the following settings and select **Review + Add**:
 
       |Setting|Value|
       |---|---|
