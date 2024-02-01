@@ -1,4 +1,4 @@
-# Module 07 - Configure Conditional Access policies for WVD (AD DS)
+# Module 07 - Configure Conditional Access policies for AVD (AD DS)
 
 ## Lab scenario
 
