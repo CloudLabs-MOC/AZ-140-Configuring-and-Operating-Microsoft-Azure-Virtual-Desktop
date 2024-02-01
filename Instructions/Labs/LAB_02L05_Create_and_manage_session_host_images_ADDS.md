@@ -469,9 +469,9 @@ Deploy the Teams desktop app to the VM](https://docs.microsoft.com/en-us/microso
      > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
      > - If you need any assistance, please contact us at labs-support@spektrasystems.com. 
 
-    ### Review
-   In this lab, you have completed the following:
-   - Setup Azure AD Connect
-   - Created and managed session host images
+### Review
+In this lab, you have completed the following:
+- Setup Azure AD Connect
+- Created and managed session host images
 
-   ## You have successfully completed the lab.
+## You have successfully completed the lab.
