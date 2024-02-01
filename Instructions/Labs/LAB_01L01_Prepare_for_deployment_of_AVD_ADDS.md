@@ -32,15 +32,17 @@ The main tasks for this exercise are as follows:
 
 1. In the web browser displaying the Azure portal, navigate to the **Overview** blade of the Microsoft Entra ID tenant and, in the vertical menu on the left side, in the **Manage** section, click **Properties**.
 2. On the **Properties** blade of your Microsoft Entra ID tenant, at the very bottom of the blade, select the **Manage security defaults** link.
-3. On the **Security defaults** blade, if it is enabled, Click on the dropdown and select **Disabled(not recommebded)** and Click on **Save**
+3. On the **Security defaults** blade, if it is enabled, Click on the dropdown and select **Disabled(not recommebded)**, select any **Reason for disabling** and Click on **Save** then **Disable**.
 
    ![](./images/t1s2.png)
-
-4. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
+   ![](./images/tt11ss22.png)
+    
+   
+5. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
    ![](./images/cloudshell.png)
 
-5. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**. 
+6. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**. 
 
     >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
 
