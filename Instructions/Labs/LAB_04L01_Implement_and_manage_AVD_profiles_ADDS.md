@@ -1,4 +1,4 @@
-# Module 08A - Implement and manage Azure Virtual Desktop profiles (AD DS)
+# Module 08A - Implement and manage Azure Virtual Desktop profiles (Microsoft Entra DS)
 
 ## Lab scenario
 
@@ -42,6 +42,8 @@ After completing this lab, you will be able to implement FSLogix based profiles 
 5. On the **Welcome to Azure AD Connect** page of the **Microsoft Azure Active Directory Connect** wizard, select the checkbox **I agree to the license terms and privacy notice** and select **Continue**.
 
    ![](./images/31.png)
+
+   >**Note:** on the event that **Azure AD Connect** is not visible on desktop Windows, open the **C:\LabFiles** folder, right-click **logon**, and choose Run with PowerShell.
  
 6. On the **Express Settings** page of the **Microsoft Azure Active Directory Connect** wizard, select the **Customize** option.
 
@@ -75,6 +77,8 @@ After completing this lab, you will be able to implement FSLogix based profiles 
 12. Back on the **Connect your directories** page, ensure that the **adatum.com** entry appears as a configured directory and select **Next**
   
 13. On the **Azure AD sign-in configuration** page, note the warning stating **Users will not be able to sign-in to Azure AD with on-premises credentials if the UPN suffix does not match a verified domain name**, enable the checkbox **Continue without matching all UPN suffixes to verified domain**, and select **Next**.
+
+    ![](./images/lab0801ss.png)
 
     >**Note**: This is expected, since the Microsoft entra tenant does not have a verified custom DNS domain matching one of the UPN suffixes of the **adatum.com** AD DS.
 
@@ -119,6 +123,9 @@ After completing this lab, you will be able to implement FSLogix based profiles 
     ![](./images/29.png)
 
 26. Within the Remote Desktop session to **az140-dc-vm11**, in the browser window displaying the Azure portal, search for and select Virtual machines and, on the Virtual machines blade, in the list of virtual machines, select **az140-21-p1-0**  under **Operations** section select **Run command**, select **RunPowerShellScript** and under **Run Command Script** paste the content of p3script.ps1 available on desktop and click on **Run**. 
+
+    ![](./images/lab0802ss.png)
+
 
 27. Within the Remote Desktop session to **az140-dc-vm11**, in the browser window displaying the Azure portal, search for and select Virtual machines and, on the Virtual machines blade, in the list of virtual machines, select **az140-21-p1-1**  under **Operations** section select **Run command**, select **RunPowerShellScript** and under **Run Command Script** paste the content of p3script.ps1 available on desktop and click on **Run**. 
 
@@ -176,7 +183,7 @@ After completing this lab, you will be able to implement FSLogix based profiles 
 
 38. On the **Applications** tab of the **Create an application group** blade, select **+ Add applications**.
 
-39. On the **Add application** blade, specify the following settings and select **Save**:
+39. On the **Add application** blade, specify the following settings and select **Review + add** and click on **add**:
 
     |Setting|Value|
      |---|---|
@@ -185,11 +192,12 @@ After completing this lab, you will be able to implement FSLogix based profiles 
      |Application name|**Command Prompt**|
      |Display name|**Command Prompt**|
      |Icon path|**C:\Windows\system32\cmd.exe**|
-     |Icon index|**0**|
-     |Description|**Windows Command Prompt**|
      |Require command line|**No**|
+     |Icon path|**C:\Windows\system32\cmd.exe**|
+     |Icon index|**0**|
 
      ![](./images/68.png)
+     ![](./images/lab0803ss.png)     
 
 40. Back on the **Applications** tab of the **Create an application group** blade, select **Next: Assignments >**.
 
@@ -304,7 +312,12 @@ The main tasks for this exercise are as follows:
        ![](./images/56.png)
 
 14. In the **Local Users and Groups** console, in the list of groups, double-click the **FSLogix Profile Include List** group, note that it includes the **\\Everyone** group, and select **OK** to close the group **Properties** window. 
+
+     ![](./images/lab0804ss.png)
+
 15. In the **Local Users and Groups** console, in the list of groups, double-click the **FSLogix Profile Exclude List** group, note that it does not include any group members by default, and select **OK** to close the group **Properties** window. 
+
+     ![](./images/lab0805ss.png)
 
      > **Note**: To provide a consistent user experience, you need to install and configure FSLogix components on all Azure Virtual Desktop session hosts. Please repeat all previous steps (step 1 and 15) for Virtual Machines **az140-21-p1-1** and **az140-21-p1-2** .
 
