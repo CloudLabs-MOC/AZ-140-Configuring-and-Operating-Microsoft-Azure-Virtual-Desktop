@@ -35,18 +35,17 @@ After completing this lab, you will be able to deploy Azure Virtual Desktop host
 
    |Setting|Value|
    |---|---|
-   |Username|**Student (1)**|
-   |Authentication Type|**VM Password (2)**|    
+   |Authentication Type|**VM Password (1)**| 
+   |Username|**Student (2)**|
    |Password|**Pa55w.rd1234 (3)**|
 
-    ![](./images/10.png)
+    ![](./images/Az-140-Lab04-05-connectionsettings.png)
 
+     **Note**: On clicking **Connect**, if you encounter an error: **A popup blocker is preventing new window from opening. Please allow popups and retry**, then select the popup blocker icon at the top, select **Always allow pop-ups and redirects from https://portal.azure.com** and click on **Done**, and try connecting to the VM again.
 
-   **Note**: On clicking **Connect**, if you encounter an error: **A popup blocker is preventing new window from opening. Please allow popups and retry**, then select the popup blocker icon at the top, select **Always allow pop-ups and redirects from https://portal.azure.com** and click on **Done**, and try connecting to the VM again.
+    ![](./images/16.png) 
 
-     ![](./images/16.png) 
-
-   **Note**: If you are prompted **See text and images copied to the clipboard**, select **Allow**.
+     **Note**: If you are prompted **See text and images copied to the clipboard**, select **Allow**.
 
 5. Once logged in, a logon task will start executing. When prompted **Do you want PowerShell to install and import the Nuget provider now?** enter **Y** and hit enter.
    
@@ -120,7 +119,7 @@ After completing this lab, you will be able to deploy Azure Virtual Desktop host
 
 22. In the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page, search for and navigate to the **Microsoft Entra ID** blade and, on your Azure AD tenant blade, in the **Overview** section of the hub menu, select **Users**.
 
-23. On the **Users** blade, note that the list of user objects includes the listing of AD DS user accounts you created earlier in this lab, with the **No** entry appearing in the **On-premises sync enabled** column.
+23. On the **Users** blade, note that the list of user objects includes the listing of AD DS user accounts you created earlier in this lab, with the **Yes** entry appearing in the **On-premises sync enabled** column.
 
       > **Note**: You might have to wait a few minutes and refresh the browser page for the AD DS user accounts to appear. Proceed to the next step only if you are able to see the listing of AD DS user accounts you created. 
 
