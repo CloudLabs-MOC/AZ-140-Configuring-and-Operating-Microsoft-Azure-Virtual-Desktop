@@ -192,7 +192,7 @@ After completing this lab, you will be able to:
    
 40. On the **Applications** tab of the **Create an application group** blade, select **+ Add applications**.
 
-    >**Note :** The **Add** option might take while to appear until the health state of the session pools is **Available**. Navigate to Host pools > Virtual Machines to check the availablity
+    >**Note :** The **Add** option might take a while to appear until the health state of the session hosts is in **Available** state. Navigate to Host pools > Virtual Machines to check the availablity.
 
     ![](./images/1-4.png)
 
