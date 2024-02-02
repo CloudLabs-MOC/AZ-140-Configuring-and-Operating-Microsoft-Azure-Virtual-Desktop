@@ -529,8 +529,8 @@ The main tasks for this exercise are as follows:
    |Setting|Value|
    |---|---|
    |Application source|**MSIX package**|
-   |MSIX package|the name representing the package included in the image|
-   |Application name|**XML Notepad**|
+   |Package|the name representing the package included in the image|
+   |Application identifier|**XML Notepad**|
    |Display name|**XML Notepad**|
    |Description|**XML Notepad**|
 
