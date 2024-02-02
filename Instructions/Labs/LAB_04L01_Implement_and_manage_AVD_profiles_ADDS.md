@@ -29,14 +29,14 @@ After completing this lab, you will be able to implement FSLogix based profiles 
 
    |Setting|Value|
    |---|---|
-   |Username|**Student (1)**|
-   |Authentication Type|**VM Password (2)**|    
-   |Password|**Pa55w.rd1234 (3)**|
+   |Authentication Type|**VM Password**|
+   |Username|**Student**|    
+   |Password|**Pa55w.rd1234**|
 
-    ![](./images/10.png)
+    ![](./images/lab0806ss.png)
 
    > **Note**: On clicking **Connect**, if you encounter an error **A popup blocker is preventing new window from opening. Please allow popups and retry**, then select the popup blocker icon at the top, select **Always allow pop-ups and redirects from https://portal.azure.com** click on **Done**, and try connecting to the VM again.
-  
+     
    > **Note**: If you are prompted **See text and images copied to the clipboard**, select **Allow**. 
 
 5. On the **Welcome to Azure AD Connect** page of the **Microsoft Azure Active Directory Connect** wizard, select the checkbox **I agree to the license terms and privacy notice** and select **Continue**.
@@ -141,8 +141,8 @@ After completing this lab, you will be able to implement FSLogix based profiles 
 
     |Setting|Value|
     |---|---|
-    |User Name|**Student**|
-    |Authentication Type|**VM Password**| 
+    |Authentication Type|**VM Password**|
+    |User Name|**Student**| 
     |Password|**Pa55w.rd1234**|
    
 30. Now right-click on the **connect** PowerShell file present on the desktop and select **Run with PowerShell** in the popup options. This will join the Session host to host pool.
@@ -189,9 +189,8 @@ After completing this lab, you will be able to implement FSLogix based profiles 
      |---|---|
      |Application source|**File path**|
      |Application path|**C:\Windows\system32\cmd.exe**|
-     |Application name|**Command Prompt**|
+     |Application identifier|**Command Prompt**|
      |Display name|**Command Prompt**|
-     |Icon path|**C:\Windows\system32\cmd.exe**|
      |Require command line|**No**|
      |Icon path|**C:\Windows\system32\cmd.exe**|
      |Icon index|**0**|
@@ -242,8 +241,8 @@ The main tasks for this exercise are as follows:
 
    |Setting|Value|
    |---|---|
-   |User Name|**student@adatum.com**|
-   |Authentication Type|**VM Password**| 
+   |Authentication Type|**VM Password**|
+   |User Name|**student@adatum.com**| 
    |Password|**Pa55w.rd1234**|
    
 4. Within the Remote Desktop session to **az140-21-p1-0**, start Microsoft Edge, browse to [FSLogix download page](https://aka.ms/fslogix_download), download FSLogix compressed installation binaries, extract them into the **C:\\Allfiles\\Labs\\04** folder (create the folder if needed), navigate to the **x64\\Release** subfolder, double-click the **FSLogixAppsSetup.exe** file to launch the **Microsoft FSLogix Apps Setup** wizard, and step through the installation of Microsoft FSLogix Apps with the default settings.
@@ -330,7 +329,7 @@ The main tasks for this exercise are as follows:
       ```
       $servers = 'az140-21-p1-1', 'az140-21-p1-2'
       foreach ($server in $servers) {
-         $localPath = 'C:\AllFiles\Labs\04\FSLogix_Apps_2.9.8612.60056\x64'
+         $localPath = 'C:\AllFiles\Labs\04\x64'
          $remotePath = "\\$server\C$\Allfiles\Labs\04\x64\Release"
          Copy-Item -Path $localPath\Release -Destination $remotePath -Filter '*.exe' -Force -Recurse
          Invoke-Command -ComputerName $server -ScriptBlock {
@@ -379,8 +378,8 @@ The main tasks for this exercise are as follows:
 
    |Setting|Value|
    |---|---|
-   |User Name|**Student@adatum.com**|
-   |Authentication Type|**VM Password**| 
+   |Authentication Type|**VM Password**|
+   |User Name|**Student@adatum.com**| 
    |Password|**Pa55w.rd1234**|
 
 4. Within the Remote Desktop session to **az140-cl-vm11**, open edge and go to link  https://go.microsoft.com/fwlink/?linkid=2068602
