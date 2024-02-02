@@ -35,6 +35,8 @@ The main tasks for this exercise are as follows:
 
 1. From your lab computer, in the web browser window displaying the Azure portal, in the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the files **C:\\AllFiles\\AZ-140\\AllFiles\\Labs\\04\\az140-42_azuredeploycl42.json** and **C:\\AllFiles\\AZ-140\\AllFiles\\Labs\\04\\az140-42_azuredeploycl42.parameters.json** into the Cloud Shell home directory.
 
+   >**Note:** Make sure to upload each file individually, and use the **ls** command to verify that your file has been uploaded.
+
    ![](./images/48.png)
 
 1. From the PowerShell session in the Cloud Shell pane, run the following to deploy an Azure VM running Windows 10 that you will use for creating MSIX packages and to join it to the Azure AD DS domain:
@@ -504,16 +506,17 @@ The main tasks for this exercise are as follows:
 
 1. On the **Add application** blade, specify the following settings and select **Save**:
 
-   |Setting|Value|
-   |---|---|
-   |Application source|**MSIX package**|
-   |MSIX package|the name representing the package included in the image|
-   |MSIX application|**XMLNOTEPAD**|
-   |Application name|**XML Notepad**|
-   |Display name|**XML Notepad**|
-   |Description|**XML Notepad**|
-   |Icon path|**C:\Program Files\WindowsApps\XmlNotepad_2.8.0.0_x64__4vm7ty4fw38e8\VFS\ProgramFilesX86\LovettSoftware\XmlNotepad\XmlNotepad.exe**|
-   |Icon index|**0**|
+     |Setting|Value|
+     |---|---|
+     |Application source|**File path**|
+     |Application path|**C:\Windows\system32\cmd.exe**|
+     |Application identifier|**XML Notepad**|
+     |Display name|**XML Notepad**|
+     |Icon path|**C:\Program Files\WindowsApps\XmlNotepad_2.8.0.0_x64__4vm7ty4fw38e8\VFS\ProgramFilesX86\LovettSoftware\XmlNotepad\XmlNotepad.exe**|
+     |Icon index|**0**|
+
+     ![](./images/68.png)
+     ![](./images/lab0803ss.png)  
 
 1. Navigate back to the **Azure Virtual Desktop \| Application groups** blade and select the **az140-21-hp1-DAG** application group entry.
 
