@@ -384,11 +384,9 @@ The main tasks for this exercise are as follows:
 
 4. Within the Remote Desktop session to **az140-cl-vm11**, open edge and go to link  https://go.microsoft.com/fwlink/?linkid=2068602
 
-5. Open the downloaded file and when prompted, select **Run** to start its installation. On the **Installation Scope** page of the **Remote Desktop Setup** wizard, select the option **Install for all users of this machine** and click **Install**. When prompted by User Account Control for administrative credentials, authenticate by using the **ADATUM\\Student** username with **Pa55w.rd1234** as its password.
+5. Open the downloaded file and when prompted, select **Run** to start its installation. On the **Installation Scope** page of the **Remote Desktop Setup** wizard, select the option **Install for all users of this machine** and click **Install**.
 
-6. Once the installation completes, ensure that the **Launch Remote Desktop when setup exits** checkbox is selected and click **Finish** to start the Remote Desktop client.
-
-7. Select **Subscribe** and, when prompted, sign in with the **aduser1** credentials:
+6. Select **Subscribe** and, when prompted, sign in with the **aduser1** credentials:
    - Email: copy and paste **aduser1** email.
    - Password: **Pa55w.rd1234**
 
