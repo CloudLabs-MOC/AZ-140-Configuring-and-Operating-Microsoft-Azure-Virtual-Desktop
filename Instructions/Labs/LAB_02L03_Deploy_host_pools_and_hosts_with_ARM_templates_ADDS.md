@@ -316,7 +316,11 @@ The main tasks for this exercise are as follows:
 
       > **Note**: If you get **Action Required** page, then select **Ask later**.
 
-      > **Note**: If you get the **Stay signed in to all your apps** window, clear the checkbox **Allow my organization to manage my device** checkbox and select **No, sign in to this app only**. 
+      > **Note**: If you get the **Stay signed in to all your apps** window, clear the checkbox **Allow my organization to manage my device** checkbox and select **No, sign in to this app only**.
+
+21. On the **Remote Desktop** page, double-click the **SessionDesktop** icon, when prompted for credentials, type the same password again, select the **Remember me** checkbox, and click **OK**.
+  
+22. Verify that **aduser8** successfully signed in via Remote Desktop to a host.
 
     > **Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
     > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
