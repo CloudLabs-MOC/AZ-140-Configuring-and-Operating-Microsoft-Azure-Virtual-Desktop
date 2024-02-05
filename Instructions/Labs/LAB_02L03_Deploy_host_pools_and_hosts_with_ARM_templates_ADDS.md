@@ -203,7 +203,7 @@ The main tasks for this exercise are as follows:
 
    > **Note**: Scroll little bit down then you'll be able to see the **ARM Template to Create and provision new Windows Virtual Desktop hostpool** page.
 
-1. On the **ARM Template to Create and provision new Windows Virtual Desktop hostpool** page, select **Deploy to Azure**. This will automatically redirect the browser to the **Custom deployment** blade in the Azure portal.
+4. On the **ARM Template to Create and provision new Windows Virtual Desktop hostpool** page, select **Deploy to Azure**. This will automatically redirect the browser to the **Custom deployment** blade in the Azure portal.
 
    > **Note**: If you get **Action Required** page, then select **Ask later**.
 
@@ -262,7 +262,7 @@ The main tasks for this exercise are as follows:
 
    > **Note**: Now let's review the experience of a user connecting to the Azure Virtual Desktop host pool.
 
-1. From your lab computer, in the browser window displaying the Azure portal, search for and select **Virtual machines** and, on the **Virtual machines** blade, select the **az140-cl-vm11** entry.
+6. From your lab computer, in the browser window displaying the Azure portal, search for and select **Virtual machines** and, on the **Virtual machines** blade, select the **az140-cl-vm11** entry.
 
 1. On the **az140-cl-vm11** blade, select **Connect**, select **Bastion**, click on **Use Bastion**.
 
