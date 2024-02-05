@@ -140,12 +140,6 @@ The main tasks for this exercise are as follows:
 
 1. Verify deployment of the Azure Virtual Desktop host pool and hosts
 
-1. Prepare for adding hosts to the existing Azure Virtual Desktop host pool by using an Azure Resource Manager template
-
-1. Add hosts to the existing Azure Virtual Desktop host pool by using an Azure Resource Manager template
-
-1. Verify changes to the Azure Virtual Desktop host pool
-
 1. Manage personal desktop assignments in the Azure Virtual Desktop host pool
 
 ### Task 1: Prepare for deployment of an Azure Virtual Desktop host pool by using an Azure Resource Manager template
@@ -251,82 +245,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **az140-23-hp2 \| Application groups** blade, verify that the deployment includes the **Default Desktop** application group named **az140-23-hp2-DAG**.
 
-### Task 4: Prepare for adding hosts to the existing Azure Virtual Desktop host pool by using an Azure Resource Manager template
-
-1. From your lab computer, switch to the Remote Desktop session to **az140-dc-vm11**. 
-
-1. Within the Remote Desktop session to **az140-dc-vm11**, from the **Administrator: Windows PowerShell ISE** console, run the following to generate the token necessary to join new hosts to the pool you provisioned earlier in this exercise:
-
-   ```powershell
-   $registrationInfo = New-AzWvdRegistrationInfo -ResourceGroupName 'az140-23-RG' -HostPoolName 'az140-23-hp2' -ExpirationTime $((get-date).ToUniversalTime().AddDays(1).ToString('yyyy-MM-ddTHH:mm:ss.fffffffZ'))
-   ```
-
-1. Within the Remote Desktop session to **az140-dc-vm11**, from the **Administrator: Windows PowerShell ISE** console, run the following to retrieve the value of the token. Copy the output of these commands and paste it into text editor of your choice:
-
-   ```powershell
-   $registrationInfo.Token
-   ```
-
-   > **Note**: Record the value copied into Clipboard (for example, by launching Notepad and pressing the Ctrl+V key combination to paste the content of the Clipboard into Notepad) since you will need it in the next task. Make sure to that the value you are using includes a single line of text, without any line breaks. 
-
-   > **Note**: A registration token is required to authorize a host to join the pool. The value of the token's expiration date must be between one hour and one month from the current date and time.
-
-### Task 5: Add hosts to the existing Azure Virtual Desktop host pool by using an Azure Resource Manager template
-
-1. From your lab computer, in the same web browser window, open another web browser tab and navigate to the GitHub Azure RDS templates repository page [ARM Template to Add sessionhosts to an existing Windows Virtual Desktop hostpool](https://github.com/Azure/RDS-Templates/tree/master/ARM-wvd-templates/AddVirtualMachinesToHostPool). 
-
-   > **Note**: Scroll a little bit down then you'll be able to see the **ARM Template to Create and provision new Windows Virtual Desktop hostpool** page.
-
-1. On the **ARM Template to Add sessionhosts to an existing Windows Virtual Desktop hostpool** page, select **Deploy to Azure**. This will automatically redirect the browser to the **Custom deployment** blade in the Azure portal.
-
-   > **Note**: If you get **Action Required** page, then select **Ask later**.
-
-1. On the **Custom deployment** blade, select **Edit parameters**.
-
-1. On the **Edit parameters** blade, select **Load file**, in the **Open** dialog box, navigate to the path **C:\AllFiles\AZ-140-Configuring-and-Operating-Microsoft-Azure-Virtual-Desktop\Allfiles\Labs\02** and select the file **az140-23_azuremodifyhp23.parameters.json**, select **Open**, and then select **Save**. 
-
-1. Back on the **Custom deployment** blade, specify the following settings (leave others with their existing values):
-
-   |Setting|Value|
-   |---|---|
-   |Subscription|the name of the Azure subscription you are using in this lab|
-   |Resource Group|**az140-23-RG**|
-   |Hostpool Token|the value of the token you generated in the previous task|
-   |Hostpool Location|the name of the Azure region into which you deployed the hostpool earlier in this lab|
-   |Vm Administrator Account Username|**student** Do not use @adatum.com|
-   |Vm Administrator Account Password|**Pa55w.rd1234**|
-   |Vm location|the name of the same Azure region as the one set as the value of the **Hostpool Location** parameters|
-   |Create Network Security Group|**false**|
-   |Network Security Group Id|the value of the resourceID parameter of the existing network security group you identified in the previous task|
-
-1. On the **Custom deployment** blade, select **Review + create** and select **Create**.
-
-   > **Note**: Wait for the deployment to complete before you proceed to the next task.
-
-   > **Note**: If the deployment fails with the error **Conflict** or the deployment continues without any failure for more than 15 minutes, then, in the deployment blade, delete the deployment by selecting **Delete** and when prompted select **Delete deployment**, and also, delete the associated resources deployed(If any). Then restart again from **Task 5: Step 1**.
-
-### Task 6: Verify changes to the Azure Virtual Desktop host pool
-
-1. From your lab computer, in the web browser displaying the Azure portal, search for and select **Virtual machines** and, on the **Virtual machines** blade, note that the list includes an additional virtual machine named **az140-23-p2-2**.
-
-1. From your lab computer, switch to the Remote Desktop session to **az140-dc-vm11**. 
-
-1. Within the Remote Desktop session to **az140-dc-vm11**, from the **Administrator: Windows PowerShell ISE** console, run the following to verify that the third  host was successfully joined to the **adatum.com** AD DS domain:
-
-   ```powershell
-   Get-ADComputer -Filter "sAMAccountName -eq 'az140-23-p2-2$'"
-   ```
-1. Switch back to your lab computer, in the web browser displaying the Azure portal, search for and select **Azure Virtual Desktop**, on the **Azure Virtual Desktop** blade, select **Host pools** and, on the **Azure Virtual Desktop \| Host pools** blade, select the entry **az140-23-hp2** representing the newly modified pool.
-
-1. On the **az140-23-hp2** blade, review the **Essentials** section and verify that the **Host pool type** is set to **Personal** with the **Assignment type** set to **Automatic**.
-
-1. On the **az140-23-hp2** blade, in the vertical menu on the left side, in the **Manage** section, click **Session hosts**. 
-
-1. On the **az140-23-hp2 \| Session hosts** blade, verify that the deployment consists of three hosts. 
-
-   > **Note:** The third session host might take upto 15-60 minutes to get reflected so no need to wait for that. Please continue on to the next task and you can verify it later.
-
-### Task 7: Manage personal desktop assignments in the Azure Virtual Desktop host pool
+### Task 4: Manage personal desktop assignments in the Azure Virtual Desktop host pool
 
 1. On your lab computer, in the web browser displaying the Azure portal, search for and select **Azure Virtual Desktop**. On the **az140-23-hp2** blade, in the vertical menu on the left side, in the **Manage** section, select **Host Pools**. Then, select the host pool entry **az140-23-hp2**, and select **Application groups** in the vertical menu on the left side, under the **Manage** section. 
 
@@ -379,8 +298,6 @@ The main tasks for this exercise are as follows:
 
 15. Within the Remote Desktop session to one of the hosts as **aduser7**, right-click **Start**, in the right-click menu, select **Shut down or sign out**, and, in the cascading menu, click **Sign out**.
 
-      > **Note**: Now let's switch the personal desktop assignment from the direct mode to automatic. 
-
 16. Switch to your lab computer, to the web browser displaying the Azure portal, search for and select **Azure Virtual Desktop**, on the **Azure Virtual Desktop** blade, select **Application groups**, and select the application group entry **az140-23-hp2-DAG**. On the **az140-23-hp2-DAG** blade, in the vertical menu in the left side, select the **Assignments**. In the informational bar directly above the list of assignments, click the **Assign VM** link. This will redirect you to the **az140-23-hp2 \| Session hosts** blade. 
 
     ![](./images/13.png)
@@ -389,39 +306,21 @@ The main tasks for this exercise are as follows:
 
       > **Note**: This is expected since the host pool is configured for automatic assignment.
 
-18. On your lab computer, in the web browser window displaying the Azure portal, open the **PowerShell** shell session within the **Cloud Shell** pane. Then, select **Create storage** and wait for a few seconds for the Cloud Shell to provision.
-
-    ![](./images/12.png)
-
-19. From the PowerShell session in the Cloud Shell pane, run the following to switch to the direct assignment mode:
-
-    ```powershell
-    Update-AzWvdHostPool -ResourceGroupName 'az140-23-RG' -Name 'az140-23-hp2' -PersonalDesktopAssignmentType Direct
-    ```
-
-20. On your lab computer, in the web browser window displaying the Azure portal, navigate to the **az140-23-hp2** host pool blade, review the **Essentials** section and verify that the **Host pool type** is set to **Personal** with the **Assignment type** set to **Direct**.
-
-21. Switch back to the Remote Desktop session to **az140-cl-vm11**, in the **Remote Desktop** window, click the second ellipsis icon in the upper right corner, in the dropdown menu, click **Unsubscribe**, and, when prompted for confirmation, click **Continue**.
+18. Switch back to the Remote Desktop session to **az140-cl-vm11**, in the **Remote Desktop** window, click the second ellipsis icon in the upper right corner, in the dropdown menu, click **Unsubscribe**, and, when prompted for confirmation, click **Continue**.
 
       ![](./images/AZ-140-module-4-ellipses.png)
 
-22. Within the Remote Desktop session to **az140-cl-vm11**, in the **Remote Desktop** window, on the **Let's get started** page, click **Subscribe**.
+19. Within the Remote Desktop session to **az140-cl-vm11**, in the **Remote Desktop** window, on the **Let's get started** page, click **Subscribe**.
 
-23. When prompted sign in with the, **aduser8** credentials, by providing its userPrincipalName and **Pa55w.rd1234** as its password.
+20. When prompted sign in with the, **aduser8** credentials, by providing its userPrincipalName and **Pa55w.rd1234** as its password.
 
       > **Note**: If you get **Action Required** page, then select **Ask later**.
 
-      > **Note**: If you get the **Stay signed in to all your apps** window, clear the checkbox **Allow my organization to manage my device** checkbox and select **No, sign in to this app only**. 
+      > **Note**: If you get the **Stay signed in to all your apps** window, clear the checkbox **Allow my organization to manage my device** checkbox and select **No, sign in to this app only**.
 
-24. On the **Remote Desktop** page, double-click the **SessionDesktop** icon, and verify that you receive an error message stating **We couldn't connect because there are currently no available resources. Try again later or contact tech support for help if this keeps happening**, and click **OK**.
-
-      > **Note**: This is expected since the host pool is configured for direct assignment and **aduser8** has not been assigned a host.
-
-25. Switch to your lab computer, to the web browser displaying the Azure portal and, on the **az140-23-hp2** blade, select **Session hosts** in the vertical menu in the left side, and select the **(Assign)** link in the **Assigned User** column next to one of the two remaining unassigned hosts.
-
-26. On the **Assign a user**, select **aduser8**, click **Assign** and, when prompted for confirmation, click **OK**.
-
-27. Switch back to the Remote Desktop session to **az140-cl-vm11**, in the **Remote Desktop** window, double-click the **SessionDesktop** icon, when prompted for the password, type the password **Pa55w.rd1234**, click **OK**, and verify that you can successfully sign in to the assigned host.
+21. On the **Remote Desktop** page, double-click the **SessionDesktop** icon, when prompted for credentials, type the same password again, select the **Remember me** checkbox, and click **OK**.
+  
+22. Verify that **aduser8** successfully signed in via Remote Desktop to a host.
 
     > **Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
     > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
