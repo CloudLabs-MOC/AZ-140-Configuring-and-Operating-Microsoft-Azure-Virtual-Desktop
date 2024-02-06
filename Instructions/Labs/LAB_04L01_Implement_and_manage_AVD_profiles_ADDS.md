@@ -2,7 +2,7 @@
 
 ## Lab scenario
 
-You need to implement Azure Virtual Desktop profile management in an Active Directory Domain Services (AD DS) environment.
+You need to implement Azure Virtual Desktop profile management in an Active Directory Domain Services (Microsoft Entra DS) environment.
 
 ## Lab Objectives
   
@@ -80,7 +80,7 @@ After completing this lab, you will be able to implement FSLogix based profiles 
 
     ![](./images/lab0801ss.png)
 
-    >**Note**: This is expected, since the Microsoft entra tenant does not have a verified custom DNS domain matching one of the UPN suffixes of the **adatum.com** AD DS.
+    >**Note**: This is expected, since the Microsoft entra tenant does not have a verified custom DNS domain matching one of the UPN suffixes of the **adatum.com** Microsoft Entra DS.
 
 14. On the **Domain and OU filtering** page, select the option **Sync selected domains and OUs**, expand the adatum.com node, clear all checkboxes, select only the checkbox next to the **ToSync** OU, and select **Next**.
 
@@ -107,9 +107,9 @@ After completing this lab, you will be able to implement FSLogix based profiles 
     - Password: <inject key="AzureAdUserPassword"></inject>
 
 22. In the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page, search for and navigate to the **Microsoft Entra ID** blade and, on your Microsoft Entra ID tenant blade, in the **Manage** section of the hub menu, select **Users**.
-23. On the **All users** blade, note that the list of user objects includes the listing of AD DS user accounts you created earlier in this lab, with the **Yes** entry appearing in the **On-premises sync enabled** column.
+23. On the **All users** blade, note that the list of user objects includes the listing of Microsoft Entra DS user accounts you created earlier in this lab, with the **Yes** entry appearing in the **On-premises sync enabled** column.
 
-     > **Note**: You might have to wait a few minutes and refresh the browser page for the AD DS user accounts to appear. Proceed to next step only if you are able to see the listing of AD DS user accounts you created. 
+     > **Note**: You might have to wait a few minutes and refresh the browser page for the Microsoft Entra DS user accounts to appear. Proceed to next step only if you are able to see the listing of Microsoft Entra DS user accounts you created. 
 
 24. Once the users are reflected in the Microsoft Entra ID, right-click on the **lab-prerequisite** PowerShell file present on the desktop and select **Run with PowerShell** in the popup options. This will configure the storage account with the naming convention **storage<inject key="DeploymentID" enableCopy="false"/>** and file share with the name **az140-22-profiles**.
 

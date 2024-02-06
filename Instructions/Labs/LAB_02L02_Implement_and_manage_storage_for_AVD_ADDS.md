@@ -10,7 +10,7 @@ After completing this lab, you will be able to:
 
 - Create an Azure Storage account
 - Create an Azure Files share
-- Enable AD DS authentication for the Azure Storage account
+- Enable Microsoft Entra DS authentication for the Azure Storage account
 - Configure the Azure Files RBAC-based permissions
 - Configure the Azure Files file system permissions
 
@@ -87,7 +87,7 @@ After completing this lab, you will be able to:
 
 16. On the **Azure AD sign-in configuration** page, note the warning stating **Users will not be able to sign in to Azure AD with on-premises credentials if the UPN suffix does not match a verified domain name**, enable the checkbox **Continue without matching all UPN suffixes to verified domain**, and select **Next**.
 
-     > **Note**: This is expected since the Azure AD tenant does not have a verified custom DNS domain matching one of the UPN suffixes of the **adatum.com** AD DS.
+     > **Note**: This is expected since the Azure AD tenant does not have a verified custom DNS domain matching one of the UPN suffixes of the **adatum.com** Microsoft Entra DS.
 
 17. On the **Domain and OU filtering** page, select the option **Sync selected domains and OUs**, expand the adatum.com node, clear all checkboxes, select only the checkbox next to the **ToSync** OU, and select **Next**.
 
@@ -113,9 +113,9 @@ After completing this lab, you will be able to:
 
 24. In the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page, search for and navigate to the **Microsoft Entra ID** blade and, on your Microsoft Entra ID tenant blade, in the **Manage** section of the hub menu, select **Users**.
 
-25. On the **All users** blade, note that the list of user objects includes the listing of AD DS user accounts you created earlier in this lab, with the **Yes** entry appearing in the **On-premises sync enabled** column.
+25. On the **All users** blade, note that the list of user objects includes the listing of Microsoft Entra DS user accounts you created earlier in this lab, with the **Yes** entry appearing in the **On-premises sync enabled** column.
 
-    > **Note**: You might have to wait a few minutes and refresh the browser page for the AD DS user accounts to appear. Proceed to the next step only if you are able to see the listing of AD DS user accounts you created. 
+    > **Note**: You might have to wait a few minutes and refresh the browser page for the Microsoft Entra DS user accounts to appear. Proceed to the next step only if you are able to see the listing of Microsoft Entra DS user accounts you created. 
 
 26. Within the Remote Desktop session to **az140-dc-vm11**, start **Windows PowerShell ISE** as administrator, and run the following to create an organizational unit that will host the computer objects of the Azure Virtual Desktop hosts:
 
@@ -129,7 +129,7 @@ The main tasks for this exercise are as follows:
 
 1. Create an Azure Storage account
 1. Create an Azure Files share
-1. Enable AD DS authentication for the Azure Storage account 
+1. Enable Microsoft Entra DS authentication for the Azure Storage account 
 1. Configure the Azure Files RBAC-based permissions
 1. Configure the Azure Files file system permissions
 
@@ -167,7 +167,7 @@ The main tasks for this exercise are as follows:
    |Redundancy|**Geo-redundant storage (GRS)**|
    |Make read access to data available in the event of regional unavailability|enabled|
 
-   >**Note**: Make sure that the length of the storage account name does not exceed 15 characters. The name will be used to create a computer account in the Active Directory Domain Services (Microsoft Entra DS) domain that is integrated with the Azure AD tenant associated with the Azure subscription containing the storage account. This will allow for AD DS-based authentication when accessing file shares hosted in this storage account.
+   >**Note**: Make sure that the length of the storage account name does not exceed 15 characters. The name will be used to create a computer account in the Micrrosoft Entra DS (formerly AD DS) domain that is integrated with the Azure AD tenant associated with the Azure subscription containing the storage account. This will allow for Microsoft Entra DS-based authentication when accessing file shares hosted in this storage account.
 
 1. On the **Basics** tab of the **Create storage account** blade, select **Review**, wait for the validation process to complete, and then select **Create**.
 
@@ -188,7 +188,7 @@ The main tasks for this exercise are as follows:
    |Name|**az140-22-profiles**|
    |Tiers|**Transaction optimized**|
 
-### Task 3: Enable AD DS authentication for the Azure Storage account 
+### Task 3: Enable Microsoft Entra DS authentication for the Azure Storage account 
 
 1. Within the Remote Desktop session to **az140-dc-vm11**, open another tab in the Microsoft Edge window, navigate to the [Azure Files samples GitHub repository](https://github.com/Azure-Samples/azure-files-samples/releases), download [the most recent version of the compressed **AzFilesHybrid.zip** PowerShell module, and extract its content into **C:\\Allfiles\\Labs\\02** folder (create the folders if needed).
 
@@ -220,7 +220,7 @@ The main tasks for this exercise are as follows:
    $storageAccountName = (Get-AzStorageAccount -ResourceGroupName $resourceGroupName)[0].StorageAccountName
    ```
 
-6. Within the Remote Desktop session to **az140-dc-vm11**, from the **Administrator: Windows PowerShell ISE** script pane, run the following to create an AD DS computer object that represents the Azure Storage account you created earlier in this task and is used to implement its AD DS authentication:
+6. Within the Remote Desktop session to **az140-dc-vm11**, from the **Administrator: Windows PowerShell ISE** script pane, run the following to create an Microsoft Entra DS computer object that represents the Azure Storage account you created earlier in this task and is used to implement its Microsoft Entra DS authentication:
 
    ```powershell
    cd C:\AllFiles\Labs\02
@@ -240,7 +240,7 @@ The main tasks for this exercise are as follows:
     
     >**Note**: If you get a **Set password on AD object storage** popup. Select **Yes to All**.
 
-7. Within the Remote Desktop session to **az140-dc-vm11**, from the **Administrator: Windows PowerShell ISE** script pane, run the following to verify that the AD DS authentication is enabled on the Azure Storage account:
+7. Within the Remote Desktop session to **az140-dc-vm11**, from the **Administrator: Windows PowerShell ISE** script pane, run the following to verify that the Microsoft Entra DS authentication is enabled on the Azure Storage account:
 
    ```powershell
    $storageaccount = Get-AzStorageAccount -ResourceGroupName $resourceGroupName -Name $storageAccountName

@@ -1,16 +1,16 @@
-# Module 08B - Package Azure Virtual Desktop applications (AD DS)
+# Module 08B - Package Azure Virtual Desktop applications (Microsoft Entra DS)
 
 ## Lab scenario
 
-You need to package and deploy Azure Virtual Desktop applications in an Active Directory Domain Services (AD DS) environment.
+You need to package and deploy Azure Virtual Desktop applications in an Micrrosoft Entra DS (formerly AD DS) environment.
 
 ## Lab Objectives
   
 After completing this lab, you will be able to:
 
 - Prepare for and create MSIX app packages
-- Implement an MSIX app attach image for Azure Virtual Desktop in Azure AD DS environment
-- Implement the MSIX app attached on Azure Virtual Desktop in AD DS environment
+- Implement an MSIX app attach image for Azure Virtual Desktop in Azure Microsoft Entra DS environment
+- Implement the MSIX app attached on Azure Virtual Desktop in Microsoft Entra DS environment
 
 
 ## Estimated Timing: 60 minutes
@@ -39,7 +39,7 @@ The main tasks for this exercise are as follows:
 
    ![](./images/48.png)
 
-1. From the PowerShell session in the Cloud Shell pane, run the following to deploy an Azure VM running Windows 10 that you will use for creating MSIX packages and to join it to the Azure AD DS domain:
+1. From the PowerShell session in the Cloud Shell pane, run the following to deploy an Azure VM running Windows 10 that you will use for creating MSIX packages and to join it to the Azure Microsoft Entra DS domain:
 
    ```powershell
    $vNetResourceGroupName = 'az140-11-RG'
@@ -209,7 +209,7 @@ The main tasks for this exercise are as follows:
 
 1. Copy the **XmlNotepad.msix** file to the **C:\\Allfiles\\Labs\\04** folder.
 
-### Exercise 2: Implement an MSIX app attach an image for Azure Virtual Desktop in Azure AD DS environment
+### Exercise 2: Implement an MSIX app attach an image for Azure Virtual Desktop in Azure Microsoft Entra DS environment
 
 The main tasks for this exercise are as follows:
 
@@ -333,7 +333,7 @@ The main tasks for this exercise are as follows:
 
 1. Within the Remote Desktop session to **az140-dc-vm11**, start **Windows PowerShell ISE** as administrator.
 
-1. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create an AD DS group object that will be synchronized to the Microsoft Entra tenant used in this lab:
+1. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create an Microsoft Entra DS group object that will be synchronized to the Microsoft Entra tenant used in this lab:
 
    ```powershell
    $ouPath = "OU=WVDInfra,DC=adatum,DC=com"
@@ -395,9 +395,9 @@ The main tasks for this exercise are as follows:
 
 1. Within the Remote Desktop session to **az140-cl-vm42**, in the Microsoft Edge window displaying the Azure portal, search for and select **Storage accounts** and, on the **Storage accounts** blade, select the storage account you configured to host user profiles.
 
-   > **Note**: This part of the lab is contingent on completing the lab **Azure Virtual Desktop profile management (AD DS)** or **Azure Virtual Desktop profile management (Azure AD DS)**
+   > **Note**: This part of the lab is contingent on completing the lab **Azure Virtual Desktop profile management (Microsoft Entra DS)** or **Azure Virtual Desktop profile management (Azure Microsoft Entra DS)**
 
-   > **Note**: In production scenarios, you should consider using a separate storage account. This would require configuring that storage account for Azure AD DS authentication, which you already implemented for the storage account hosting user profiles. You are using the same storage account to minimize duplicate steps across individual labs.
+   > **Note**: In production scenarios, you should consider using a separate storage account. This would require configuring that storage account for Azure Microsoft Entra DS authentication, which you already implemented for the storage account hosting user profiles. You are using the same storage account to minimize duplicate steps across individual labs.
 
 1. On the storage account blade, in the vertical menu on the left side, select **Access Control (IAM)**.
 
@@ -557,7 +557,7 @@ The main tasks for this exercise are as follows:
 ### Review
 In this lab, you have completed the following:
 - Prepare for and create MSIX app packages
-- Implement an MSIX app attach image for Azure Virtual Desktop in Azure AD DS environment
-- Implement the MSIX app attached on Azure Virtual Desktop in AD DS environment
+- Implement an MSIX app attach image for Azure Virtual Desktop in Azure Microsoft Entra DS environment
+- Implement the MSIX app attached on Azure Virtual Desktop in Microsoft Entra DS environment
 
 ## You have successfully completed the lab
