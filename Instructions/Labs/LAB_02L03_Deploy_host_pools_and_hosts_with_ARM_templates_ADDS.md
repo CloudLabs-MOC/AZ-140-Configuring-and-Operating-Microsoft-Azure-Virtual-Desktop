@@ -12,9 +12,7 @@ After completing this lab, you will be able to deploy Azure Virtual Desktop host
 
 ## Architecture Diagram
   
-  ![](./images/az-140-mod04.png)
-
-
+  ![](./images/arch-04.png)
 
 ## Lab files
 
