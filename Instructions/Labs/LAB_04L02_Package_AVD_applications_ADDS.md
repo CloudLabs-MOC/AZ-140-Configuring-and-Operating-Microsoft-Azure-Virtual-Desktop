@@ -2,7 +2,7 @@
 
 ## Lab scenario
 
-You need to package and deploy Azure Virtual Desktop applications in an Active Directory Domain Services (Microsoft Entra DS) environment.
+You need to package and deploy Azure Virtual Desktop applications in an Micrrosoft Entra DS (formerly AD DS) environment.
 
 ## Lab Objectives
   

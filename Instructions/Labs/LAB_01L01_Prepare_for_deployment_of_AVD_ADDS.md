@@ -2,13 +2,13 @@
 
 ## Lab scenario
 
-You need to prepare for deployment of an Active Directory Domain Services (Microsoft Entra DS) environment
+You need to prepare for deployment of an Micrrosoft Entra DS (formerly AD DS) environment
 
 ## Lab Objectives
   
 After completing this lab, you will be able to:
 
-- Deploy an Active Directory Domain Services (Microsoft Entra DS) single-domain forest by using Azure VMs
+- Deploy an Micrrosoft Entra DS (formerly AD DS) single-domain forest by using Azure VMs
 - Integrate an Microsoft Entra DS forest with an Microsoft Entra ID tenant
 
 
@@ -19,7 +19,7 @@ After completing this lab, you will be able to:
   ![](./images/az-140-mod01.png)
 
 
-### Exercise 1: Deploy an Active Directory Domain Services (Microsoft Entra DS) domain
+### Exercise 1: Deploy an Micrrosoft Entra DS (formerly AD DS) domain
 
 The main tasks for this exercise are as follows:
 
@@ -470,7 +470,7 @@ The main tasks for this exercise are as follows:
 
 ### Review
 In this lab, you have completed the following:
-- Deployed  an Active Directory Domain Services (Microsoft Entra DS) single-domain forest by using Azure VMs
+- Deployed  an Micrrosoft Entra DS (formerly AD DS) single-domain forest by using Azure VMs
 - Integrated an Microsoft Entra DS forest with an Microsoft Entra ID tenant
 
 ## You have successfully completed the lab

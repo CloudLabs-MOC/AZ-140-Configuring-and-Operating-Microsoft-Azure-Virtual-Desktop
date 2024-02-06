@@ -167,7 +167,7 @@ The main tasks for this exercise are as follows:
    |Redundancy|**Geo-redundant storage (GRS)**|
    |Make read access to data available in the event of regional unavailability|enabled|
 
-   >**Note**: Make sure that the length of the storage account name does not exceed 15 characters. The name will be used to create a computer account in the Active Directory Domain Services (Microsoft Entra DS) domain that is integrated with the Azure AD tenant associated with the Azure subscription containing the storage account. This will allow for Microsoft Entra DS-based authentication when accessing file shares hosted in this storage account.
+   >**Note**: Make sure that the length of the storage account name does not exceed 15 characters. The name will be used to create a computer account in the Micrrosoft Entra DS (formerly AD DS) domain that is integrated with the Azure AD tenant associated with the Azure subscription containing the storage account. This will allow for Microsoft Entra DS-based authentication when accessing file shares hosted in this storage account.
 
 1. On the **Basics** tab of the **Create storage account** blade, select **Review**, wait for the validation process to complete, and then select **Create**.
 

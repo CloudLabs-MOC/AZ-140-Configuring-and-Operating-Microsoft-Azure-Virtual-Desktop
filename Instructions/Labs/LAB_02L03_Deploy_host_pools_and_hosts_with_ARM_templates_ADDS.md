@@ -328,7 +328,7 @@ The main tasks for this exercise are as follows:
 
 ### Review
 In this lab, you have completed the following:
-- Deployed  an Active Directory Domain Services (Microsoft Entra DS) single-domain forest by using Azure VMs
-- Integrated an Microsoft Entra DS forest with an Azure Active Directory (Azure AD) tenant
+- Deployed  an Micrrosoft Entra DS (formerly AD DS) single-domain forest by using Azure VMs
+- Integrated an Microsoft Entra DS forest with an Microsoft Entra ID tenant
 
 ## You have successfully completed the lab

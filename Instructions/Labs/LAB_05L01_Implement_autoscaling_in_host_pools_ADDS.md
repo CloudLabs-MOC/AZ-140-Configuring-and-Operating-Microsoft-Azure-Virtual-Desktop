@@ -2,7 +2,7 @@
 
 ## Lab scenario
 
-You need to configure autoscaling of Azure Virtual Desktop session hosts in an Active Directory Domain Services (Microsoft Entra DS) environment.
+You need to configure autoscaling of Azure Virtual Desktop session hosts in an Micrrosoft Entra DS (formerly AD DS) environment.
 
 ## Lab Objectives
   
