@@ -1,4 +1,4 @@
-# Module 01 - Prepare for deployment of Azure Virtual Desktop(AD DS)
+# Module 01 - Prepare for deployment of Azure Virtual Desktop(Microsoft Entra DS)
 
 ## Lab scenario
 
@@ -9,7 +9,7 @@ You need to prepare for deployment of an Active Directory Domain Services (Micro
 After completing this lab, you will be able to:
 
 - Deploy an Active Directory Domain Services (Microsoft Entra DS) single-domain forest by using Azure VMs
-- Integrate an AD DS forest with an Microsoft Entra ID tenant
+- Integrate an Microsoft Entra DS forest with an Microsoft Entra ID tenant
 
 
 ## Estimated Timing: 60 minutes
@@ -24,7 +24,7 @@ After completing this lab, you will be able to:
 The main tasks for this exercise are as follows:
 
 1. Prepare for an Azure VM deployment
-1. Deploy an Azure VM running an AD DS domain controller by using an Azure Resource Manager QuickStart template
+1. Deploy an Azure VM running an Microsoft Entra DS domain controller by using an Azure Resource Manager QuickStart template
 1. Deploy an Azure VM running Windows 10 by using an Azure Resource Manager QuickStart template
 1. Deploy Azure Bastion
 
@@ -46,7 +46,7 @@ The main tasks for this exercise are as follows:
 
     >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
 
-#### Task 2: Deploy an Azure VM running an AD DS domain controller by using an Azure Resource Manager QuickStart template
+#### Task 2: Deploy an Azure VM running an Microsoft Entra DS domain controller by using an Azure Resource Manager QuickStart template
 
 1. On the lab computer, in the web browser displaying the Azure portal, from the PowerShell session in the Cloud Shell pane, run the following to create a resource group (replace the `<Azure_region>` placeholder with the name of the Azure region that you intend to use for this lab, such as, for example, `eastus`):
 
@@ -166,16 +166,16 @@ The main tasks for this exercise are as follows:
      > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
      > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
 
-### Exercise 2: Integrate an AD DS forest with an Microsoft Entra ID tenant
+### Exercise 2: Integrate an Microsoft Entra DS forest with an Microsoft Entra ID tenant
   
 The main tasks for this exercise are as follows:
 
-1. Create AD DS users and groups that will be synchronized to Microsoft Entra ID
-1. Configure AD DS UPN suffix
+1. Create Microsoft Entra DS users and groups that will be synchronized to Microsoft Entra ID
+1. Configure Microsoft Entra DS UPN suffix
 1. Create an Microsoft Entra ID user that will be used to configure synchronization with Microsoft Entra ID
 1. Install Azure AD Connect
 
-#### Task 1: Create AD DS users and groups that will be synchronized to Microsoft Entra ID
+#### Task 1: Create Microsoft Entra DS users and groups that will be synchronized to Microsoft Entra ID
 
 1. On the lab computer, in the web browser displaying the Azure portal, search for and select **Virtual machines** and, from the **Virtual machines** blade, select **az140-dc-vm11**.
 2. On the **az140-dc-vm11** blade, select **Connect**, then select **More ways to connect(3)** select **Go to Bastion**.
@@ -217,19 +217,19 @@ The main tasks for this exercise are as follows:
 
    ![Bastion close clipboard](./images/bastion-copy-paste.png)
 
-6. From the **Administrator: Windows PowerShell ISE** console, run the following to create an AD DS organizational unit that will contain objects included in the scope of synchronization to the Microsoft Entra tenant used in this lab:
+6. From the **Administrator: Windows PowerShell ISE** console, run the following to create an Microsoft Entra DS organizational unit that will contain objects included in the scope of synchronization to the Microsoft Entra tenant used in this lab:
 
    ```powershell
    New-ADOrganizationalUnit 'ToSync' -path 'DC=adatum,DC=com' -ProtectedFromAccidentalDeletion $false
    ```
 
-7. From the **Administrator: Windows PowerShell ISE** console, run the following to create an AD DS organizational unit that will contain computer objects of Windows 10 domain-joined client computers:
+7. From the **Administrator: Windows PowerShell ISE** console, run the following to create an Microsoft Entra DS organizational unit that will contain computer objects of Windows 10 domain-joined client computers:
 
    ```powershell
    New-ADOrganizationalUnit 'WVDClients' -path 'DC=adatum,DC=com' -ProtectedFromAccidentalDeletion $false
    ```
 
-8. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create AD DS user accounts that will be synchronized to the Microsoft Entra tenant used in this lab (replace the `<password>` placeholder with the password **Pa55w.rd1234** in line 9 and 16):
+8. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create Microsoft Entra DS user accounts that will be synchronized to the Microsoft Entra tenant used in this lab (replace the `<password>` placeholder with the password **Pa55w.rd1234** in line 9 and 16):
 
    > **Note**: You can provide the password of your choice in DevTest/Producion scenarious. But for the purpose of this lab, we are going to use the above password. Ensure that you remember the password you used. You will need it later in this and subsequent labs.
 
@@ -256,7 +256,7 @@ The main tasks for this exercise are as follows:
 
    > **Note**: The script creates nine non-privileged user accounts named **aduser1** - **aduser9** and one privileged account that is a member of the **ADATUM\\Domain Admins** group named **wvdadmin1**.
 
-9. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create AD DS group objects that will be synchronized to the Microsoft Entra tenant used in this lab:
+9. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create Microsoft Entra DS group objects that will be synchronized to the Microsoft Entra tenant used in this lab:
 
    ```powershell
    New-ADGroup -Name 'az140-wvd-pooled' -GroupScope 'Global' -GroupCategory Security -Path $ouPath
@@ -276,7 +276,7 @@ The main tasks for this exercise are as follows:
     Get-ADGroup -Identity 'az140-wvd-admins' | Add-AdGroupMember -Members 'wvdadmin1'
     ```
 
-#### Task 2: Configure AD DS UPN suffix
+#### Task 2: Configure Microsoft Entra DS UPN suffix
 
 1. Within the Remote Desktop session to **az140-dc-vm11**, from the **Administrator: Windows PowerShell ISE** script pane, run the following to install the latest version of the PowerShellGet module (select **Yes** when prompted for confirmation):
 
@@ -331,13 +331,13 @@ The main tasks for this exercise are as follows:
    $aadDomainName = ((Get-AzureAdTenantDetail).VerifiedDomains)[0].Name
    ```
 
-1. From the **Administrator: Windows PowerShell ISE** console, run the following to add the primary DNS domain name of the Microsoft Entra ID tenant associated with your Azure subscription to the list of UPN suffixes of your AD DS forest:
+1. From the **Administrator: Windows PowerShell ISE** console, run the following to add the primary DNS domain name of the Microsoft Entra ID tenant associated with your Azure subscription to the list of UPN suffixes of your Microsoft Entra DS forest:
 
    ```powershell
    Get-ADForest|Set-ADForest -UPNSuffixes @{add="$aadDomainName"}
    ```
 
-1. From the **Administrator: Windows PowerShell ISE** script pane, run the following to assign the primary DNS domain name of the Microsoft Entra ID tenant associated with your Azure subscription as the UPN suffix of all users in the AD DS domain:
+1. From the **Administrator: Windows PowerShell ISE** script pane, run the following to assign the primary DNS domain name of the Microsoft Entra ID tenant associated with your Azure subscription as the UPN suffix of all users in the Microsoft Entra DS domain:
 
    ```powershell
    $domainUsers = Get-ADUser -Filter {UserPrincipalName -like '*adatum.com'} -Properties userPrincipalName -ResultSetSize $null
@@ -439,7 +439,7 @@ The main tasks for this exercise are as follows:
 
     ![](./images/adconnect.png)
 
-    > **Note**: This is expected, since the Azure AD tenant does not have a verified custom DNS domain matching one of the UPN suffixes of the **adatum.com** AD DS.
+    > **Note**: This is expected, since the Azure AD tenant does not have a verified custom DNS domain matching one of the UPN suffixes of the **adatum.com** Microsoft Entra DS.
 
 15. On the **Domain and OU filtering** page, select the option **Sync selected domains and OUs**, expand the adatum.com node, clear all checkboxes, select only the checkbox next to the **ToSync** OU, and select **Next**.
 
@@ -458,9 +458,9 @@ The main tasks for this exercise are as follows:
 
 21. In Microsoft Edge browser, navigate to the [Azure portal](https://portal.azure.com). If prompted, sign in by using the Azure AD credentials of the user account with the Owner role in the subscription you are using in this lab.
 21. In the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page, search for and navigate to the **Azure Active Directory** blade and, on your Azure AD tenant blade, in the **Manage** section of the hub menu, select **Users**.
-22. On the **All users (Preview)** blade, note that the list of user objects includes the listing of AD DS user accounts you created earlier in this lab, with the **Yes** entry appearing in the **On-premises sync enabled** column.
+22. On the **All users (Preview)** blade, note that the list of user objects includes the listing of Microsoft Entra DS user accounts you created earlier in this lab, with the **Yes** entry appearing in the **On-premises sync enabled** column.
 
-    > **Note**: You might have to wait a few minutes and refresh the browser page for the AD DS user accounts to appear.
+    > **Note**: You might have to wait a few minutes and refresh the browser page for the Microsoft Entra DS user accounts to appear.
 
     > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
     > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
@@ -470,7 +470,7 @@ The main tasks for this exercise are as follows:
 
 ### Review
 In this lab, you have completed the following:
-- Deployed  an Active Directory Domain Services (AD DS) single-domain forest by using Azure VMs
-- Integrated an AD DS forest with an Microsoft Entra ID tenant
+- Deployed  an Active Directory Domain Services (Microsoft Entra DS) single-domain forest by using Azure VMs
+- Integrated an Microsoft Entra DS forest with an Microsoft Entra ID tenant
 
 ## You have successfully completed the lab

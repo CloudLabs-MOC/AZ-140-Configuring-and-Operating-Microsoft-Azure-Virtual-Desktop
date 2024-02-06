@@ -1,8 +1,8 @@
-# Module 09 - Implement autoscaling in host pools (AD DS)
+# Module 09 - Implement autoscaling in host pools (Microsoft Entra DS)
 
 ## Lab scenario
 
-You need to configure autoscaling of Azure Virtual Desktop session hosts in an Active Directory Domain Services (AD DS) environment.
+You need to configure autoscaling of Azure Virtual Desktop session hosts in an Active Directory Domain Services (Microsoft Entra DS) environment.
 
 ## Lab Objectives
   
@@ -83,7 +83,7 @@ In this lab you will perform:
 
 13. On the **Azure AD sign-in configuration** page, note the warning statig **Users will not be able to sign in to Azure AD with on-premises credentials if the UPN suffix does not match a verified domain name**, enable the checkbox **Continue without matching all UPN suffixes to verified domain (1)**, and select **Next (2)**.
 
-    > **Note**: This is expected, since the Azure AD tenant does not have a verified custom DNS domain matching one of the UPN suffixes of the **adatum.com** AD DS.
+    > **Note**: This is expected, since the Azure AD tenant does not have a verified custom DNS domain matching one of the UPN suffixes of the **adatum.com** Microsoft Entra DS.
 
     ![](./images/azuread1.png)
 
@@ -115,9 +115,9 @@ In this lab you will perform:
 
       ![](./images/microsoftentraID.png)
 
-22. On the **All users** blade, note that the list of user objects includes the listing of AD DS user accounts you created earlier in this lab, with the **Yes** entry appearing in the **On-premises sync enabled** column.
+22. On the **All users** blade, note that the list of user objects includes the listing of Microsoft Entra DS user accounts you created earlier in this lab, with the **Yes** entry appearing in the **On-premises sync enabled** column.
 
-    >**Note**: You might have to wait a few minutes and refresh the browser page for the AD DS user accounts to appear. Proceed to the next exercise only if you are able to see the listing of AD DS user accounts you created. 
+    >**Note**: You might have to wait a few minutes and refresh the browser page for the Microsoft Entra DS user accounts to appear. Proceed to the next exercise only if you are able to see the listing of Microsoft Entra DS user accounts you created. 
 
       ![](./images/userprincipal.png)
 
