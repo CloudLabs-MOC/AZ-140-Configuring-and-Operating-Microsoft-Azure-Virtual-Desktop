@@ -91,7 +91,7 @@ After completing this lab, you will be able to deploy Azure Virtual Desktop host
 
 14. On the **Azure AD sign-in configuration** page, note the warning stating **Users will not be able to sign in to Azure AD with on-premises credentials if the UPN suffix does not match a verified domain name**, enable the checkbox **Continue without matching all UPN suffixes to verified domain**, and select **Next**.
 
-      > **Note**: This is expected since the Azure AD tenant does not have a verified custom DNS domain matching one of the UPN suffixes of the **adatum.com** AD DS.
+      > **Note**: This is expected since the Azure AD tenant does not have a verified custom DNS domain matching one of the UPN suffixes of the **adatum.com** Microsoft Entra DS.
 
 15. On the **Domain and OU filtering** page, select the option **Sync selected domains and OUs**, expand the adatum.com node, clear all checkboxes, select only the checkbox next to the **ToSync** OU, and select **Next**.
 
@@ -117,9 +117,9 @@ After completing this lab, you will be able to deploy Azure Virtual Desktop host
 
 22. In the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page, search for and navigate to the **Microsoft Entra ID** blade and, on your Azure AD tenant blade, in the **Overview** section of the hub menu, select **Users**.
 
-23. On the **Users** blade, note that the list of user objects includes the listing of AD DS user accounts you created earlier in this lab, with the **Yes** entry appearing in the **On-premises sync enabled** column.
+23. On the **Users** blade, note that the list of user objects includes the listing of Microsoft Entra DS user accounts you created earlier in this lab, with the **Yes** entry appearing in the **On-premises sync enabled** column.
 
-      > **Note**: You might have to wait a few minutes and refresh the browser page for the AD DS user accounts to appear. Proceed to the next step only if you are able to see the listing of AD DS user accounts you created. 
+      > **Note**: You might have to wait a few minutes and refresh the browser page for the Microsoft Entra DS user accounts to appear. Proceed to the next step only if you are able to see the listing of Microsoft Entra DS user accounts you created. 
 
 
 24. Within the Remote Desktop session to **az140-dc-vm11**, start **Windows PowerShell ISE** as administrator, and run the following to create an organizational unit that will host the computer objects of the Azure Virtual Desktop hosts:
@@ -148,7 +148,7 @@ The main tasks for this exercise are as follows:
    (Get-ADOrganizationalUnit -Filter "Name -eq 'WVDInfra'").distinguishedName
    ```
 
-1. Within the Remote Desktop session to **az140-dc-vm11**, from the **Administrator: Windows PowerShell ISE** script pane, run the following to identify the user principal name attribute of the **ADATUM\\Student** account that you will use to join the Azure Virtual Desktop hosts to the AD DS domain (**student@adatum.com**):
+1. Within the Remote Desktop session to **az140-dc-vm11**, from the **Administrator: Windows PowerShell ISE** script pane, run the following to identify the user principal name attribute of the **ADATUM\\Student** account that you will use to join the Azure Virtual Desktop hosts to the Microsoft Entra DS domain (**student@adatum.com**):
 
    ```powershell
    (Get-ADUser -Filter "sAMAccountName -eq 'student'").userPrincipalName
@@ -215,7 +215,7 @@ The main tasks for this exercise are as follows:
    |---|---|
    |Subscription|the name of the Azure subscription you are using in this lab|
    |Resource Group|**az140-23-RG**|
-   |Region|the name of the Azure region into which you deployed Azure VMs hosting AD DS domain controllers in the lab **Prepare for deployment of Azure Virtual Desktop (AD DS)**|
+   |Region|the name of the Azure region into which you deployed Azure VMs hosting Microsoft Entra DS domain controllers in the lab **Prepare for deployment of Azure Virtual Desktop (Microsoft Entra DS)**|
    |Location|the name of the same Azure region as the one set as the value of the **Region** parameters|
    |Workspace location|the name of the same Azure region as the one set as the value of the **Region** parameters|
    |Workspace Resource Group|Leave as default|
@@ -328,7 +328,7 @@ The main tasks for this exercise are as follows:
 
 ### Review
 In this lab, you have completed the following:
-- Deployed  an Active Directory Domain Services (AD DS) single-domain forest by using Azure VMs
-- Integrated an AD DS forest with an Azure Active Directory (Azure AD) tenant
+- Deployed  an Active Directory Domain Services (Microsoft Entra DS) single-domain forest by using Azure VMs
+- Integrated an Microsoft Entra DS forest with an Azure Active Directory (Azure AD) tenant
 
 ## You have successfully completed the lab
