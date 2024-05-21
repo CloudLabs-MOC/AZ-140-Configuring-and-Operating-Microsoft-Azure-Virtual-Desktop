@@ -75,6 +75,7 @@ The main tasks for this exercise are as follows:
    |Subscription|the name of the Azure subscription you are using in this lab|
    |Resource group|**az140-11-RG**|
    |Domain Name|**adatum.com**|
+   |Virtual machine Name| **az140-dc-vm11**|                    
    |Virtual Network Name| **az140-adds-vnet11**|
 
    ![](./images/t2s8.png)
