@@ -215,19 +215,19 @@ The main tasks for this exercise are as follows:
    
      ![Bastion close clipboard](./images/bastion-copy-paste.png)
 
-7. From the **Administrator: Windows PowerShell ISE** console, run the following to create an Microsoft Entra DS organizational unit that will contain objects included in the scope of synchronization to the Microsoft Entra tenant used in this lab:
+6. From the **Administrator: Windows PowerShell ISE** console, run the following to create an Microsoft Entra DS organizational unit that will contain objects included in the scope of synchronization to the Microsoft Entra tenant used in this lab:
 
    ```powershell
    New-ADOrganizationalUnit 'ToSync' -path 'DC=adatum,DC=com' -ProtectedFromAccidentalDeletion $false
    ```
 
-8. From the **Administrator: Windows PowerShell ISE** console, run the following to create an Microsoft Entra DS organizational unit that will contain computer objects of Windows 10 domain-joined client computers:
+7. From the **Administrator: Windows PowerShell ISE** console, run the following to create an Microsoft Entra DS organizational unit that will contain computer objects of Windows 10 domain-joined client computers:
 
    ```powershell
    New-ADOrganizationalUnit 'WVDClients' -path 'DC=adatum,DC=com' -ProtectedFromAccidentalDeletion $false
    ```
 
-9. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create Microsoft Entra DS user accounts that will be synchronized to the Microsoft Entra tenant used in this lab (replace the `<password>` placeholder with the password **Pa55w.rd1234** in line 9 and 16):
+8. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create Microsoft Entra DS user accounts that will be synchronized to the Microsoft Entra tenant used in this lab (replace the `<password>` placeholder with the password **Pa55w.rd1234** in line 9 and 16):
 
    > **Note**: You can provide the password of your choice in DevTest/Producion scenarious. But for the purpose of this lab, we are going to use the above password. Ensure that you remember the password you used. You will need it later in this and subsequent labs.
 
@@ -254,17 +254,17 @@ The main tasks for this exercise are as follows:
 
    > **Note**: The script creates nine non-privileged user accounts named **aduser1** - **aduser9** and one privileged account that is a member of the **ADATUM\\Domain Admins** group named **wvdadmin1**.
 
-10. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create Microsoft Entra DS group objects that will be synchronized to the Microsoft Entra tenant used in this lab:
+9. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create Microsoft Entra DS group objects that will be synchronized to the Microsoft Entra tenant used in this lab:
 
-   ```powershell
-   New-ADGroup -Name 'az140-wvd-pooled' -GroupScope 'Global' -GroupCategory Security -Path $ouPath
-   New-ADGroup -Name 'az140-wvd-remote-app' -GroupScope 'Global' -GroupCategory Security -Path $ouPath
-   New-ADGroup -Name 'az140-wvd-personal' -GroupScope 'Global' -GroupCategory Security -Path $ouPath
-   New-ADGroup -Name 'az140-wvd-users' -GroupScope 'Global' -GroupCategory Security -Path $ouPath
-   New-ADGroup -Name 'az140-wvd-admins' -GroupScope 'Global' -GroupCategory Security -Path $ouPath
-   ```
+     ```powershell
+     New-ADGroup -Name 'az140-wvd-pooled' -GroupScope 'Global' -GroupCategory Security -Path $ouPath
+     New-ADGroup -Name 'az140-wvd-remote-app' -GroupScope 'Global' -GroupCategory Security -Path $ouPath
+     New-ADGroup -Name 'az140-wvd-personal' -GroupScope 'Global' -GroupCategory Security -Path $ouPath
+     New-ADGroup -Name 'az140-wvd-users' -GroupScope 'Global' -GroupCategory Security -Path $ouPath
+     New-ADGroup -Name 'az140-wvd-admins' -GroupScope 'Global' -GroupCategory Security -Path $ouPath
+     ```
 
-11. From the **Administrator: Windows PowerShell ISE** console, run the following to add members to the groups you created in the previous step:
+10. From the **Administrator: Windows PowerShell ISE** console, run the following to add members to the groups you created in the previous step:
 
     ```powershell
     Get-ADGroup -Identity 'az140-wvd-pooled' | Add-AdGroupMember -Members 'aduser1','aduser2','aduser3','aduser4'
@@ -288,18 +288,18 @@ The main tasks for this exercise are as follows:
    ```powershell
    Install-Module -Name Az -AllowClobber -SkipPublisherCheck
    ```
-  >**Note:** The execution of the above command will be around 20 minutes.
+    >**Note:** The execution of the above command will be around 20 minutes.
 
 1. From the **Administrator: Windows PowerShell ISE** console, run the following to sign in to your Azure subscription:
 
    ```powershell
    Connect-AzAccount
    ```
-   > **Note**: If you face an issue while connecting to the Azure account, then run: `Connect-AzAccount -devicecode`
+    > **Note**: If you face an issue while connecting to the Azure account, then run: `Connect-AzAccount -devicecode`
 
 1. When prompted, provide the credentials of the user account with the Owner role in the subscription you are using in this lab.
 
-   >**Note**: If you get **Microsoft Azure: Help us protect your account** page, then select **Skip for now(14 days until this is required)**.
+    >**Note**: If you get **Microsoft Azure: Help us protect your account** page, then select **Skip for now(14 days until this is required)**.
 
 1. From the **Administrator: Windows PowerShell ISE** console, run the following to retrieve the Id property of the Microsoft Entra ID tenant associated with your Azure subscription:
 
@@ -321,12 +321,13 @@ The main tasks for this exercise are as follows:
    ```
 
    >**Note:** If you face any error after entering the above command telling the tenant id is null,navigate to Azure portal and search for and select Microsoft Entra ID.
-   >From the overview page,copy the **Tenant ID**.
+   >- From the overview page,copy the **Tenant ID**.
 
      ![](./images/az140x1.png)
    
-   >Now, within the bastion session,in the powershell window enter **$tenantID=<The tenant id you copied>**
-   >Once you have initialized the tenant id,run the above command again to connect to Entra ID.
+   >-  Now, within the bastion session,in the powershell window enter **$tenantID=_The tenant id you copied_** and hit enter.
+   
+   >-  Once you have initialized the tenant id,run the above command again to connect to Entra ID.
 
 1. When prompted, sign in with the same credentials you used earlier in this task. 
 
@@ -391,7 +392,7 @@ The main tasks for this exercise are as follows:
    > **Note**: Record the user principal name. You will need it later in this exercise. 
 
 
-#### Task 4: Install Azure AD Connect
+#### Task 4: Install Microsoft Entra ID Connect
 
 1. Within the Remote Desktop session to **az140-dc-vm11**, from the **Administrator: Windows PowerShell ISE** script pane, run the following to enable TLS 1.2:
 
@@ -411,17 +412,17 @@ The main tasks for this exercise are as follows:
    Write-Host 'TLS 1.2 has been enabled.'
    ```
    
-3. Within the Remote Desktop session to **az140-dc-vm11**, use Microsoft Edge to navigate to the [Download Microsoft Azure Active Directory Connect page](https://www.microsoft.com/en-us/download/details.aspx?id=47594), scroll down and download the **Microsoft Azure Active Directory Connect** by selecting **Download** button.
+3. Within the Remote Desktop session to **az140-dc-vm11**, use Microsoft Edge to navigate to the [Download Microsoft Azure Active Directory Connect page](https://www.microsoft.com/en-us/download/details.aspx?id=47594), scroll down and download the **Microsoft Entra ID Connect** by selecting **Download** button.
 
-4. If prompted whether to run or save the **AzureADConnect.msi** installer, select **Run**. Otherwise, open the file after it downloads to start the **Microsoft Azure Active Directory Connect** wizard.
-5. On the **Welcome to Azure AD Connect** page of the **Microsoft Azure Active Directory Connect** wizard, select the checkbox **I agree to the license terms and privacy notice** and select **Continue**.
+4. If prompted whether to run or save the **AzureADConnect.msi** installer, select **Run**. Otherwise, open the file after it downloads to start the **Microsoft Entra ID Connect** wizard.
+5. On the **Welcome to Entra ID Connect** page of the **Microsoft Entra ID Connect** wizard, select the checkbox **I agree to the license terms and privacy notice** and select **Continue**.
 
    > **Note**: If you are unable to view the checkbox/buttons, expand the Azure AD Connect wizard to full screen by dragging the window to the top.
 
    ![Azure AD Connect Wizard](./images/welcome-aad-connect.jpg)
 
 
-6. On the **Express Settings** page of the **Microsoft Azure Active Directory Connect** wizard, select the **Customize** option.
+6. On the **Express Settings** page of the **Microsoft Entra ID Connect** wizard, select the **Customize** option.
 7. On the **Install required components** page, leave all optional configuration options deselected and select **Install**.
 8. On the **User sign-in** page, ensure that only the **Password Hash Synchronization** is enabled and select **Next**.
 9. On the **Connect to Azure AD** page, authenticate by using the credentials of the **aadsyncuser** user account you created in the previous exercise and select **Next**. 
@@ -454,12 +455,12 @@ The main tasks for this exercise are as follows:
 
     > **Note**: Installation should take about 2 minutes.
 
-19. Review the information on the **Configuration complete** page and select **Exit** to close the **Microsoft Azure Active Directory Connect** window.
+19. Review the information on the **Configuration complete** page and select **Exit** to close the **Microsoft Entra ID Connect** window.
 
     ![](./images/adconnect2.png)
 
 20. In Microsoft Edge browser, navigate to the [Azure portal](https://portal.azure.com). If prompted, sign in by using the Azure AD credentials of the user account with the Owner role in the subscription you are using in this lab.
-21. In the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page, search for and navigate to the **Azure Active Directory** blade and, on your Azure AD tenant blade, in the **Manage** section of the hub menu, select **Users**.
+21. In the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page, search for and navigate to the **Entra ID** blade and, on your Azure AD tenant blade, in the **Manage** section of the hub menu, select **Users**.
 22. On the **All users (Preview)** blade, note that the list of user objects includes the listing of Microsoft Entra DS user accounts you created earlier in this lab, with the **Yes** entry appearing in the **On-premises sync enabled** column.
 
     > **Note**: You might have to wait a few minutes and refresh the browser page for the Microsoft Entra DS user accounts to appear.
