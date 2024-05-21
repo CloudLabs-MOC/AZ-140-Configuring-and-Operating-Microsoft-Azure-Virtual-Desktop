@@ -290,6 +290,7 @@ The main tasks for this exercise are as follows:
    ```powershell
    Install-Module -Name Az -AllowClobber -SkipPublisherCheck
    ```
+  >**Note:** The execution of the above command will be around 20 minutes.
 
 1. From the **Administrator: Windows PowerShell ISE** console, run the following to sign in to your Azure subscription:
 
