@@ -65,10 +65,10 @@ The main tasks for this exercise are as follows:
 
    ![](./images/t2s4.png)
 
-5. On the  **Custom deployment** blade, select **Edit template** and go to line no **192** and change **2019-Datacenter** to **2022-Datacenter** then click on **Save**.
-5. On the **Custom deployment** blade, select **Edit parameters**.
-6. On the **Edit parameters** blade, select **Load file**, in the **Open** dialog box, navigate to the path **C:\AllFiles\AZ-140-Configuring-and-Operating-Microsoft-Azure-Virtual-Desktop\Allfiles\Labs\01** and select the file **az140-11_azuredeploydc11.parameters.json**, select **Open**, and then select **Save**. 
-7. On the **Custom deployment** blade, specify the following settings (leave others with their existing values):
+5. On the Custom deployment blade, select Edit template, navigate to line **192**, and change **2019-Datacenter to 2022-Datacenter**. Then click Save.
+6. On the **Custom deployment** blade, select **Edit parameters**.
+7. On the **Edit parameters** blade, select **Load file**, in the **Open** dialog box, navigate to the path **C:\AllFiles\AZ-140-Configuring-and-Operating-Microsoft-Azure-Virtual-Desktop\Allfiles\Labs\01** and select the file **az140-11_azuredeploydc11.parameters.json**, select **Open**, and then select **Save**. 
+8. On the **Custom deployment** blade, specify the following settings (leave others with their existing values):
 
    |Setting|Value|
    |---|---|
@@ -78,7 +78,7 @@ The main tasks for this exercise are as follows:
 
    ![](./images/t2s8.png)
 
-8. On the **Custom deployment** blade, select **Review + create** and select **Create**.
+9. On the **Custom deployment** blade, select **Review + create** and select **Create**.
 
    > **Note**: Wait for the deployment to complete before you proceed to the next task. This might take close to 20 minutes. 
 
