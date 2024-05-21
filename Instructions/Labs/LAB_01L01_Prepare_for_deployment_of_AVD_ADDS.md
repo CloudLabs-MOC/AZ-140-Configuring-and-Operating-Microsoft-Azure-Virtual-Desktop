@@ -211,25 +211,23 @@ The main tasks for this exercise are as follows:
    ```
    >**Note**: If you are unable to copy and paste content within the bastion session to **az140-dc-vm11** or any other VMs in the following labs, then click the arrows **>>** in the left part, and in the **Clipboard** paste the content in the blank area ***(1)*** and copy it and paste in the bastion session to the respected VM. Then, close the **Clipboard** by selecting the back arrows **<<** ***(2)***.
 
-   ![Bastion open clipboard](./images/bastion-arrow-out.png)
+     ![Bastion open clipboard](./images/bastion-arrow-out.png)
+   
+     ![Bastion close clipboard](./images/bastion-copy-paste.png)
 
-
-
-   ![Bastion close clipboard](./images/bastion-copy-paste.png)
-
-6. From the **Administrator: Windows PowerShell ISE** console, run the following to create an Microsoft Entra DS organizational unit that will contain objects included in the scope of synchronization to the Microsoft Entra tenant used in this lab:
+7. From the **Administrator: Windows PowerShell ISE** console, run the following to create an Microsoft Entra DS organizational unit that will contain objects included in the scope of synchronization to the Microsoft Entra tenant used in this lab:
 
    ```powershell
    New-ADOrganizationalUnit 'ToSync' -path 'DC=adatum,DC=com' -ProtectedFromAccidentalDeletion $false
    ```
 
-7. From the **Administrator: Windows PowerShell ISE** console, run the following to create an Microsoft Entra DS organizational unit that will contain computer objects of Windows 10 domain-joined client computers:
+8. From the **Administrator: Windows PowerShell ISE** console, run the following to create an Microsoft Entra DS organizational unit that will contain computer objects of Windows 10 domain-joined client computers:
 
    ```powershell
    New-ADOrganizationalUnit 'WVDClients' -path 'DC=adatum,DC=com' -ProtectedFromAccidentalDeletion $false
    ```
 
-8. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create Microsoft Entra DS user accounts that will be synchronized to the Microsoft Entra tenant used in this lab (replace the `<password>` placeholder with the password **Pa55w.rd1234** in line 9 and 16):
+9. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create Microsoft Entra DS user accounts that will be synchronized to the Microsoft Entra tenant used in this lab (replace the `<password>` placeholder with the password **Pa55w.rd1234** in line 9 and 16):
 
    > **Note**: You can provide the password of your choice in DevTest/Producion scenarious. But for the purpose of this lab, we are going to use the above password. Ensure that you remember the password you used. You will need it later in this and subsequent labs.
 
@@ -256,7 +254,7 @@ The main tasks for this exercise are as follows:
 
    > **Note**: The script creates nine non-privileged user accounts named **aduser1** - **aduser9** and one privileged account that is a member of the **ADATUM\\Domain Admins** group named **wvdadmin1**.
 
-9. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create Microsoft Entra DS group objects that will be synchronized to the Microsoft Entra tenant used in this lab:
+10. From the **Administrator: Windows PowerShell ISE** script pane, run the following to create Microsoft Entra DS group objects that will be synchronized to the Microsoft Entra tenant used in this lab:
 
    ```powershell
    New-ADGroup -Name 'az140-wvd-pooled' -GroupScope 'Global' -GroupCategory Security -Path $ouPath
@@ -266,7 +264,7 @@ The main tasks for this exercise are as follows:
    New-ADGroup -Name 'az140-wvd-admins' -GroupScope 'Global' -GroupCategory Security -Path $ouPath
    ```
 
-10. From the **Administrator: Windows PowerShell ISE** console, run the following to add members to the groups you created in the previous step:
+11. From the **Administrator: Windows PowerShell ISE** console, run the following to add members to the groups you created in the previous step:
 
     ```powershell
     Get-ADGroup -Identity 'az140-wvd-pooled' | Add-AdGroupMember -Members 'aduser1','aduser2','aduser3','aduser4'
