@@ -75,10 +75,11 @@ The main tasks for this exercise are as follows:
    |Subscription|the name of the Azure subscription you are using in this lab|
    |Resource group|**az140-11-RG**|
    |Domain Name|**adatum.com**|
+   |Virtual Network Name| **az140-adds-vnet11**|
 
    ![](./images/t2s8.png)
 
-9. On the **Custom deployment** blade, select **Review + create** and select **Create**.
+10. On the **Custom deployment** blade, select **Review + create** and select **Create**.
 
    > **Note**: Wait for the deployment to complete before you proceed to the next task. This might take close to 20 minutes. 
 
