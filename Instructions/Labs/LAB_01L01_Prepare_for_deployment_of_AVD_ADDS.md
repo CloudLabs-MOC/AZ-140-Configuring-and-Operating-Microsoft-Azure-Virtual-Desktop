@@ -8,8 +8,8 @@ You need to prepare for deployment of an Micrrosoft Entra DS (formerly AD DS) en
   
 After completing this lab, you will be able to:
 
-- Deploy an Micrrosoft Entra DS (formerly AD DS) single-domain forest by using Azure VMs
-- Integrate an Microsoft Entra DS forest with an Microsoft Entra ID tenant
+- Deploy an Microsoft Entra DS (formerly AD DS) single-domain forest by using Azure VMs
+- Integrate  Microsoft Entra DS forest with  Microsoft Entra ID tenant
 
 
 ## Estimated Timing: 60 minutes
