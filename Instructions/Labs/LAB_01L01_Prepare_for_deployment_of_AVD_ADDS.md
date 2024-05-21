@@ -320,6 +320,14 @@ The main tasks for this exercise are as follows:
    Connect-AzureAD -TenantId $tenantId
    ```
 
+   >**Note:** If you face any error after entering the above command telling the tenant id is null,navigate to Azure portal and search for and select Microsoft Entra ID.
+   >From the overview page,copy the **Tenant ID**.
+
+     ![](./images/az140x1.png)
+   
+   >Now, within the bastion session,in the powershell window enter **$tenantID=<The tenant id you copied>**
+   >Once you have initialized the tenant id,run the above command again to connect to Entra ID.
+
 1. When prompted, sign in with the same credentials you used earlier in this task. 
 
    >**Note**: If you get **Microsoft Azure: Help us protect your account** page, then select **Skip for now(14 days until this is required)**. 
