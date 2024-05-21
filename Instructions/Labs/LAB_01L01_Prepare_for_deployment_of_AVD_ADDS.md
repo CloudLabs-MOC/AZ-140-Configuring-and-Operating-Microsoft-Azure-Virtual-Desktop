@@ -19,7 +19,7 @@ After completing this lab, you will be able to:
   ![](./images/az-140-mod01.png)
 
 
-### Exercise 1: Deploy an Micrrosoft Entra DS (formerly AD DS) domain
+### Exercise 1: Deploy an Microsoft Entra DS (formerly AD DS) domain
 
 The main tasks for this exercise are as follows:
 
