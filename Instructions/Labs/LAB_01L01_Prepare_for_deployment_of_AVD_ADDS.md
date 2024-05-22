@@ -293,6 +293,8 @@ The main tasks for this exercise are as follows:
 1. From the **Administrator: Windows PowerShell ISE** console, run the following to sign in to your Azure subscription:
 
    ```powershell
+   Update-AzConfig -LoginExperienceV2 Off
+   Update-AzConfig -EnableLoginByWam $false
    Connect-AzAccount
    ```
     > **Note**: If you face an issue while connecting to the Azure account, then run: `Connect-AzAccount -devicecode`
