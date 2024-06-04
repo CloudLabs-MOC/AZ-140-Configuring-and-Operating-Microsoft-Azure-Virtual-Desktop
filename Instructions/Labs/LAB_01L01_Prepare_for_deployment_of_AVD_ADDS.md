@@ -36,16 +36,20 @@ The main tasks for this exercise are as follows:
 
    ![](./images/t1s2.png)
    ![](./images/tt11ss22.png)
-    
-   
+       
 5. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
    ![](./images/cloudshell.png)
 
 6. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**. 
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
+7. If this is the first time you are starting **Cloud Shell**, select **Mount storage account**, select **your subscription** and click **Apply**.
 
+   ![](./images/Cldshell-1.png)
+
+8. Select **We will create a storage account for you** and click on **Next**.
+
+   ![](./images/Cldshell-2.png)
 #### Task 2: Deploy an Azure VM running an Microsoft Entra DS domain controller by using an Azure Resource Manager QuickStart template
 
 1. On the lab computer, in the web browser displaying the Azure portal, from the PowerShell session in the Cloud Shell pane, run the following to create a resource group (replace the `<Azure_region>` placeholder with the name of the Azure region that you intend to use for this lab, such as, for example, `eastus`):
@@ -96,11 +100,11 @@ The main tasks for this exercise are as follows:
    ```
  
 
-1. In the Azure portal, in the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, in the **Open** dialog box, navigate to the path **C:\AllFiles\AZ-140-Configuring-and-Operating-Microsoft-Azure-Virtual-Desktop\Allfiles\Labs\01** and select the template file **az140-11_azuredeploycl11.json** and select **Open**. This will upload the file into the Cloud Shell home directory.
+1. In the Azure portal, in the toolbar of the Cloud Shell pane, select the **Upload** icon from the **Manage files tab** in the drop-down menu select **Upload**, in the **Open** dialog box, navigate to the path **C:\AllFiles\AZ-140-Configuring-and-Operating-Microsoft-Azure-Virtual-Desktop\Allfiles\Labs\01** and select the template file **az140-11_azuredeploycl11.json** and select **Open**. This will upload the file into the Cloud Shell home directory.
 
-    ![](./images/uploadicon.png)
+    ![](./images/Cldshell-upload.png)
 
-1. Once again, select the **Upload/Download files** icon in the Cloud Shell pane, in the drop-down menu select **Upload**, in the **Open** dialog box, navigate to the path **C:\AllFiles\AZ-140-Configuring-and-Operating-Microsoft-Azure-Virtual-Desktop\Allfiles\Labs\01** and select the template file **az140-11_azuredeploycl11.parameters.json** and select **Open**.
+1. Once again, select the **Upload** icon in the Cloud Shell pane from **Manage files tab**, in the **Open** dialog box, navigate to the path **C:\AllFiles\AZ-140-Configuring-and-Operating-Microsoft-Azure-Virtual-Desktop\Allfiles\Labs\01** and select the template file **az140-11_azuredeploycl11.parameters.json** and select **Open**.
 
 1. From the PowerShell session in the Cloud Shell pane, run the following to deploy an Azure VM running Windows 10 that will serve as a client into the newly created subnet:
 
