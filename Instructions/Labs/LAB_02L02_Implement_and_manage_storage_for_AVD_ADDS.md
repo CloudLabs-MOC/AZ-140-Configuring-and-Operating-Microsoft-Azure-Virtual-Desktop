@@ -205,7 +205,7 @@ The main tasks for this exercise are as follows:
    ```powershell
    Connect-AzAccount
    ```
-
+   > **Note**: If you see error "InteractiveBrowserCredential Authentication failed" Please execute the following command _Update-AzConfig -EnableLoginByWam $false_ and then try the Connect-AzAccount command again.
 4. When prompted, sign in with the Azure AD credentials of the user account with the Owner role in the subscription you are using in this lab.
 
    > **Note**: If you see the pop-up Action Required, click **Ask Later.**
