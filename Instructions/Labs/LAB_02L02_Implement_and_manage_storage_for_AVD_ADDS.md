@@ -190,9 +190,9 @@ The main tasks for this exercise are as follows:
 
 ### Task 3: Enable Microsoft Entra DS authentication for the Azure Storage account 
 
-1. Within the Remote Desktop session to **az140-dc-vm11**, open another tab in the Microsoft Edge window, navigate to the [Azure Files samples GitHub repository](https://github.com/Azure-Samples/azure-files-samples/releases), download [the most recent version of the compressed **AzFilesHybrid.zip** PowerShell module, and extract its content into **C:\\Allfiles\\Labs\\02** folder (create the folders if needed).
+1. Within the Remote Desktop session to **az140-dc-vm11**, open another tab in the Microsoft Edge window, navigate to the [Azure Files samples GitHub repository](https://github.com/Azure-Samples/azure-files-samples/releases), download [the most recent version of the compressed **AzFilesHybrid.zip** PowerShell module, and extract its content into **C:\AllFiles\AZ-140-Configuring-and-Operating-Microsoft-Azure-Virtual-Desktop-prod\Allfiles\Labs\02** folder (create the folders if needed).
 
-   ![](./images/04.png)
+   ![](./images/E2T3S1.png)
 
 2. Within the Remote Desktop session to **az140-dc-vm11**, start **Windows PowerShell ISE** as administrator and, from the **Administrator: Windows PowerShell ISE** script pane, run the following to remove the **Zone.Identifier** alternate data stream, which has a value of **3**, indicating that it was downloaded from the Internet:
 
@@ -205,7 +205,7 @@ The main tasks for this exercise are as follows:
    ```powershell
    Connect-AzAccount
    ```
-
+   > **Note**: If you see error "InteractiveBrowserCredential Authentication failed" Please execute the following command _Update-AzConfig -EnableLoginByWam $false_ and then try the Connect-AzAccount command again.
 4. When prompted, sign in with the Azure AD credentials of the user account with the Owner role in the subscription you are using in this lab.
 
    > **Note**: If you see the pop-up Action Required, click **Ask Later.**
