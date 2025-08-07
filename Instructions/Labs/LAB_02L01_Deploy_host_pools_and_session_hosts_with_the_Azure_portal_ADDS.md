@@ -1,4 +1,4 @@
-# Lab 02 - Deploy host pools and session hosts by using the Azure portal(Microsoft Entra DS)
+# Lab 02: Deploy host pools and session hosts by using the Azure portal(Microsoft Entra DS)
 
 ## Lab scenario
 

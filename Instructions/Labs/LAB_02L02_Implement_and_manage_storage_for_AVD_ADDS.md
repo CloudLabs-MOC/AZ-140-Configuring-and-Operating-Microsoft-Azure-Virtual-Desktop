@@ -1,4 +1,4 @@
-# Lab 03 - Implement and manage storage for AVD (Microsoft Entra DS)
+# Lab 03: Implement and manage storage for AVD (Microsoft Entra DS)
 
 ## Lab scenario
 

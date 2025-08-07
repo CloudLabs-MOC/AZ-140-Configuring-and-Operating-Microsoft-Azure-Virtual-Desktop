@@ -1,4 +1,4 @@
-# Lab 07 - Configure Conditional Access policies for AVD (Microsoft Entra DS)
+# Lab 07: Configure Conditional Access policies for AVD (Microsoft Entra DS)
 
 ## Lab scenario
 

@@ -1,4 +1,4 @@
-# Lab 05 - Deploy and manage host pools and hosts by using PowerShell
+# Lab 05: Deploy and manage host pools and hosts by using PowerShell
 
 ## Lab scenario
 

@@ -1,4 +1,4 @@
-# Lab 01 - Prepare for deployment of Azure Virtual Desktop(Microsoft Entra DS)
+# Lab 01: Prepare for deployment of Azure Virtual Desktop(Microsoft Entra DS)
 
 ## Lab scenario
 

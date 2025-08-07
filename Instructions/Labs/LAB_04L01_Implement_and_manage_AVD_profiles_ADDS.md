@@ -1,4 +1,4 @@
-# Lab 8a - Implement and manage Azure Virtual Desktop profiles (Microsoft Entra DS)
+# Lab 8a: Implement and manage Azure Virtual Desktop profiles (Microsoft Entra DS)
 
 ## Lab scenario
 

@@ -1,4 +1,4 @@
-# Lab 09 - Implement autoscaling in host pools (Microsoft Entra DS)
+# Lab 09: Implement autoscaling in host pools (Microsoft Entra DS)
 
 ## Lab scenario
 
