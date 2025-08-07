@@ -1,4 +1,4 @@
-# Module 06 - Create and manage session host images (Microsoft Entra DS)
+# Lab 06 - Create and manage session host images (Microsoft Entra DS)
 
 ## Lab scenario
 
