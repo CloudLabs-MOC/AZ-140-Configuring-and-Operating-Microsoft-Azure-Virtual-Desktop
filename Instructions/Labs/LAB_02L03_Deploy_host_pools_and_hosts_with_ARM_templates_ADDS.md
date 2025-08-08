@@ -1,4 +1,4 @@
-# Module 04 - Deploy host pools and hosts by using Azure Resource Manager templates
+# Lab 04: Deploy host pools and hosts by using Azure Resource Manager templates
 
 ## Lab scenario
 

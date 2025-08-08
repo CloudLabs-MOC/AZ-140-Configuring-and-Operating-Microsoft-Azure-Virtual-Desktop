@@ -1,4 +1,4 @@
-# Module 08B - Package Azure Virtual Desktop applications (Microsoft Entra DS)
+# Lab 8b: Package Azure Virtual Desktop applications (Microsoft Entra DS)
 
 ## Lab scenario
 
