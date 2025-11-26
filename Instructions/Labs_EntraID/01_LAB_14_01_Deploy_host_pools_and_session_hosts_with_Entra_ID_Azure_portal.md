@@ -18,7 +18,7 @@ In this lab, you will complete the following tasks:
 
 1. In the lab VM, click on the **Azure Portal icon** as shown below:
 
-    ![](Media/lab1-11-1.png)
+    ![](Media/lab1-11-0.png)
    
     - On the **Sign in to Microsoft Azure** tab, you will see the login screen. Enter your credentials:
       
@@ -169,6 +169,8 @@ In this lab, you will complete the following tasks:
 
     ![](Media/lab1-11-17.png)
    
+    |Setting|Value|
+    |---|---|
     |Image|**Windows 11 Enterprise multi-session, Version 23H2 + Microsoft 365 Apps (8)**|
     |Virtual machine size|**Standard DC2s_v3 (9)**|
     |Number of VMs|**2 (10)**|
@@ -182,10 +184,12 @@ In this lab, you will complete the following tasks:
 
     ![](Media/lab1-11-17.2.png)
 
-    >**Note:** In the Images section, click **See all images**, scroll down, click **Select (1)** under the Windows multi-     session image tile, and choose **Windows 11 Enterprise multi-session, Version 23H2 + Microsoft 365 Apps (2)**.
+    >**Note:** In the Images section, click **See all images**, scroll down, click **Select (1)** under the Windows multi-session image tile, and choose **Windows 11 Enterprise multi-session, Version 23H2 + Microsoft 365 Apps (2)**.
 
      ![](Media/lab1-11-17.1.png)
 
+    |Setting|Value|
+    |---|---|
     |Select which directory you would like to join|**Microsoft Entra ID (18)**|
     |Enroll VM with Intune|**No (19)**|
     |User name|**Student (20)**|
