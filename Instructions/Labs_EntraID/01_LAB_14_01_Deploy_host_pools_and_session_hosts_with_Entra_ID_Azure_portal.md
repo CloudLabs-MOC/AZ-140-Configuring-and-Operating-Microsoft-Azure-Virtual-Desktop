@@ -6,11 +6,15 @@
   
 In this lab, you will complete the following tasks:
 
-- Prepare the Azure subscription for deployment of an Azure Virtual Desktop host pool
-- Deploy an Azure Virtual Desktop host pool
-- Create an Azure Virtual Desktop application group
-- Create an Azure Virtual Desktop workspace
-- Grant access to Azure Virtual Desktop host pools
+- **Task 1:** Prepare the Azure subscription for deployment of an Azure Virtual Desktop host pool
+
+- **Task 2:** Deploy an Azure Virtual Desktop host pool
+
+- **Task 3:** Create an Azure Virtual Desktop application group
+
+- **Task 4:** Create an Azure Virtual Desktop workspace
+
+- **Task 5:** Grant access to Azure Virtual Desktop host pools
 
 ## Exercise 1: Implement an Azure Virtual Desktop environment using Microsoft Entra joined session hosts
   

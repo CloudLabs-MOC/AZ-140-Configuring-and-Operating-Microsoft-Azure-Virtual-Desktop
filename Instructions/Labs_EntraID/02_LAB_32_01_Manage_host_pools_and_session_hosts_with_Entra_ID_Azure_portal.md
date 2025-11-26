@@ -1,18 +1,20 @@
 # Lab - Manage host pools and session hosts by using the Azure portal (Entra ID)
 
+## Estimated Duration: 30 Minutes
+
 ## Lab Objectives
 
 In this lab, you will complete the following tasks:
 
-- Deploy additional Azure Virtual Desktop host pool session hosts
+- **Task 1:** Deploy additional Azure Virtual Desktop host pool session hosts
 
-- Review and configure the host pool properties
+- **Task 2:** Review and configure the host pool properties
 
-- Assign the required RBAC role to an Azure Virtual Desktop service principal
+- **Task 3:** Assign the required RBAC role to an Azure Virtual Desktop service principal
 
-- Configure scheduled agent updates
+- **Task 4:** Configure scheduled agent updates
 
-- Configure RDP properties of the host pool
+- **Task 5:** Configure RDP properties of the host pool
 
 ### Exercise 1: Manage an Azure Virtual Desktop environment containing Microsoft Entra joined session hosts
 
