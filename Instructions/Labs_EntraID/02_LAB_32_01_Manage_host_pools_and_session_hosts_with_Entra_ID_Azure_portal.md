@@ -48,7 +48,7 @@ In this lab, you will complete the following tasks:
     |Availability options|**No infrastructure redundancy required (4)**|
     |Security type|**Trusted launch virtual machines (5)**|
 
-     ![](Media/lab2-11-4.png)
+    ![](Media/lab2-11-4.png)
 
     |Setting|Value|
     |---|---|
@@ -63,7 +63,7 @@ In this lab, you will complete the following tasks:
     |Network security group|**Basic (14)**|
     |Public inbound ports|**No (15)**|
     
-     ![](Media/lab2-11-5.png)
+    ![](Media/lab2-11-5.png)
     
     |Setting|Value|
     |---|---|
@@ -215,3 +215,7 @@ In this lab, you will complete the following tasks:
 1. On the **az140-21-hp1\|RDP Properties** page, select the **Advanced** tab and review the existing configuration settings. Note that these settings reflect the changes you made earlier in this task.
 
     ![](Media/lab2-11-16.png)
+
+**You have successfully completed the lab. Click on Next >>**
+
+![](Media/next.png)

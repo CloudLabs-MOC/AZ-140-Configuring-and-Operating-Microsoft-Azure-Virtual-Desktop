@@ -60,16 +60,18 @@ In this lab, you will complete the following tasks:
 
      ![](Media/lab1-11-5.png)
 
-1. On the **Basics** tab of the **Create virtual network** page, specify the following settings and select **Next (5)**:
+1. On the **Basics** tab of the **Create virtual network** page, specify the following settings and select **Next (7)**:
 
     |Setting|Value|
     |---|---|
     |Subscription|Choose the default subscription **(1)**|
-    |Resource group|The name of a new resource group **az140-11e-RG (2)**|
-    |Virtual network name|**az140-vnet11e (3)**|
-    |Region|**<inject key="Region" enableCopy="false" /> (4)**|
+    |Resource group|Select **Create new (2)**, enter `az140-11e-RG` in the Name field **(3)**, and then select **OK (4)**|
+    |Virtual network name|**az140-vnet11e (5)**|
+    |Region|**<inject key="Region" enableCopy="false" /> (6)**|
 
-     ![](Media/lab1-11-6.png)
+     ![](Media/lab111-1.png)
+
+     ![](Media/lab111-2.png)
 
 1. On the **Security** tab, accept the default settings and select **Next**.
    
@@ -488,3 +490,7 @@ In this lab, you will complete the following tasks:
 1. Back on the **Members** tab of the **Add role assignment** page, select **Next** and on **Review + assign** tab select **Review + assign**.
 
     ![](Media/lab1-11-63.png)
+
+**You have successfully completed the lab. Click on Next >>**
+
+![](Media/next.png)

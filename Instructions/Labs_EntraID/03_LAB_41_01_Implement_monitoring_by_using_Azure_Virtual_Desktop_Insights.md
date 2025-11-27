@@ -1,10 +1,8 @@
 # Lab - Implement monitoring by using Azure Virtual Desktop Insights
 
-## Lab scenario
+## Estimated Duration: 25 Minutes
 
-You have an existing Azure Virtual Desktop environment. You want to monitor the status and activities of the environment.
-
-## Objectives
+## Lab Objectives
   
 In this lab, you will complete the following tasks:
 
@@ -88,13 +86,13 @@ In this lab, you will complete the following tasks:
      ![](Media/lab3-11-9.png)
 
      > **Note:** This effectively enables the following diagnostics tables in the target Log Analytics workspace:
-      - Management Activities
-      - Feed
-      - Connections
-      - Errors
-      - Checkpoints
-      - HostRegistration
-      - AgentHealthStatus
+     - Management Activities
+     - Feed
+     - Connections
+     - Errors
+     - Checkpoints
+     - HostRegistration
+     - AgentHealthStatus
 
      > **Note:** Wait for the deployment to complete. This typically takes less than 1 minute.
 
@@ -177,3 +175,7 @@ In this lab, you will complete the following tasks:
 1. Next, review all the remaining tabs on the **Azure Virtual Desktop \| Insights** page, including **Connection Reliability**, **Connection Diagnostics**, **Connection Performance**, **Users**, **Utilization**, **Clients**, and **Alerts**.
 
     > **Note:** Consider revisiting these tabs of the Insights page once you complete the subsequent labs to review the charts representing collected telemetry.
+
+**You have successfully completed the lab. Click on Next >>**
+
+![](Media/next.png)
