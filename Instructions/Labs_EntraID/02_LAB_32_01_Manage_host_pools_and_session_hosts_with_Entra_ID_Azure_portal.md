@@ -53,7 +53,7 @@ In this lab, you will complete the following tasks:
     |Setting|Value|
     |---|---|
     |Image|**Windows 11 Enterprise multi-session, Version 23H2 + Microsoft 365 Apps (6)**|
-    |Virtual machine size|**Standard DC2s_v3 (7)**|
+    |Virtual machine size|Click on **Change Size** select **Standard DC2s_v3 (7)**|
     |Number of VMs|**1 (8)**|
     |OS disk type|**Standard SSD (9)**|
     |OS disk size|**Default size (128GB) (10)**|
@@ -64,6 +64,10 @@ In this lab, you will complete the following tasks:
     |Public inbound ports|**No (15)**|
     
     ![](Media/lab2-11-5.png)
+
+    >**Note:** In the Images section, click **See all images**, scroll down, click **Select (1)** under the Windows multi-session image tile, and choose **Windows 11 Enterprise multi-session, Version 23H2 + Microsoft 365 Apps (2)**.
+
+     ![](Media/lab1-11-17.1.png)
     
     |Setting|Value|
     |---|---|

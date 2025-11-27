@@ -1,6 +1,10 @@
-# Lab - Deploy host pools and session hosts by using the Azure portal (Entra ID)
+# Lab 01 - Deploy host pools and session hosts by using the Azure portal (Entra ID)
 
 ## Estimated Duration: 60 Minutes
+
+## Overview
+
+In this lab, you will deploy a Azure Virtual Desktop environment using Microsoft Entra joined session hosts. You will create the required virtual network, host pool, session hosts, application groups, and workspace. You will also configure group-based assignments to control access within the environment. By the end, you will have a fully functional AVD deployment ready.
 
 ## Lab Objectives
   
@@ -19,6 +23,8 @@ In this lab, you will complete the following tasks:
 ## Exercise 1: Implement an Azure Virtual Desktop environment using Microsoft Entra joined session hosts
   
 ### Task 1: Prepare the Azure subscription for deployment of an Azure Virtual Desktop host pool
+
+In this task, you will prepare the Azure subscription for deploying an Azure Virtual Desktop host pool. You'll register the required resource provider, configure Azure Cloud Shell, and create the virtual network and subnet needed for the deployment. You will also verify user group memberships in Microsoft Entra ID to support later configuration steps.
 
 1. In the lab VM, click on the **Azure Portal icon** as shown below:
 
@@ -109,15 +115,15 @@ In this lab, you will complete the following tasks:
 
 1. On the **Overview** page of the Microsoft Entra tenant associated with your subscription, in the **Manage** section of the vertical navigation menu, select **Users**.
 
-    ![](Media/lab1-11-11.png)
+    ![](Media/lab1-11-12.png)
 
 1. On the **Users** page, in the **Search** text box, enter the name of the **ODL_User<inject key="DeploymentID" enableCopy="false"/>** account listed on the Resources tab on the right side of the lab session window.
    
 1. In the list of results of the search, select the user account entry with the matching name.
    
-1. On the page displaying the properties of the user account, in the **Manage** section of the vertical navigation menu, select **Groups**.
+1. On the page displaying the properties of the user account, in the **Manage** section of the vertical navigation menu, select **Groups (1)**.
    
-1. On the **Groups** page, record the name of the group starting with the **AVD-DAG** prefix (you will need it later in this lab).
+1. On the **Groups** page, record the name of the group starting with the **AVD-DAG (2)** prefix (you will need it later in this lab).
    
     ![](Media/lab1-11-12.1.png)
    
@@ -125,13 +131,15 @@ In this lab, you will complete the following tasks:
    
 1. In the list of results of the search, select the user account entry with the matching name.
    
-1. On the page displaying the properties of the user account, in the **Manage** section of the vertical navigation menu, select **Groups**.
+1. On the page displaying the properties of the user account, in the **Manage** section of the vertical navigation menu, select **Groups (1)**.
    
-1. On the **Groups** page, record the name of the group starting with the **AVD-RemoteApp** prefix (you will need it later in this lab).
+1. On the **Groups** page, record the name of the group starting with the **AVD-RemoteApp (2)** prefix (you will need it later in this lab).
 
      ![](Media/lab1-11-12.2.png)
 
 ### Task 2: Deploy an Azure Virtual Desktop host pool
+
+In this task, you will deploy an Azure Virtual Desktop host pool and configure its basic properties. You will also provision session host VMs, define their settings, and finalize the host pool deployment.
 
 1. In the Azure portal, search for**Azure Virtual Desktop (1)** and select **Azure Virtual Desktop (2)** from the list.
 
@@ -146,7 +154,7 @@ In this lab, you will complete the following tasks:
     |Setting|Value|
     |---|---|
     |Subscription|Choose the default subscription **(1)**|
-    |Resource group|The name of a new resource group **az140-21e-RG (2)**|
+    |Resource group|Select **az140-21e-RG (2)**|
     |Host pool name|**az140-21-hp1 (3)**|
     |Location|**<inject key="Region" enableCopy="false" /> (4)**|
     |Validation environment|**No (5)**|
@@ -178,7 +186,7 @@ In this lab, you will complete the following tasks:
     |Setting|Value|
     |---|---|
     |Image|**Windows 11 Enterprise multi-session, Version 23H2 + Microsoft 365 Apps (8)**|
-    |Virtual machine size|**Standard DC2s_v3 (9)**|
+    |Virtual machine size| Click on **Change Size** select **Standard DC2s_v3 (9)**|
     |Number of VMs|**2 (10)**|
     |OS disk type|**Standard SSD (11)**|
     |OS disk size|**Default size (128GiB) (12)**|
@@ -221,6 +229,8 @@ In this lab, you will complete the following tasks:
     > **Note:** Please wait for the deployment to complete. This may take approximately 20 minutes.
 
 ### Task 3: Create an Azure Virtual Desktop application group
+
+In this task, you will create Azure Virtual Desktop application groups and configure them with the required applications. You will also assign the appropriate Microsoft Entra groups to enable access to these application groups.
 
 1. In the Azure portal, search for and select **Azure Virtual Desktop** and, on the **Azure Virtual Desktop** page, select **Application groups** under the **Manage** section from the left-side menu.
 
@@ -405,6 +415,8 @@ In this lab, you will complete the following tasks:
 
 ### Task 4: Create an Azure Virtual Desktop workspace
 
+In this task, you will create an Azure Virtual Desktop workspace and register the required application groups to make them available to users.
+
 1. In the Azure portal, search for and select **Azure Virtual Desktop** and, on the **Azure Virtual Desktop** page, select **Workspaces (1)**.
 
 1. On the **Azure Virtual Desktop \| Workspaces** page, select **+ Create (2)**. 
@@ -449,6 +461,8 @@ In this lab, you will complete the following tasks:
 
 ### Task 5: Grant access to Azure Virtual Desktop host pools
 
+In this task, you will assign the required RBAC roles to user groups to enable sign-in and provide the appropriate access to Azure Virtual Desktop session hosts.
+
 > **Note:** When using Microsoft Entra joined session hosts, you need to assign to Azure Virtual Desktop users and administrators appropriate Azure role-based access control (RBAC) roles. In particular, the *Virtual Machine User Login* role is required to sign in to session hosts, and the *Virtual Machine Administrator Login* role is required for the local administrative privileges. 
 
 1. In the Azure portal, search for and select **Resource groups** and, on the **Resource groups** page, select **az140-21e-RG**.
@@ -465,7 +479,7 @@ In this lab, you will complete the following tasks:
 
     ![](Media/lab1-11-56.png)
 
-1. On the **Members** tab of the **Add role assignment** page, ensure that the **User, group, or service principal (1)** option is selected, click **+ Select members (2)**, in the **Select members** pane, locate the **AVD-RemoteApp (3)** group you identified in the first task of this exercise, and click **Select (5)**.
+1. On the **Members** tab of the **Add role assignment** page, ensure the **User, group, or service principal (1)** option is selected, then choose **+ Select members (2)**. In the **Select members** pane, search for **AVD-RemoteApp (3)**, select **AVD-RemoteApp (4)** from the results, and then choose **Select (5)**.
 
     ![](Media/lab1-11-57.png)
 
@@ -483,13 +497,17 @@ In this lab, you will complete the following tasks:
 
     ![](Media/lab1-11-60.png)
 
-1. On the **Members** tab of the **Add role assignment** page, ensure that the **User, group, or service principal (1)** option is selected, click **+ Select memebers (2)**, in the **Select members** pane, locate the **AVD-DAG (3)** group you identified in the first task of this exercise, and click **Select (5)**.
+1. On the **Members** tab of the **Add role assignment** page, ensure the **User, group, or service principal (1)** option is selected, then choose **+ Select members (2)**. In the **Select members** pane, search for **AVD-DAG (3)**, select **AVD-DAG (4)** from the results, and then choose **Select (5)**. 
 
     ![](Media/lab1-11-61.png)
 
 1. Back on the **Members** tab of the **Add role assignment** page, select **Next** and on **Review + assign** tab select **Review + assign**.
 
     ![](Media/lab1-11-63.png)
+
+### Summary
+
+In this lab, you deployed a complete Azure Virtual Desktop environment by creating the required network resources, host pool, and session hosts. You configured multiple application groups using both Start Menu and file path sources and assigned the appropriate Microsoft Entra groups for access. You then created a workspace and registered the application groups for user availability. Finally, you applied the necessary RBAC roles to ensure proper sign-in and permissions for the AVD session hosts.
 
 **You have successfully completed the lab. Click on Next >>**
 
