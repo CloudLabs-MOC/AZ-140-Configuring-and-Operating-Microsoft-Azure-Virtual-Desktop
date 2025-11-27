@@ -1,4 +1,4 @@
-# Lab - Implement and monitor autoscaling of session hosts
+# Lab 05- Implement and monitor autoscaling of session hosts
 
 ## Estimated Duration: 45 Minutes
 

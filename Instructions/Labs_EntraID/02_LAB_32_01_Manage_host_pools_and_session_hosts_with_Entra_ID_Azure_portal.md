@@ -1,4 +1,4 @@
-# Lab - Manage host pools and session hosts by using the Azure portal (Entra ID)
+# Lab 02- Manage host pools and session hosts by using the Azure portal (Entra ID)
 
 ## Estimated Duration: 30 Minutes
 

@@ -1,4 +1,4 @@
-# Lab - Create custom session host images by using image templates
+# Lab 07- Create custom session host images by using image templates
 
 ## Estimated Time
 
@@ -59,7 +59,6 @@ In this lab, you will complete the following tasks:
     ![](Media/7-2.png)
 
 1. On the **Basics** tab of the **Create User Assigned Managed Identity** page, specify the following settings and then select **Review + create (5)**:
-
 
     |Setting|Value|
     |---|---|

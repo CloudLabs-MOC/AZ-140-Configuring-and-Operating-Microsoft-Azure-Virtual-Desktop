@@ -1,4 +1,4 @@
-# Lab - Implement Azure Private Link for Azure Virtual Desktop
+# Lab 06- Implement Azure Private Link for Azure Virtual Desktop
 
 ## Lab dependencies
 

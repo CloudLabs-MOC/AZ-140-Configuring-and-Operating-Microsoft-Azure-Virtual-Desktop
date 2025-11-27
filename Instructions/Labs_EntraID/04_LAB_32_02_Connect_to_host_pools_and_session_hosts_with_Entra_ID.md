@@ -1,4 +1,4 @@
-# Lab - Connect to session hosts (Entra ID)
+# Lab 04- Connect to session hosts (Entra ID)
 
 ## Estimated Duration: 20 Minutes
 

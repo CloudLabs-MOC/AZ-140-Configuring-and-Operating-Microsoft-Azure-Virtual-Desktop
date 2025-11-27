@@ -1,4 +1,4 @@
-# Lab - Implement monitoring by using Azure Virtual Desktop Insights
+# Lab 03- Implement monitoring by using Azure Virtual Desktop Insights
 
 ## Estimated Duration: 25 Minutes
 
