@@ -66,10 +66,10 @@ In this task, you will deploy an additional session host to the existing Azure V
     |Subnet|**hp1-Subnet (13)**|
     |Network security group|**Basic (14)**|
     |Public inbound ports|**No (15)**|
-    
+
     ![](Media/lab2-11-5.png)
 
-  1. In the Images section, click **See all images**, scroll down, click **Select (1)** under the Windows multi-session image tile, and choose **Windows 11 Enterprise multi-session, Version 23H2 + Microsoft 365 Apps (2)**.
+    >**Note:** In the Images section, click **See all images**, scroll down, click **Select (1)** under the Windows multi-session image tile, and choose **Windows 11 Enterprise multi-session, Version 23H2 + Microsoft 365 Apps (2)**.
 
      ![](Media/lab1-11-17.1.png)
     
