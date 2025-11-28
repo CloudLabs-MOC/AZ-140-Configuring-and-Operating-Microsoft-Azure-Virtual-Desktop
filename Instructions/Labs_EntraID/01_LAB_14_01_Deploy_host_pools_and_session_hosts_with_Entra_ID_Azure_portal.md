@@ -19,8 +19,6 @@ In this lab, you will complete the following tasks:
 - **Task 4:** Create an Azure Virtual Desktop workspace
 
 - **Task 5:** Grant access to Azure Virtual Desktop host pools
-
-## Exercise 1: Implement an Azure Virtual Desktop environment using Microsoft Entra joined session hosts
   
 ### Task 1: Prepare the Azure subscription for deployment of an Azure Virtual Desktop host pool
 
@@ -154,7 +152,7 @@ In this task, you will deploy an Azure Virtual Desktop host pool and configure i
     |Setting|Value|
     |---|---|
     |Subscription|Choose the default subscription **(1)**|
-    |Resource group|Select **az140-21e-RG (2)**|
+    |Resource group|Select **az140-11e-RG (2)**|
     |Host pool name|**az140-21-hp1 (3)**|
     |Location|**<inject key="Region" enableCopy="false" /> (4)**|
     |Validation environment|**No (5)**|
@@ -174,7 +172,7 @@ In this task, you will deploy an Azure Virtual Desktop host pool and configure i
     |Setting|Value|
     |---|---|
     |Add virtual machines|**Yes (1)**|
-    |Resource group|**az140-21e-RG (2)**|
+    |Resource group|**az140-11e-RG (2)**|
     |Name prefix|**sh-<inject key="DeploymentID" enableCopy="false"/> (3)**|
     |Virtual machine type|**Azure virtual machine (4)**|
     |Virtual machine location|**<inject key="Region" enableCopy="false" /> (5)**|
@@ -259,7 +257,7 @@ In this task, you will create Azure Virtual Desktop application groups and confi
     |Setting|Value|
     |---|---|
     |Subscription|Choose the default subscription **(1)**|
-    |Resource group|**az140-21e-RG (2)**|
+    |Resource group|**az140-11e-RG (2)**|
     |Host pool|**az140-21-hp1 (3)**|
     |Application group type|**Remote App (4)**|
     |Application group name|**az140-21-hp1-Office365-RAG (5)**|
@@ -353,7 +351,7 @@ In this task, you will create Azure Virtual Desktop application groups and confi
     |Setting|Value|
     |---|---|
     |Subscription|Choose the default subscription **(1)**|
-    |Resource group|**az140-21e-RG (2)**|
+    |Resource group|**az140-11e-RG (2)**|
     |Host pool|**az140-21-hp1 (3)**|
     |Application group type|**RemoteApp (4)**|
     |Application group name|**az140-21-hp1-Utilities-RAG (5)**|
@@ -428,7 +426,7 @@ In this task, you will create an Azure Virtual Desktop workspace and register th
     |Setting|Value|
     |---|---|
     |Subscription|Choose the default subscription **(1)**|
-    |Resource group|**az140-21e-RG (2)**|
+    |Resource group|**az140-11e-RG (2)**|
     |Workspace name|**az140-21-ws1 (3)**|
     |Friendly name|**az140-21-ws1 (4)**|
     |Location|**<inject key="Region" enableCopy="false" /> (5)**|
@@ -465,13 +463,13 @@ In this task, you will assign the required RBAC roles to user groups to enable s
 
 > **Note:** When using Microsoft Entra joined session hosts, you need to assign to Azure Virtual Desktop users and administrators appropriate Azure role-based access control (RBAC) roles. In particular, the *Virtual Machine User Login* role is required to sign in to session hosts, and the *Virtual Machine Administrator Login* role is required for the local administrative privileges. 
 
-1. In the Azure portal, search for and select **Resource groups** and, on the **Resource groups** page, select **az140-21e-RG**.
+1. In the Azure portal, search for and select **Resource groups** and, on the **Resource groups** page, select **az140-11e-RG**.
 
     ![](Media/lab1-11-54.png)
    
-1. On the **az140-21e-RG** page, in the vertical navigation menu, select **Access control (IAM) (1)**.
+1. On the **az140-11e-RG** page, in the vertical navigation menu, select **Access control (IAM) (1)**.
 
-1. On the **az140-21e-RG\|Access control (IAM)** page, select **+ Add (2)** and, in the drop-down menu, select **Add role assignment (3)**.
+1. On the **az140-11e-RGG\|Access control (IAM)** page, select **+ Add (2)** and, in the drop-down menu, select **Add role assignment (3)**.
 
     ![](Media/lab1-11-55.png)
    
@@ -491,7 +489,7 @@ In this task, you will assign the required RBAC roles to user groups to enable s
 
     ![](Media/lab1-11-59.png)
 
-1. Back on the **az140-21e-RG\|Access control (IAM)** page, select **+ Add** and, in the drop-down menu, select **Add role assignment**.
+1. Back on the **az140-11e-RG\|Access control (IAM)** page, select **+ Add** and, in the drop-down menu, select **Add role assignment**.
 
 1. On the **Role** tab of the **Add role assignment** page, ensure that the **Job function roles** tab is selected, in the search textbox, enter **Virtual Machine Administrator Login (1)**, in the list of results, select **Virtual Machine Administrator Login (2)**, and then select **Next (3)**.
 

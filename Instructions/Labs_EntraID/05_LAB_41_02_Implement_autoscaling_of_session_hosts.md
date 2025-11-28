@@ -2,6 +2,10 @@
 
 ## Estimated Duration: 45 Minutes
 
+## Overview
+
+In this lab, you’ll set up and validate autoscaling for an Azure Virtual Desktop pooled host pool. You’ll assign the required RBAC role, adjust host pool settings, and build a scaling plan with custom schedules. Finally, you’ll test how autoscale reacts to user load and shut down extra hosts before disabling the scaling plan.
+
 ## Lab Objectives
   
 In this lab, you will complete the following tasks:
@@ -18,9 +22,9 @@ In this lab, you will complete the following tasks:
 
 - **Task 6:** Disable host pool autoscaling
 
-### Exercise 1: Implement Azure Virtual Desktop autoscale scaling plans
-
 ### Task 1: Assign the required RBAC role to an Azure Virtual Desktop service principal
+
+In this task, you assign the required subscription-level RBAC role so Azure Virtual Desktop can power on and off session host VMs for autoscaling.
 
 > **Note:** For autoscale plans to work, you need to grant the Azure Virtual Desktop service principal the permissions to manage the power state of the session host VMs. These permissions can be granted by using the built-in **Desktop Virtualization Power On Off Contributor** RBAC role. It is important to keep in mind that the role assignment must be performed at the subscription scope. Assigning this role at any level lower than your subscription, such as the resource group, host pool, or VM, will prevent autoscale from working properly. 
 
@@ -58,6 +62,8 @@ In this lab, you will complete the following tasks:
 
 ### Task 2: Stop and deallocate all session hosts
 
+In this task, you stop and deallocate every session host in the pool.
+
 > **Note:** To evaluate the autoscaling functionality, you will stop and deallocate all of the session hosts in the Azure Virtual Desktop environment. 
 
 1. In the Azure portal, search for and select **Azure Virtual Desktop** and, on the **Azure Virtual Desktop** page, in the vertical menu bar, in the **Manage** section, select **Host pools (1)**.
@@ -80,6 +86,8 @@ In this lab, you will complete the following tasks:
 
 ### Task 3: Adjust the host pool settings
 
+In this task, you lower the host pool’s MaxSessionLimit to 1 to support autoscale testing.
+
 > **Note:** When using autoscale for pooled host pools, you must have a configured MaxSessionLimit parameter for that host pool. In this lab, you will set it artificially low in order to facilitate illustrating the autoscaling functionality.
 
 1. In the Azure portal, on the **az140-21-hp1** page, in the **Settings (1)** section, select **Properties (2)**.
@@ -92,6 +100,8 @@ In this lab, you will complete the following tasks:
 
 ### Task 4: Create a scaling plan
 
+In this task, you build a scaling plan with schedules and assign it to the host pool to control automatic VM power management.
+
 1. In the Azure portal, navigate back to **Azure Virtual Desktop**, and in the **Manage (1)** section of the vertical menu, select **Scaling plans (2)**.
 
 1. On the **Azure Virtual Desktop \| Scaling plans** page, select **+ Create (3)**.
@@ -103,7 +113,7 @@ In this lab, you will complete the following tasks:
     |Setting|Value|
     |---|---|
     |Subscription|Choose the default subscription **(1)**|
-    |Resource group|Select **az140-412e-RG (2)**|
+    |Resource group|Select **az140-11e-RG (2)**|
     |Scaling plan name|**az140-scalingplan412e (3)**|
     |Region|**<inject key="Region" enableCopy="false" /> (4)**|
     |Friendly name|**az140-scalingplan412e (5)**|
@@ -216,6 +226,8 @@ In this lab, you will complete the following tasks:
 
 ### Task 5: Evaluate the autoscaling functionality
 
+In this task, you simulate user load to observe how autoscale reacts scaling out additional session hosts when capacity is exceeded, then scaling them back in during ramp-down.
+
 > **Note:** You will start by evaluating the **Ramp-up** settings.
 
 1. In the Azure portal, on **Azure Virtual Desktop** page, in the vertical menu bar, in the **Manage** section, select **Host pools (1)**.
@@ -306,6 +318,8 @@ In this lab, you will complete the following tasks:
 
 ### Task 6: Disable host pool autoscaling
 
+In this task, you’ll disable autoscaling by unassigning the scaling plan from the host pool.
+
 > **Note:** To ensure that the autoscaling configuration will not affect other labs, you will remove the host pool assignment of the scaling plan you implemented in this lab.
 
 1. Navigate to **Azure Virtual Desktop** page, in the **Manage (1)** section of the vertical navigation menu, select **Scaling plans (1)**, and then, on the **Scaling plans** page, select **az140-scalingplan412e (2)**.
@@ -321,6 +335,10 @@ In this lab, you will complete the following tasks:
 1. In the **Unassign host pool** confirmation dialog, select **Unassign** to complete the action.
 
      ![](Media/lab5-11-25.png)
+
+### Summary
+
+In this lab, you configured autoscaling for your Azure Virtual Desktop host pool by assigning the necessary RBAC role and adjusting host pool limits. You built and applied a scaling plan to control how session hosts start and stop based on load. Finally, you validated the autoscale behavior in action and disabled the scaling plan.
 
 **You have successfully completed the lab. Click on Next >>**
 

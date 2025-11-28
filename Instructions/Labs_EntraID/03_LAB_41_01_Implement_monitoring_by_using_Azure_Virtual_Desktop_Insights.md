@@ -2,6 +2,10 @@
 
 ## Estimated Duration: 25 Minutes
 
+## Overview
+
+In this lab, you will enable monitoring for your Azure Virtual Desktop environment by setting up Log Analytics and configuring AVD Insights. You’ll register the required resource provider, create a workspace, and connect your host pool and workspace to send diagnostic and performance data to Insights. Finally, you'll complete the setup so AVD can display session host performance, connection details, and overall environment health.
+
 ## Lab Objectives
   
 In this lab, you will complete the following tasks:
@@ -11,10 +15,10 @@ In this lab, you will complete the following tasks:
 - **Task 2:** Create an Azure Log Analytics workspace
 
 - **Task 3:** Set up the Virtual Desktop Insights configuration workbook
-
-### Exercise 1: Implement monitoring of an Azure Virtual Desktop environment
   
 ### Task 1: Register the Azure subscription with the Microsoft.Insights resource provider
+
+In this task, you will register the Microsoft.Insights resource provider to enable monitoring features required by Azure Virtual Desktop Insights.
 
 > **Note:** Azure Virtual Desktop Insights rely on the Microsoft.Insights resource provider, so you need to first register it within the Azure subscription you are using for this lab. In the *Deploy host pools and session hosts by using the Azure portal (Entra ID)* lab, you performed this task by using Azure PowerShell. In this lab, you will accomplish it by using the Azure portal (either method is supported and available).
 
@@ -29,6 +33,8 @@ In this lab, you will complete the following tasks:
     > **Note:** Wait for the registration process to complete. This typically takes about 1 minute. Use the **Refresh** toolbar button to display the up-to-date value of the registration status.
 
 ### Task 2: Create an Azure Log Analytics workspace
+
+In this task, you will create a Log Analytics workspace that will store diagnostics, performance data, and event logs required for Azure Virtual Desktop Insights.
 
 > **Note:** Azure Virtual Desktop Insights is a dashboard built on Azure Monitor Workbooks that facilitates monitoring of Azure Virtual Desktop environments. 
 
@@ -62,6 +68,8 @@ In this lab, you will complete the following tasks:
      > **Note:** Next, you need to enable data collection in the newly provisioned Log Analytics workspace of diagnostics from the Azure Virtual Desktop environment, performance counters from the session hosts, and Windows Event Logs from the Azure Virtual Desktop session hosts.
 
 ### Task 3: Set up the Virtual Desktop Insights configuration workbook
+
+In this task, you will configure the Virtual Desktop Insights workbook by enabling diagnostic settings, creating a data collection rule, and applying it to your host pool and workspace. You’ll also install the Azure Monitor extension so AVD can start sending monitoring data into Log Analytics.
 
 > **Note:** When opening Azure Virtual Desktop Insights for the first time, you need to set up Azure Virtual Desktop Insights to target your Azure Virtual Desktop environment.
 
@@ -175,6 +183,10 @@ In this lab, you will complete the following tasks:
 1. Next, review all the remaining tabs on the **Azure Virtual Desktop \| Insights** page, including **Connection Reliability**, **Connection Diagnostics**, **Connection Performance**, **Users**, **Utilization**, **Clients**, and **Alerts**.
 
     > **Note:** Consider revisiting these tabs of the Insights page once you complete the subsequent labs to review the charts representing collected telemetry.
+
+### Summary
+
+In this lab, you set up monitoring for Azure Virtual Desktop using Azure Virtual Desktop Insights. You registered the required resource provider, created a Log Analytics workspace, and configured diagnostic settings and data collection rules. You finished by enabling monitoring extensions so AVD session hosts could send performance and usage data to Insights.
 
 **You have successfully completed the lab. Click on Next >>**
 

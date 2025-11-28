@@ -2,6 +2,10 @@
 
 ## Estimated Duration: 30 Minutes
 
+## Overview
+
+In this lab, you will manage and scale an Azure Virtual Desktop host pool by adding additional session hosts and updating core configuration settings. You’ll review and adjust host pool properties, assign the required RBAC roles, configure scheduled agent updates, and customize RDP connection properties.
+
 ## Lab Objectives
 
 In this lab, you will complete the following tasks:
@@ -16,9 +20,9 @@ In this lab, you will complete the following tasks:
 
 - **Task 5:** Configure RDP properties of the host pool
 
-### Exercise 1: Manage an Azure Virtual Desktop environment containing Microsoft Entra joined session hosts
-
 ### Task 1: Deploy additional Azure Virtual Desktop host pool session hosts
+
+In this task, you will deploy an additional session host to the existing Azure Virtual Desktop host pool. You’ll review the preconfigured settings, adjust the VM configuration, and submit the deployment to scale out the host pool.
 
 1. In the Azure portal, search for and select **Azure Virtual Desktop** and, on the **Azure Virtual Desktop** page, in the vertical menu bar, in the **Manage** section, select **Host pools (1)**.
 
@@ -42,7 +46,7 @@ In this lab, you will complete the following tasks:
 
     |Setting|Value|
     |---|---|
-    |Resource group|**az140-21e-RG (1)**|
+    |Resource group|**az140-11e-RG (1)**|
     |Name prefix|**sh-<inject key="DeploymentID" enableCopy="false"/> (2)**|
     |Virtual machine location|**<inject key="Region" enableCopy="false" /> (3)**|
     |Availability options|**No infrastructure redundancy required (4)**|
@@ -91,6 +95,8 @@ In this lab, you will complete the following tasks:
 
 ### Task 2: Review and configure the host pool properties
 
+In this task, you will review and update key properties of the host pool, including load balancing behavior, session limits, and startup settings. You’ll adjust these configurations to optimize how session hosts are allocated and powered on.
+
 1. In the Azure portal, search for and select **Azure Virtual Desktop**, on the **Azure Virtual Desktop** page, in the **Manage** section of the vertical navigation menu, select **Host pools** and, on the **Azure Virtual Desktop \| Host pools** page, select **az140-21-hp1**.
 
     ![](Media/lab2-11-1.png)
@@ -121,6 +127,8 @@ In this lab, you will complete the following tasks:
     > **Note:** Using *Start VM on Connect* requires assigning the *Desktop Virtualization Power On Contributor* role-based access control (RBAC) role to the *Azure Virtual Desktop* service principal at the Azure subscription scope. 
 
 ### Task 3: Assign the required RBAC role to an Azure Virtual Desktop service principal
+
+In this task, you will assign the required RBAC role to the Azure Virtual Desktop service principal using Azure Cloud Shell.
 
 1. In the Azure portal, select the **Cloud Shell** icon from the top menu to start a PowerShell session.
 
@@ -154,6 +162,8 @@ In this lab, you will complete the following tasks:
 
 ### Task 4: Configure scheduled agent updates
 
+In this task, you will configure a scheduled maintenance window for Azure Virtual Desktop agent updates to ensure updates occur outside business hours.
+
 > **Note:** The Scheduled Agent Updates feature lets you create up to two maintenance windows for the updates of the Azure Virtual Desktop agent, side-by-side stack, and Geneva Monitoring agent, so these updates take place outside of business hours. 
 
 1. In the Azure portal, navigate back to the **az140-21-hp1** host pool page.
@@ -169,6 +179,8 @@ In this lab, you will complete the following tasks:
     ![](Media/lab2-11-11.png)
 
 ### Task 5: Configure RDP properties of the host pool
+
+In this task, you will review and update the RDP properties of the host pool to configure connection, session behavior, device redirection, and display settings.
 
 1. In the Azure portal, on the **az140-21-hp1** page, in the in the vertical menu bar, in the **Settings** section, select the **RDP Properties** entry.
 
@@ -219,6 +231,10 @@ In this lab, you will complete the following tasks:
 1. On the **az140-21-hp1\|RDP Properties** page, select the **Advanced** tab and review the existing configuration settings. Note that these settings reflect the changes you made earlier in this task.
 
     ![](Media/lab2-11-16.png)
+
+### Summary
+
+In this lab, you expanded and configured an existing Azure Virtual Desktop host pool by deploying an additional session host and adjusting key host pool settings. You assigned the required RBAC role to support power-on functionality and configured scheduled agent updates for controlled maintenance. Finally, you reviewed and customized the host pool’s RDP properties to refine connection and session behavior.
 
 **You have successfully completed the lab. Click on Next >>**
 

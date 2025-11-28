@@ -1,12 +1,6 @@
 # Lab 06- Implement Azure Private Link for Azure Virtual Desktop
 
-## Lab dependencies
-
-- The lab *Deploy host pools and session hosts by using the Azure portal (Entra ID)* completed
-
-## Estimated Time
-
-60 minutes
+## Estimated Duration: 60 Minutes
 
 ## Lab scenario
 
@@ -470,3 +464,9 @@ In this lab, you will complete the following tasks:
 1. On the **az140-21-hp1** page, in the vertical navigation menu, in the **Settings** section, select **Networking**.
 
 1. On the **az140-21-hp1 \| Networking** page, on the **Public access** tab, select the option **Enable public access from all networks**, and then select **Save**.
+
+### Summary
+
+**You have successfully completed the lab. Click on Next >>**
+
+![](Media/next.png)

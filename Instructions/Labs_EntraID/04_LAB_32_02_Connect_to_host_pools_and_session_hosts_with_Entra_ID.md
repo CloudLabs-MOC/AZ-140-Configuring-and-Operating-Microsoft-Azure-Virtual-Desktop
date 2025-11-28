@@ -2,6 +2,10 @@
 
 ## Estimated Duration: 20 Minutes
 
+## Overview
+
+In this lab, you’ll connect to Microsoft Entra joined Azure Virtual Desktop session hosts using the Windows Remote Desktop client. You’ll tweak the required RDP settings, install the Remote Desktop app, subscribe to the workspace, and test both desktop and RemoteApp experiences across different user accounts. By the end, you’ll validate successful sign-in and session access for all assigned AVD resources.
+
 ## Lab Objectives
   
 In this lab, you will complete the following tasks:
@@ -14,9 +18,9 @@ In this lab, you will complete the following tasks:
 
 - **Task 4:** Test Azure Virtual Desktop apps
 
-### Exercise 1: Validate the functionality of Microsoft Entra joined Azure Virtual Desktop session hosts by connecting to them from a Windows 11 client
-
 ### Task 1: Adjust RDP properties of the Azure Virtual Desktop host pool
+
+In this task, you’ll update the host pool’s advanced RDP settings so the client can successfully connect to Entra-joined session hosts.
 
 > **Note:** The RDP settings you implemented in the previous lab provide the optimal user experience (via support for single sign-on), however, this requires additional changes described in [Configure single sign-on for Azure Virtual Desktop using Microsoft Entra ID authentication](https://learn.microsoft.com/en-us/azure/virtual-desktop/configure-single-sign-on). Without these changes, by default, authentication is supported providing that the client computer satisfies one of the following criteria:
 
@@ -50,6 +54,8 @@ Since none of these criteria apply to the lab computer, it is necessary to add `
 
 ### Task 2: Install Microsoft Remote Desktop client on a Windows 11 computer
 
+In this task, you’ll download and install the Microsoft Remote Desktop client on a Lab VM to enable connecting to Azure Virtual Desktop resources.
+
 1. In the web browser, navigate to the [Connect to Azure Virtual Desktop with the Remote Desktop client for Windows](https://learn.microsoft.com/en-us/azure/virtual-desktop/users/connect-windows) page, scroll down to the section **Download and install the Remote Desktop client (MSI)**, and select the [Windows 64-bit](https://go.microsoft.com/fwlink/?linkid=2139369) link. 
 
     ![](Media/lab4-11-3.png)
@@ -78,7 +84,9 @@ Since none of these criteria apply to the lab computer, it is necessary to add `
 
 ### Task 3: Subscribe to a Azure Virtual Desktop workspace
 
-1. On the lab vm, switch to the **Remote Desktop** client window, select **Subscribe** and, when prompted, sign in with the credentials.
+In this task, you’ll subscribe to the Azure Virtual Desktop workspace using two different Entra ID user accounts. You’ll launch both the full desktop session and RemoteApp applications to verify access, settings, and session behavior.
+
+1. On the Lab VM, switch to the **Remote Desktop** client window, select **Subscribe** and, when prompted, sign in with the credentials.
 
    ![](Media/lab4-11-10.png)
 
@@ -187,6 +195,10 @@ Since none of these criteria apply to the lab computer, it is necessary to add `
 1. At the Command Prompt, type **logoff** and press the **Enter** key to log off from the current Remote App session.
 
    ![](Media/lab4-11-24.png)
+
+### Summary
+
+In this lab, you connected to Azure Virtual Desktop using the Microsoft Remote Desktop client and subscribed to the workspace with two different Entra ID users to validate both desktop and RemoteApp access. You then confirmed session behavior, permissions, and overall connectivity across the published AVD resources.
 
 **You have successfully completed the lab. Click on Next >>**
 
