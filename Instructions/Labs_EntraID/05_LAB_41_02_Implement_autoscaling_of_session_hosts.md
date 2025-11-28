@@ -108,7 +108,7 @@ In this task, you build a scaling plan with schedules and assign it to the host 
 
     ![](Media/lab5-11-6.png)
 
-1. On the **Basics** tab of the **Create a scaling plan** page, specify the following settings and select **Next : Schedules (9)**:
+1. On the **Basics** tab of the **Create a scaling plan** page, specify the following settings and select **Next : Schedules (9):**
 
     |Setting|Value|
     |---|---|
