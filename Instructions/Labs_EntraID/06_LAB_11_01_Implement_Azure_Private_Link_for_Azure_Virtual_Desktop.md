@@ -1,6 +1,6 @@
 # Lab 06- Implement Azure Private Link for Azure Virtual Desktop
 
-## Estimated Duration: 60 Minutes
+## Estimated Duration: 90 Minutes
 
 ## Overview
 
@@ -70,17 +70,17 @@ In this task, you will create a dedicated subnet in the Azure virtual network to
 
 1. On the **az140-vnet11e** page, in the **Settings (1)** section of the vertical navigation menu, select **Subnets (2)**.
 
-    ![](Media/7-42.png)
-
 1. On the **az140-vnet11e \| Subnets** page, select **+ Subnet (3)**.
+
+    ![](Media/7-42.png)
 
 1. In the **Add a subnet** pane, specify the following settings and select **Add (4)** (leave other settings with their default values):
 
     |Setting|Value|
     |---|---|
     |Name|**pe-Subnet (1)**|
-    |Starting address|**10.20.255.0** (2)|
-    |Enable private subnet (no default outbound access)|Disabled (3)|
+    |Starting address|**10.20.255.0 (2)**|
+    |Enable private subnet (no default outbound access)|Disabled **(3)**|
 
     ![](Media/7-43.png)
 
@@ -88,23 +88,25 @@ In this task, you will create a dedicated subnet in the Azure virtual network to
 
 In this task, you will create a private endpoint for the host pool, configure networking and DNS integration, and finalize the setup required for secure Private Link access to Azure Virtual Desktop
 
-1. From the lab computer, in the web browser displaying the Azure portal, search for and select **Azure Virtual Desktop**, on the **Azure Virtual Desktop** page, in the **Manage** section of the vertical navigation menu, select **Host pools** and, on the **Azure Virtual Desktop \| Host pools** page, select **az140-21-hp1**. 
+1. In the Azure portal, search for and select **Azure Virtual Desktop**, on the **Azure Virtual Desktop** page, in the **Manage** section of the vertical navigation menu, select **Host pools (1)** and, on the **Azure Virtual Desktop \| Host pools** page, select **az140-21-hp1 (2)**. 
+
+     ![](Media/lab2-11-1.png)
 
 1. On the **az140-21-hp1** page, in the vertical navigation menu, in the **Settings (1)** section, select **Networking (2)**.
 
-    ![](Media/7-41.png)
-
 1. On the **az140-21-hp1 \| Networking** page, select the **Private endpoint connections (3)** tab and then, select **+ New private endpoint (4)**.
+
+     ![](Media/7-41.png)
 
 1. On the **Basics** tab of the **Create a private endpoint** page, specify the following settings and select **Next : Resource > (5)**:
 
     |Setting|Value|
     |---|---|
     |Subscription|Choose the default subscription|
-    |Resource group|Select **az140-11e-RG** (1)|
-    |Name|Specify **az140-11-pehp1** (2)|
-    |Network Interface Name|**az140-11-pehp1-nic** (3)|
-    |Region|**<inject key="Region" enableCopy="false" />** (4)|
+    |Resource group|Select **az140-11e-RG (1)**|
+    |Name|Specify **az140-11-pehp1 (2)**|
+    |Network Interface Name|**az140-11-pehp1-nic (3)**|
+    |Region|**<inject key="Region" enableCopy="false" /> (4)**|
 
     ![](Media/7-44.png)
 
@@ -112,7 +114,7 @@ In this task, you will create a private endpoint for the host pool, configure ne
 
     |Setting|Value|
     |---|---|
-    |Target sub-resource|**connection** (1)|
+    |Target sub-resource|**connection (1)**|
 
     ![](Media/7-45.png)
 
@@ -120,10 +122,10 @@ In this task, you will create a private endpoint for the host pool, configure ne
 
     |Setting|Value|
     |---|---|
-    |Virtual network|Select **az140-vnet11e (az140-11e-RG)** (1)|
-    |Subnet|Select **pe-Subnet** (2)|
-    |Network policy for private endpoints|**Disabled** (3)|
-    |Private IP configuration|**Dynamically allocate IP address** (4)|
+    |Virtual network|Select **az140-vnet11e (az140-11e-RG) (1)**|
+    |Subnet|Select **pe-Subnet (2)**|
+    |Network policy for private endpoints|**Disabled (3)**|
+    |Private IP configuration|**Dynamically allocate IP address (4)**|
 
     ![](Media/7-46.png)
 
@@ -131,13 +133,13 @@ In this task, you will create a private endpoint for the host pool, configure ne
 
     |Setting|Value|
     |---|---|
-    |Integrate with private DNS zone|**Yes** (1)|
-    |Subscription|Choose the default subscription (2)|
-    |Resource group|Choose **az140-11e-RG** (3)|
+    |Integrate with private DNS zone|**Yes (1)**|
+    |Subscription|Choose the default subscription **(2)**|
+    |Resource group|Choose **az140-11e-RG (3)**|
 
     ![](Media/7-47.png)
 
-    > **Note**: This step will result in creation of a private DNS zone named **privatelink.wvd.microsoft.com**.
+    > **Note:** This step will result in creation of a private DNS zone named **privatelink.wvd.microsoft.com**.
 
 1. On the **Tags** tab of the **Create a private endpoint** page, select **Next : Review + create**.
 
@@ -151,31 +153,38 @@ In this task, you will create a private endpoint for the host pool, configure ne
 
     > **Note:** You would need to create a private endpoint for the connection sub-resource for each host pool you want to use with Private Link.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+<validation step="7e5ab981-7a71-499c-bd16-d4dd8f902fc4" />
+
 ### Task 4: Implement a private endpoint for feed download
 
 In this task, you will create a private endpoint for feed download on the workspace, configuring networking and DNS integration to enable secure Private Link access for Azure Virtual Desktop feeds.
 
 1. In the Azure portal, search for and select **Azure Virtual Desktop** and, on the **Azure Virtual Desktop** page, select **Workspaces** under **Manage (1)** section.
 
-    ![](Media/7-50.png)
-
 1. On the **Azure Virtual Desktop \| Workspaces (2)** page, select **az140-21-ws1 (3)**.
+
+     ![](Media/7-50.png)
 
 1. On the **az140-21-ws1** page, in the vertical navigation menu, in the **Settings (1)** section, select **Networking (2)**.
 
-    ![](Media/7-51.png)
-
 1. On the **az140-21-ws1 \| Networking** page, select the **Private endpoint connections (3)** tab and then, select **+ New private endpoint (4)**.
+
+     ![](Media/7-51.png)
 
 1. On the **Basics** tab of the **Create a private endpoint** page, specify the following settings and select **Next : Resource > (5)**:
 
     |Setting|Value|
     |---|---|
     |Subscription|Choose the default subscription|
-    |Resource group|Select **az140-11e-RG** (1)|
-    |Name|Specify **az140-11-pefeeddwnld** (2)|
-    |Network Interface Name|**az140-11-pefeeddwnld-nic** (3)|
-    |Region|**<inject key="Region" enableCopy="false" />** (4)|
+    |Resource group|Select **az140-11e-RG (1)**|
+    |Name|Specify **az140-11-pefeeddwnld (2)**|
+    |Network Interface Name|**az140-11-pefeeddwnld-nic (3)**|
+    |Region|**<inject key="Region" enableCopy="false" /> (4)**|
 
     ![](Media/7-52.png)
 
@@ -183,7 +192,7 @@ In this task, you will create a private endpoint for feed download on the worksp
 
     |Setting|Value|
     |---|---|
-    |Target sub-resource|**feed** (1)|
+    |Target sub-resource|**feed (1)**|
 
     ![](Media/7-53.png)
 
@@ -191,10 +200,10 @@ In this task, you will create a private endpoint for feed download on the worksp
 
     |Setting|Value|
     |---|---|
-    |Virtual network|**az140-vnet11e (az140-11e-RG)** (1)|
-    |Subnet|**pe-Subnet** (2)|
-    |Network policy for private endpoints|**Disabled** (3)|
-    |Private IP configuration|**Dynamically allocate IP address** (4)|
+    |Virtual network|**az140-vnet11e (az140-11e-RG) (1)**|
+    |Subnet|**pe-Subnet (2)**|
+    |Network policy for private endpoints|**Disabled (3)**|
+    |Private IP configuration|**Dynamically allocate IP address (4)**|
 
     ![](Media/7-54.png)
 
@@ -203,12 +212,12 @@ In this task, you will create a private endpoint for feed download on the worksp
     |Setting|Value|
     |---|---|
     |Integrate with private DNS zone|**Yes**|
-    |Subscription|Choose the default subscription (1)|
-    |Resource group|Select **az140-11e-RG** (2)|
+    |Subscription|Choose the default subscription **(1)**|
+    |Resource group|Select **az140-11e-RG (2)**|
 
     ![](Media/7-55.png)
 
-    > **Note**: This step will leverage the private DNS zone named **privatelink.wvd.microsoft.com** you created in the previous task.
+    > **Note:** This step will leverage the private DNS zone named **privatelink.wvd.microsoft.com** you created in the previous task.
 
 1. On the **Tags** tab of the **Create a private endpoint** page, select **Next : Review + create**.
 
@@ -216,33 +225,42 @@ In this task, you will create a private endpoint for feed download on the worksp
 
     ![](Media/7-56.png)
 
-    > **Note**: Do not wait for the deployment to complete but instead proceed to the next task. The deployment might take about 1 minute.
+    > **Note:** Do not wait for the deployment to complete but instead proceed to the next task. The deployment might take about 1 minute.
 
-    > **Note**: You would need to a create private endpoint for the feed sub-resource for each workspace you want to use with Private Link.
+    > **Note:** You would need to a create private endpoint for the feed sub-resource for each workspace you want to use with Private Link.
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+<validation step="ae2cc6cf-3883-4151-8527-50ef50a56d36" />
 
 ### Task 5: Implement a private endpoint for initial feed discovery
 
 In this task, you will create a private endpoint for initial feed discovery, set up required DNS integration, and restart session hosts so the new Private Link configuration takes effect.
 
-1. In the Azure portal, search for and select **Azure Virtual Desktop** and, on the **Azure Virtual Desktop** page, select **Workspaces**.
+1. In the Azure portal, search for and select **Azure Virtual Desktop** and, on the **Azure Virtual Desktop** page, select **Workspaces (1)**.
 
-1. On the **Azure Virtual Desktop \| Workspaces** page, select **az140-21-ws1**.
+1. On the **Azure Virtual Desktop \| Workspaces** page, select **az140-21-ws1 (2)**.
+
+     ![](Media/lab7-1.png)
 
 1. On the **az140-21-ws1** page, in the vertical navigation menu, in the **Settings (1)** section, select **Networking (2)**.
 
-    ![](Media/7-57.png)
-
 1. On the **az140-21-ws1 \| Networking** page, select the **Private endpoint connections (3)** tab and then, select **+ New private endpoint (4)**.
+
+     ![](Media/7-57.png)
 
 1. On the **Basics** tab of the **Create a private endpoint** page, specify the following settings and select **Next : Resource > (5)**:
 
     |Setting|Value|
     |---|---|
     |Subscription|Choose the default subscription|
-    |Resource group|Select **az140-11e-RG** (1)|
-    |Name|Specify **az140-11-pefeeddisc** (2)|
-    |Network Interface Name|**az140-11-pefeeddisc-nic** (3)|
-    |Region|**<inject key="Region" enableCopy="false" />** (4)|
+    |Resource group|Select **az140-11e-RG (1)**|
+    |Name|Specify **az140-11-pefeeddisc (2)**|
+    |Network Interface Name|**az140-11-pefeeddisc-nic (3)**|
+    |Region|**<inject key="Region" enableCopy="false" /> (4)**|
 
     ![](Media/7-58.png)
 
@@ -250,7 +268,7 @@ In this task, you will create a private endpoint for initial feed discovery, set
 
     |Setting|Value|
     |---|---|
-    |Target sub-resource|**global**(1)|
+    |Target sub-resource|**global (1)**|
 
     ![](Media/7-59.png)
 
@@ -258,10 +276,10 @@ In this task, you will create a private endpoint for initial feed discovery, set
 
     |Setting|Value|
     |---|---|
-    |Virtual network|**az140-vnet11e (az140-11e-RG)** (1)|
-    |Subnet|**pe-Subnet** (2)|
-    |Network policy for private endpoints|**Disabled** (3)|
-    |Private IP configuration|**Dynamically allocate IP address** (4)|
+    |Virtual network|**az140-vnet11e (az140-11e-RG) (1)**|
+    |Subnet|**pe-Subnet (2)**|
+    |Network policy for private endpoints|**Disabled (3)**|
+    |Private IP configuration|**Dynamically allocate IP address (4)**|
 
     ![](Media/7-54.png)
 
@@ -269,13 +287,13 @@ In this task, you will create a private endpoint for initial feed discovery, set
 
     |Setting|Value|
     |---|---|
-    |Integrate with private DNS zone|**Yes** (1)|
-    |Subscription|Choose the default subscription (2)|
-    |Resource group|**az140-11e-RG** (3)|
+    |Integrate with private DNS zone|**Yes (1)**|
+    |Subscription|Choose the default subscription **(2)**|
+    |Resource group|**az140-11e-RG (3)**|
 
     ![](Media/7-60.png)
 
-    > **Note**: This step will will result in creation of a private DNS zone named **privatelink-global.wvd.microsoft.com**.
+    > **Note:** This step will will result in creation of a private DNS zone named **privatelink-global.wvd.microsoft.com**.
 
 1. On the **Tags** tab of the **Create a private endpoint** page, select **Next : Review + create**.
 
@@ -283,21 +301,30 @@ In this task, you will create a private endpoint for initial feed discovery, set
 
     ![](Media/7-61.png)
 
-    > **Note**: Do not wait for the deployment to complete but instead proceed to the next task. The deployment might take about 1 minute.
+    > **Note:** Do not wait for the deployment to complete but instead proceed to the next task. The deployment might take about 1 minute.
 
-    > **Note**: You would need to a create private endpoint for the global sub-resource for each workspace you want to use with Private Link.
+    > **Note:** You would need to a create private endpoint for the global sub-resource for each workspace you want to use with Private Link.
 
-    > **Note**: For the network changes to take effect, you need to restart the session hosts in the target host pool.
+    > **Note:** For the network changes to take effect, you need to restart the session hosts in the target host pool.
 
-1. In the Azure portal, navigate to the **Azure Virtual Desktop** page, in the **Manage** section of the vertical navigation menu, select **Host pools** and, on the **Azure Virtual Desktop \| Host pools** page, select **az140-21-hp1**.
+1. In the Azure portal, navigate to the **Azure Virtual Desktop** page, in the **Manage** section of the vertical navigation menu, select **Host pools (1)** and, on the **Azure Virtual Desktop \| Host pools** page, select **az140-21-hp1 (2)**.
+
+     ![](Media/lab2-11-1.png)
 
 1. On the **az140-21-hp1** page, in the **Manage (1)** section of the vertical navigation menu, select **Session hosts (2)**. 
 
+1. In the list of session hosts, **(3)** to the left of each session host and then select **Restart (4)** in the toolbar.
+
     ![](Media/7-62.png)
 
-1. In the list of session hosts, ** (3)** to the left of each session host and then select **Restart (4)** in the toolbar.
-
     > **Note:** Wait until all session hosts are in the **Running** state. 
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+<validation step="c039ea61-be78-4f73-bbf6-ffa241087543" />
 
 ### Task 6: Validate the private endpoint functionality
 
@@ -305,25 +332,25 @@ In this task, you will disable public access for the workspace and host pool, th
 
 > **Note:** By default, connectivity to Azure Virtual Desktop workspaces and host pools is allowed from public networks. You will start by changing the default settings and enforcing private access.
 
-1. From the lab computer, in the web browser displaying the Azure portal, search for and select **Azure Virtual Desktop** and, on the **Azure Virtual Desktop** page, select **Workspaces**.
+1. In the Azure portal, search for and select **Azure Virtual Desktop** and, on the **Azure Virtual Desktop** page, select **Workspaces (1)**.
 
-    ![](Media/7-63.png)
+1. On the **Azure Virtual Desktop \| Workspaces** page, select **az140-21-ws1 (2)**.
 
-1. On the **Azure Virtual Desktop \| Workspaces (2)** page, select **az140-21-ws1 (3)**.
+    ![](Media/lab7-1.png)
 
 1. On the **az140-21-ws1** page, in the vertical navigation menu, in the **Settings (1)** section, select **Networking (2)**.
 
-    ![](Media/7-64.png)
-
 1. On the **az140-21-ws1 \| Networking** page, on the **Public access (3)** tab, select the option **Disable public access and use private access (4)**, and then select **Save (5)**.
 
-1. From the lab computer, in the web browser displaying the Azure portal, search for and select **Azure Virtual Desktop**, on the **Azure Virtual Desktop** page, in the **Manage** section of the vertical navigation menu, select **Host pools** and, on the **Azure Virtual Desktop \| Host pools** page, select **az140-21-hp1**. 
+     ![](Media/7-64.png)
 
-1. On the **az140-21-hp1** page, in the vertical navigation menu, in the **Settings (1)** section, select **Networking (2)**.
+1. In the Azure portal, navigate to **Azure Virtual Desktop**, on the **Azure Virtual Desktop** page, in the **Manage** section of the vertical navigation menu, select **Host pools** and, on the **Azure Virtual Desktop \| Host pools** page, select **az140-21-hp1**. 
+
+1. On the **az140-21-hp1** page, in the vertical navigation menu, in the **Settings** section, select **Networking (1)**.
 
     ![](Media/7-79.png)
 
-1. On the **az140-21-hp1 \| Networking** page, on the **Public access (3)** tab, select the option **Disable public access and use private access (4)**, and then select **Save (5)**.
+1. On the **az140-21-hp1 \| Networking** page, on the **Public access (2)** tab, select the option **Disable public access and use private access (3)**, and then select **Save (4)**.
 
     > **Note:** To validate the private endpoint functionality, an RDP client needs to be connected to a network that has private connectivity to the Azure virtual network containing subnet hosting the private endpoints you created earlier in this lab. To simulate this scenario, you will create another subnet in the same virtual network used to create private endpoints and deploy an Azure VM running Windows 11 into that subnet.
 
@@ -337,8 +364,8 @@ In this task, you will disable public access for the workspace and host pool, th
 
     |Setting|Value|
     |---|---|
-    |Name|**client-Subnet** (1)|
-    |Starting address|**10.20.2.0** (2)|
+    |Name|**client-Subnet (1)**|
+    |Starting address|**10.20.2.0 (2)**|
     |Enable private subnet (no default outbound access)|**Disabled (3)**|
 
     ![](Media/7-66.png)
@@ -353,17 +380,17 @@ In this task, you will disable public access for the workspace and host pool, th
     |---|---|
     |Subscription|Choose the default subscription|
     |Resource group|Select **Create new (1)** and specify the resource group name as **az140-111e-RG (2)**|
-    |Virtual machine name|Specify **az140-111e-vm0** (3)|
-    |Region|**<inject key="Region" enableCopy="false" />** (4)|
-    |Availability options|**No infrastructure redundancy required** (5)|
-    |Security type|**Standard** (6)|
-    |Image|Select **See all images** and select **Windows 11 Pro, version 24H2 - x64 Gen2** (7) from the list|
-    |Size|Select **See all sizes (8)** and choose **Standard DC2s_v3** (9)|
-    |Username|Student (10)|
-    |Password|**Password.1!!** (11)|
-    |Confirm Password|**Password.1!!** (12)|
-    |Public inbound ports|**None** (13)|
-    |Licensing|**Enable** the checkbox (14)|
+    |Virtual machine name|Specify **az140-111e-vm0 (3)**|
+    |Region|**<inject key="Region" enableCopy="false" /> (4)**|
+    |Availability options|**No infrastructure redundancy required (5)**|
+    |Security type|**Standard (6)**|
+    |Image|Select **See all images** and select **Windows 11 Pro, version 24H2 - x64 Gen2 (7)** from the list|
+    |Size|Select **See all sizes (8)** and choose **Standard DC2s_v3 (9)**|
+    |Username|Student **(10)**|
+    |Password|**Password.1!! (11)**|
+    |Confirm Password|**Password.1!! (12)**|
+    |Public inbound ports|**None (13)**|
+    |Licensing|**Enable** the checkbox **(14)**|
 
     ![](Media/7-68.png)    
 
@@ -419,7 +446,7 @@ In this task, you will disable public access for the workspace and host pool, th
 
     |Setting|Value|
     |---|---|
-    |Boot diagnostics|**Disable** (1)|
+    |Boot diagnostics|**Disable (1)**|
 
     ![](Media/7-74.png) 
 
@@ -427,11 +454,11 @@ In this task, you will disable public access for the workspace and host pool, th
 
     ![](Media/7-75.png) 
 
-    > **Note**: Wait for the deployment to complete. The deployment might take about 5 minutes.
+    > **Note:** Wait for the deployment to complete. The deployment might take about 5 minutes.
 
 1. In the Azure portal, search for and select **Virtual machines**, on the **Virtual machines** page, select **az140-111e-vm0**.
 
-1. On the **az140-111e-vm0** page, select **Connect** and, in the drop-down menu, select **Connect**.
+1. On the **az140-111e-vm0** page, select **Connect (1)** and, in the drop-down menu, select **Connect (2)**.
 
     ![](Media/7-76.png) 
 
@@ -449,21 +476,45 @@ In this task, you will disable public access for the workspace and host pool, th
 
 1. Within the Remote Desktop session to **az140-111e-vm0**, start Microsoft Edge, navigate to the [Connect to Azure Virtual Desktop with the Remote Desktop client for Windows](https://learn.microsoft.com/en-us/azure/virtual-desktop/users/connect-windows) page, scroll down to the section **Download and install the Remote Desktop client (MSI)**, and select the [Windows 64-bit](https://go.microsoft.com/fwlink/?linkid=2139369) link. 
 
-1. Open File Explorer, navigate to the **Downloads** folder, and launch the installation of the newly downloaded MSI file. 
+     ![](Media/lab4-11-3.png)
 
-1. When prompted, accept the terms of the licensing agreement and choose the option to **Install for all users of this machine**. If prompted, accept the User Account Control prompt to proceed with the installation. 
+1. Open File Explorer, navigate to the **Downloads (1)** folder, and launch (Double-Click) the installation of the newly downloaded MSI file **(2)**. 
+    
+     ![](Media/lab4-11-4.png)
 
-1. Once the installation completes, ensure that the **Launch Remote Desktop when setup exits** checkbox is selected and select **Finish** to start the Microsoft Remote Desktop client.
+1. In the **Remote Desktop Setup** window, the **Welcome to the Remote Desktop Setup Wizard** screen appears. Select **Next** to continue.
 
-1. Within the Remote Desktop session to **az140-111e-vm0**, in the **Remote Desktop** client window, select **Subscribe** and, when prompted, sign in with the credentials of the `User2` Entra ID user account which you can locate on the **Resources** tab in the right pane of the lab interface window.
+    ![](Media/lab4-11-6.png)
 
-   > **Note:** Select the user account which is the member of the Entra group with the **AVD-RemoteApp** prefix.
+1. On the **End-User License Agreement** screen, select the **I accept the terms in the License Agreement** checkbox **(1)**, and then choose **Next (2)**.
+
+    ![](Media/lab4-11-7.png)
+
+1. On the **Installation Scope** screen, select **Install for all users of this machine (1)**, and then choose **Install (2)**. If prompted, accept the User Account Control prompt to proceed with the installation.
+
+    ![](Media/lab4-11-8.png)
+
+1. Once the installation completes, ensure that the **Launch Remote Desktop when setup exits (1)** checkbox is selected and select **Finish (2)** to start the Microsoft Remote Desktop client.
+
+   ![](Media/lab4-11-9.png)
+
+1. Within the Remote Desktop session to **az140-111e-vm0**, in the **Remote Desktop** client window, select **Subscribe** and, when prompted, sign in with the credentials of the `user2_avd` Entra ID user account which you can locate on the **Resources** tab in the right pane of the lab interface window.
+
+    ![](Media/lab4-11-10.png)
+
+    > **Note:** Select the user account which is the member of the Entra group with the **AVD-RemoteApp** prefix.
 
 1. Ensure that the **Remote Desktop** page displays four icons, including Command Prompt, Microsoft Word, Microsoft Excel, Microsoft PowerPoint. 
 
+     ![](Media/lab4-11-21.png)
+
 1. Double-click the Command Prompt icon. 
 
-1. When prompted to sign in, in the **Windows Security** dialog box, enter the password of the same Microsoft Entra user account you used to connect to the target Azure Virtual Desktop environment.
+     ![](Media/lab4-11-21.1.png)
+
+1. When prompted to sign in, in the **Windows Security** dialog box, enter the password of the same Microsoft Entra user account you used to connect to the target Azure Virtual Desktop environment and and click **OK**.
+
+     ![](Media/lab4-11-22.png)
 
 1. Verify that a **Command Prompt** window appears shortly afterwards. 
 
@@ -471,19 +522,30 @@ In this task, you will disable public access for the workspace and host pool, th
 
    > **Note:** Optionally, you might consider attempting to subscribe to the feed and connect to The Azure Virtual Desktop workspace from the lab computer to validate that this connection will fail. 
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+<validation step="4b0375c7-c9b6-47dc-902f-43bf59bcf154" />
+
 ### Task 7: Allow public network access to a host pool and workspace
 
 In this task, you will re-enable public network access on both the workspace and host pool to restore connectivity from any network.
 
-1. From the lab computer, in the web browser displaying the Azure portal, search for and select **Azure Virtual Desktop** and, on the **Azure Virtual Desktop** page, select **Workspaces**.
+1. In the Azure portal, search for and select **Azure Virtual Desktop** and, on the **Azure Virtual Desktop** page, select **Workspaces (1)**.
 
-1. On the **Azure Virtual Desktop \| Workspaces** page, select **az140-21-ws1**.
+1. On the **Azure Virtual Desktop \| Workspaces** page, select **az140-21-ws1 (2)**.
+
+     ![](Media/lab7-1.png)
 
 1. On the **az140-21-ws1** page, in the vertical navigation menu, in the **Settings** section, select **Networking**.
 
 1. On the **az140-21-ws1 \| Networking** page, on the **Public access** tab, select the option **Enable public access from all networks**, and then select **Save**.
 
-1. From the lab computer, in the web browser displaying the Azure portal, search for and select **Azure Virtual Desktop**, on the **Azure Virtual Desktop** page, in the **Manage** section of the vertical navigation menu, select **Host pools** and, on the **Azure Virtual Desktop \| Host pools** page, select **az140-21-hp1**. 
+1. In the Azure portal, navigate back **Azure Virtual Desktop**, on the **Azure Virtual Desktop** page, in the **Manage** section of the vertical navigation menu, select **Host pools (1)** and, on the **Azure Virtual Desktop \| Host pools** page, select **az140-21-hp1 (2)**. 
+
+     ![](Media/lab2-11-1.png)
 
 1. On the **az140-21-hp1** page, in the vertical navigation menu, in the **Settings** section, select **Networking**.
 

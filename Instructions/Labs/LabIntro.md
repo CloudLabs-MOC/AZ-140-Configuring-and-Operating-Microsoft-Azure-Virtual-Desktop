@@ -71,13 +71,13 @@ Welcome to your AZ-140: Configuring and Operating Microsoft Azure Virtual Deskto
 
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![](../Labs_EntraID/Media/.png) 
+![](../Labs_EntraID/Media/lab1-11-g1.png) 
 
 ## Lab Guide Zoom In/Zoom Out
 
 To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.
 
-![](../Labs_EntraID/Media/.png) 
+![](../Labs_EntraID/Media/lab1-11-g1.png) 
 
 ## Virtual Machine & Guide
  

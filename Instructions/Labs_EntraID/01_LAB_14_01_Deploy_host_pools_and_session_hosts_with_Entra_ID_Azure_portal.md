@@ -1,6 +1,6 @@
 # Lab 01 - Deploy host pools and session hosts by using the Azure portal (Entra ID)
 
-## Estimated Duration: 60 Minutes
+## Estimated Duration: 75 Minutes
 
 ## Overview
 
@@ -125,7 +125,7 @@ In this task, you will prepare the Azure subscription for deploying an Azure Vir
    
     ![](Media/lab1-11-12.1.png)
    
-1. Navigate back to the **Users** page, in the **Search** text box, enter the name of the `User2-` account listed on the Resources tab on the right side of the lab session window.
+1. Navigate back to the **Users** page, in the **Search** text box, enter the name of the `user2_avd` account listed on the Resources tab on the right side of the lab session window.
    
 1. In the list of results of the search, select the user account entry with the matching name.
    
@@ -134,6 +134,13 @@ In this task, you will prepare the Azure subscription for deploying an Azure Vir
 1. On the **Groups** page, record the name of the group starting with the **AVD-RemoteApp (2)** prefix (you will need it later in this lab).
 
      ![](Media/lab1-11-12.2.png)
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+<validation step="852debdc-bac0-49c9-ad23-ca05d6a48fd8" />
 
 ### Task 2: Deploy an Azure Virtual Desktop host pool
 
@@ -205,8 +212,8 @@ In this task, you will deploy an Azure Virtual Desktop host pool and configure i
     |Select which directory you would like to join|**Microsoft Entra ID (18)**|
     |Enroll VM with Intune|**No (19)**|
     |User name|**Student (20)**|
-    |Password|Any sufficiently complex string of characters that will be used as the password for the built-in administrator account **(21)**|
-    |Confirm password|The same string of characters you specified previously **(22)**|
+    |Password|**Password.1!! (21)**|
+    |Confirm password|**Password.1!! (22)**|
 
     ![](Media/lab1-11-19.png)
 
@@ -225,6 +232,13 @@ In this task, you will deploy an Azure Virtual Desktop host pool and configure i
     ![](Media/lab1-11-21.png)
    
     > **Note:** Please wait for the deployment to complete. This may take approximately 20 minutes.
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+<validation step="3afdd737-6185-4304-8123-c5368b79a002" />
 
 ### Task 3: Create an Azure Virtual Desktop application group
 
@@ -411,6 +425,13 @@ In this task, you will create Azure Virtual Desktop application groups and confi
 
     > **Note:** Wait for the Application Group to be created. This should take less than 1 minute. 
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+<validation step="8fe92a7c-5807-4253-bfaf-774a70edd2d3" />
+
 ### Task 4: Create an Azure Virtual Desktop workspace
 
 In this task, you will create an Azure Virtual Desktop workspace and register the required application groups to make them available to users.
@@ -456,6 +477,13 @@ In this task, you will create an Azure Virtual Desktop workspace and register th
 1. On the **Review + create** tab of the **Create a workspace** page, select **Create**.
 
     ![](Media/lab1-11-53.png)
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+<validation step="b7787cb6-f259-41b1-a47f-52c92ffcc43b" />
 
 ### Task 5: Grant access to Azure Virtual Desktop host pools
 

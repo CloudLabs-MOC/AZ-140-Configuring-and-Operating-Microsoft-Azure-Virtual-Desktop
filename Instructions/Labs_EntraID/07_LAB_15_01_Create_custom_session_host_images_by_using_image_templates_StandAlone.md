@@ -1,6 +1,6 @@
 # Lab 07- Create custom session host images by using image templates
 
-## Estimated Duration: 90 Minutes
+## Estimated Duration: 105 Minutes
 
 ## Overview
 
@@ -44,7 +44,7 @@ In this task, you register all required Azure resource providers to enable image
     Register-AzResourceProvider -ProviderNamespace Microsoft.ContainerInstance
     ```
 
-    > **Note**: Do not wait for the registration to complete. This might take about 5 minutes.
+    > **Note:** Do not wait for the registration to complete. This might take about 5 minutes.
 
 1. Close the Azure Cloud Shell pane.
 
@@ -52,7 +52,7 @@ In this task, you register all required Azure resource providers to enable image
 
 In this task, you create a user-assigned managed identity that will be used to authenticate and run the image build process securely.
 
-1. In the Azure portal, search for and select **Managed Identities**.
+1. In the Azure portal, search for **Managed Identities (1)** and select **Managed Identities** from result.
 
     ![](Media/7-1.png)
 
@@ -65,9 +65,9 @@ In this task, you create a user-assigned managed identity that will be used to a
     |Setting|Value|
     |---|---|
     |Subscription|Choose the default subscription|
-    |Resource group|Select **Create new (1)** and specify the resource group name as **az140-15a-RG**(2)|
-    |Region|**<inject key="Region" enableCopy="false" />** (3)|
-    |Name|**az140**-<inject key="DeploymentID" enableCopy="false"/>-**uami** (4)|
+    |Resource group|Select **Create new (1)** and specify the resource group name as **az140-15a-RG****(2)**|
+    |Region|**<inject key="Region" enableCopy="false" /> (3)**|
+    |Name|**az140**-<inject key="DeploymentID" enableCopy="false"/>-**uami (4)**|
 
     ![](Media/7-3.png)
 
@@ -76,6 +76,13 @@ In this task, you create a user-assigned managed identity that will be used to a
     ![](Media/7-4.png)
 
     >**Note:** Do not wait for the provisioning of the user assigned managed identity to complete. This should take just a few seconds.
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+<validation step="88e18ef4-a866-4dcb-8199-ef44fc278aa7" />
 
 ### Task 3: Create a custom Azure role-based access control (RBAC) role
 
@@ -133,11 +140,18 @@ In this task, you create a custom RBAC role that grants the exact permissions ne
 
 1. Close the Azure Cloud Shell pane.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+<validation step="3361e37e-14e1-4dc4-a028-19d37fd5efa1" />
+
 ### Task 4: Set permissions on the host image provisioning-related resources
 
 In this task, you assign the custom RBAC role to the managed identity so it has the necessary permissions to build and manage session host images.
 
-1. In the Azure portal, search for and select **Resource groups** and, on the **Resource groups** page, select **+ Create**.
+1. In the Azure portal, search for **Resource groups (1)** and select **Resource groups (2)** and, on the **Resource groups** page, select **+ Create**.
 
     ![](Media/7-5.png)
 
@@ -146,7 +160,7 @@ In this task, you assign the custom RBAC role to the managed identity so it has 
     |Setting|Value|
     |---|---|
     |Subscription|Choose the default subscription|
-    |Resource group|The name of a new resource group **az140-15b-RG** (1)|
+    |Resource group|The name of a new resource group **az140-15b-RG (1)**|
     |Region|**<inject key="Region" enableCopy="false" />**|
 
     ![](Media/7-6.png)
@@ -155,17 +169,17 @@ In this task, you assign the custom RBAC role to the managed identity so it has 
 
 1. Refresh the **Resource groups** page and, in the list of resource groups, select **az140-15b-RG**.
 
-1. On the **az140-15b-RG** page, in the vertical navigation menu, select **Access control (IAM)**.
+1. On the **az140-15b-RG** page, in the vertical navigation menu, select **Access control (IAM) (1)**.
 
-1. On the **az140-15b-RG\|Access control (IAM) (1)** page, select **+ Add (2)** and, in the drop-down menu, select **Add role assignment (3)**.
+1. On the **az140-15b-RG\|Access control (IAM)** page, select **+ Add (2)** and, in the drop-down menu, select **Add role assignment (3)**.
 
     ![](Media/7-7.png)
 
-1. On the **Role** tab of the **Add role assignment** page, ensure that the **Job function roles** tab is selected, in the search textbox, Specify **Desktop Virtualization Image Creator <inject key="DeploymentID" enableCopy="false"/>** (1) , in the list of results, select **Desktop Virtualization Image Creator<inject key="DeploymentID" enableCopy="false"/>** (2), and then select **Next (3)**.
+1. On the **Role** tab of the **Add role assignment** page, ensure that the **Job function roles** tab is selected, in the search textbox, Specify **Desktop Virtualization Image Creator <inject key="DeploymentID" enableCopy="false"/> (1)** , in the list of results, select **Desktop Virtualization Image Creator<inject key="DeploymentID" enableCopy="false"/> (2)**, and then select **Next (3)**.
 
     ![](Media/7-8.png)
 
-1. On the **Members** tab of the **Add role assignment** page, select the **Managed identity (1)** option, click **+ Select members (2)**, in the **Select managed identities** pane, in the **Managed identity** drop-down list, select **User-assigned managed identity**, in the list of user-assigned managed identities, select **az140**-<inject key="DeploymentID" enableCopy="false"/>-**uami (3)**  and then click **Select (4)**.
+1. On the **Members** tab of the **Add role assignment** page, select the **Managed identity (1)** option, click **+ Select members (2)**, in the **Select managed identities** pane, in the **Managed identity** drop-down list, select **User-assigned managed identity**, in the list of user-assigned managed identities, select **az140-<inject key="DeploymentID" enableCopy="false"/>-uami (3)**  and then click **Select (5)**.
 
     ![](Media/7-9.png)
 
@@ -181,7 +195,7 @@ In this task, you assign the custom RBAC role to the managed identity so it has 
 
 In this task, you set up an Azure Compute Gallery and create an image definition to store and version your custom AVD images.
 
-1. In the Azure portal, search for and select **Azure compute galleries** and, on the **Azure compute galleries** page, select **+ Create**.
+1. In the Azure portal, search for **compute gallery (1)** and select **Azure compute galleries (2)** and, on the **Azure compute galleries** page, select **+ Create**.
 
     ![](Media/7-12.png)
 
@@ -193,7 +207,7 @@ In this task, you set up an Azure Compute Gallery and create an image definition
     |---|---|
     |Subscription|Choose the default subscription|
     |Resource group|Select **az140-15b-RG (1)** from the drop-down|
-    |Name|Specify **az14015computegallery** (2)|
+    |Name|Specify **az14015computegallery (2)**|
     |Region|**<inject key="Region" enableCopy="false" />**|
 
     ![](Media/7-14.png)
@@ -219,13 +233,13 @@ In this task, you set up an Azure Compute Gallery and create an image definition
     |Setting|Value|
     |---|---|
     |Region|**<inject key="Region" enableCopy="false" />**|
-    |VM image definition name|Specify **az14015imagedefinition** (1)|
-    |OS type|**Windows** (2)|
-    |Security type|**Trusted launch supported** (3)|
-    |OS state|**Generalized** (4)|
-    |Publisher|Specify **MicrosoftWindowsDesktop** (5)|
-    |Offer|Specify **Windows-11** (6)|
-    |SKU|Specify **win11-23h2-avd-m365** (7)|
+    |VM image definition name|Specify **az14015imagedefinition (1)**|
+    |OS type|**Windows (2)**|
+    |Security type|**Trusted launch supported (3)**|
+    |OS state|**Generalized (4)**|
+    |Publisher|Specify **MicrosoftWindowsDesktop (5)**|
+    |Offer|Specify **Windows-11 (6)**|
+    |SKU|Specify **win11-23h2-avd-m365 (7)**|
 
     ![](Media/7-18.png)
 
@@ -243,11 +257,18 @@ In this task, you set up an Azure Compute Gallery and create an image definition
 
     > **Note:** Wait for the provisioning process to complete. This typically takes less than 1 minute.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+<validation step="e7c1bc50-bd52-435b-9d8d-aa90d86159c4" />
+
 ### Task 6: Create a custom image template
 
 In this task, you create a custom image template that defines the source image, configuration scripts, build settings, and distribution targets for your AVD custom image.
 
-1. In the Azure portal, search for and select **Azure Virtual Desktop**, on the **Azure Virtual Desktop** page, in the **Manage** section of the vertical navigation menu, select **Custom image templates** and, on the **Azure Virtual Desktop \| Custom image templates** page, select **+ Add custom image template**. 
+1. In the Azure portal, search for and select **Azure Virtual Desktop**, on the **Azure Virtual Desktop** page, in the **Manage** section of the vertical navigation menu, select **Custom image templates (1)** and, on the **Azure Virtual Desktop \| Custom image templates** page, select **+ Add custom image template (2)**. 
 
     ![](Media/7-20.png)
 
@@ -255,12 +276,12 @@ In this task, you create a custom image template that defines the source image, 
 
     |Setting|Value|
     |---|---|
-    |Template name|Specify **az140-15b-imagetemplate** (1)|
-    |Import from existing template|**No** (2)|
+    |Template name|Specify **az140-15b-imagetemplate (1)**|
+    |Import from existing template|**No (2)**|
     |Subscription|Choose the default subscription|
-    |Resource group|Select **az140-15b-RG** (2)|
-    |Location|**<inject key="Region" enableCopy="false" />** (3)|
-    |Managed identity|**az140**-<inject key="DeploymentID" enableCopy="false"/>-**uami**(4)|
+    |Resource group|Select **az140-15b-RG (2)**|
+    |Location|**<inject key="Region" enableCopy="false" /> (3)**|
+    |Managed identity|**az140-<inject key="DeploymentID" enableCopy="false"/>-**uami (4)**|
 
     ![](Media/7-21.png)    
 
@@ -268,8 +289,8 @@ In this task, you create a custom image template that defines the source image, 
 
     |Setting|Value|
     |---|---|
-    |Source type|**Platform image (marketplace)** (1)|
-    |Select image|**Windows 11 Specifyprise multi-session, Version 23H2 + Microsoft 365 Apps** (2)|
+    |Source type|**Platform image (marketplace) (1)**|
+    |Select image|**Windows 11 Specifyprise multi-session, Version 23H2 + Microsoft 365 Apps (2)**|
 
     ![](Media/7-22.png)  
 
@@ -277,14 +298,14 @@ In this task, you create a custom image template that defines the source image, 
 
     |Setting|Value|
     |---|---|
-    |Azure Compute Gallery|enabled (1)|
-    |Gallery name|**az14015computegallery** (2)|
-    |Gallery image definition|**az14015imagedefinition** (3)|
-    |Gallery image version|Specify **1.0.0** (4)|
-    |Run output name|Specify **az140-15-image-1.0.0**(5)|
-    |Replication regions|**<inject key="Region" enableCopy="false" />** (6)|
-    |Exclude from latest|**No** (7)|
-    |Storage account type|**Standard_LRS** (8)|
+    |Azure Compute Gallery|enabled **(1)**|
+    |Gallery name|**az14015computegallery (2)**|
+    |Gallery image definition|**az14015imagedefinition (3)**|
+    |Gallery image version|Specify **1.0.0 (4)**|
+    |Run output name|Specify **az140-15-image-1.0.0 (5)**|
+    |Replication regions|**<inject key="Region" enableCopy="false" /> (6)**|
+    |Exclude from latest|**No (7)**|
+    |Storage account type|**Standard_LRS (8)**|
 
     ![](Media/7-23.png)  
 
@@ -294,10 +315,10 @@ In this task, you create a custom image template that defines the source image, 
 
     |Setting|Value|
     |---|---|
-    |Build timeout|**120** (1)|
-    |Build VM size|Click on **See all sizes** (2) oprion and select **Standard_DC2s_v3** (3) from the list|
-    |OS disk size (GB)|**127** (4)|
-    |Staging group|**az140-15c-RG** (5)|
+    |Build timeout|**120 (1)**|
+    |Build VM size|Click on **See all sizes (2)** option and select **Standard_DC2s_v3 (3)** from the list|
+    |OS disk size (GB)|**127 (4)**|
+    |Staging group|**az140-15c-RG (5)**|
 
     ![](Media/7-24.png)
   
@@ -311,13 +332,13 @@ In this task, you create a custom image template that defines the source image, 
 
 1. In the **Select built-in scripts** pane, review the available options grouped into operating system specific scripts, Azure Virtual Desktop scripts, MSIX App Attach scripts, Application scripts, and Windows Updates-related scripts, and then select the following entries:
 
-   - **Time zone redirection** (2): allows the client to use its time zone within a session on session hosts
-   - **Disable Storage Sense** (3): prevents Storage Sense from negatively affecting session hosts by falsely detecting low free disk space conditions
-   - **Enable screen capture protection** (4) with **Block Screen capture on client and server**: blocks or hides remote content in screenshots and screen sharing
+   - **Time zone redirection (2)**: allows the client to use its time zone within a session on session hosts
+   - **Disable Storage Sense (3)**: prevents Storage Sense from negatively affecting session hosts by falsely detecting low free disk space conditions
+   - **Enable screen capture protection (4)** with **Block Screen capture on client and server**: blocks or hides remote content in screenshots and screen sharing
 
 1. In the **Select built-in scripts** pane, select **Save (5)**.
 
-    > **Note**: You have the option of adding your own scripts. For examples, consider referencing the built-in scripts, such as [Time zone redirection](https://raw.githubusercontent.com/Azure/RDS-Templates/master/CustomImageTemplateScripts/CustomImageTemplateScripts_2024-03-27/TimezoneRedirection.ps1), [Disable Storage Sense](https://raw.githubusercontent.com/Azure/RDS-Templates/master/CustomImageTemplateScripts/CustomImageTemplateScripts_2024-03-27/DisableStorageSense.ps1), or [Enable screen capture protection](https://raw.githubusercontent.com/Azure/RDS-Templates/master/CustomImageTemplateScripts/CustomImageTemplateScripts_2024-03-27/ScreenCaptureProtection.ps1).
+    > **Note:** You have the option of adding your own scripts. For examples, consider referencing the built-in scripts, such as [Time zone redirection](https://raw.githubusercontent.com/Azure/RDS-Templates/master/CustomImageTemplateScripts/CustomImageTemplateScripts_2024-03-27/TimezoneRedirection.ps1), [Disable Storage Sense](https://raw.githubusercontent.com/Azure/RDS-Templates/master/CustomImageTemplateScripts/CustomImageTemplateScripts_2024-03-27/DisableStorageSense.ps1), or [Enable screen capture protection](https://raw.githubusercontent.com/Azure/RDS-Templates/master/CustomImageTemplateScripts/CustomImageTemplateScripts_2024-03-27/ScreenCaptureProtection.ps1).
 
 1. Back on the **Customization** tab of the **Create custom image template** page, select **Next (6)**.
 1. On the **Tags** tab of the **Create custom image template** page, select **Next**.
@@ -327,6 +348,13 @@ In this task, you create a custom image template that defines the source image, 
     ![](Media/7-26.png)
 
     > **Note:** Wait for the template to be created. This might take a few minutes. Refresh the **Azure Virtual Desktop \| Custom image templates** page to review the template status.
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+<validation step="381db74c-9895-43ac-b853-a756fac1a8ab" />
 
 ### Task 7: Build a custom image
 
@@ -375,8 +403,8 @@ In this task, you deploy new Azure Virtual Desktop session hosts using your cust
     |Setting|Value|
     |---|---|
     |Subscription|Choose the default subscription|
-    |Resource group|Select **Create new (1)** and specify the resource group name as **az140-15d-RG** (2)|
-    |Virtual network name|Specify **az140-vnet15d** (3)|
+    |Resource group|Select **Create new (1)** and specify the resource group name as **az140-15d-RG (2)**|
+    |Virtual network name|Specify **az140-vnet15d (3)**|
     |Region|**<inject key="Region" enableCopy="false" />**|
 
     ![](Media/7-28.png)
@@ -387,16 +415,16 @@ In this task, you deploy new Azure Virtual Desktop session hosts using your cust
 
     |Setting|Value|
     |---|---|
-    |IP address space|**10.30.0.0/16**|
+    |IP address space |**10.30.0.0/16**|
 
     ![](Media/7-29.png)
 
-1. Select the edit (pencil) icon next to the **default** subnet entry, in the **Edit** pane, specify the following settings (leave others with their existing values) and select **Save**:
+1. Select the edit (pencil) icon next to the **default** subnet entry, in the **Edit** pane, specify the following settings (leave others with their existing values) and select **Save (3)**:
 
     |Setting|Value|
     |---|---|
-    |Name|**hp1-Subnet**|
-    |Starting address|**10.30.1.0**|
+    |Name|**hp1-Subnet (1)**|
+    |Starting address|**10.30.1.0 (2)**|
     |Enable private subnet (no default outbound access)|Disabled|
 
     ![](Media/7-30.png)
@@ -407,9 +435,9 @@ In this task, you deploy new Azure Virtual Desktop session hosts using your cust
 
     ![](Media/7-32.png)
 
-    > **Note**: Wait for the provisioning process to complete. This typically takes less than 1 minute.
+    > **Note:** Wait for the provisioning process to complete. This typically takes less than 1 minute.
 
-1. In the Azure portal, search for and select **Azure Virtual Desktop**, on the **Azure Virtual Desktop** page, in the **Manage** section of the vertical navigation menu, select **Host pools** and, on the **Azure Virtual Desktop \| Host pools** page, select **+ Create**. 
+1. In the Azure portal, search for and select **Azure Virtual Desktop**, on the **Azure Virtual Desktop** page, in the **Manage (1)** section of the vertical navigation menu, select **Host pools (2)** and, on the **Azure Virtual Desktop \| Host pools** page, select **+ Create (3)**. 
 
     ![](Media/7-33.png)
 
@@ -418,32 +446,30 @@ In this task, you deploy new Azure Virtual Desktop session hosts using your cust
     |Setting|Value|
     |---|---|
     |Subscription|Choose the default subscription|
-    |Resource group|Select **az140-15d-RG** (1)|
-    |Host pool name|Specify **az140-15-hp1** (2)|
-    |Location|**<inject key="Region" enableCopy="false" />** (3)|
-    |Validation environment|**No** (4)|
-    |Preferred app group type|**Desktop** (5)|
-    |Host pool type|**Pooled** (6)|
-    |Create Session Host Configuration|**No** (7)|
-    |Load balancing algorithm|**Breadth-first** (8)|
+    |Resource group|Select **az140-15d-RG (1)**|
+    |Host pool name|Specify **az140-15-hp1 (2)**|
+    |Location|**<inject key="Region" enableCopy="false" /> (3)**|
+    |Validation environment|**No (4)**|
+    |Preferred app group type|**Desktop (5)**|
+    |Host pool type|**Pooled (6)**|
+    |Create Session Host Configuration|**No (7)**|
+    |Load balancing algorithm|**Breadth-first (8)**|
 
     ![](Media/7-34.png)
 
-    > **Note**: When using the Breadth-first load balancing algorithm, the max session limit parameter is optional.
+    > **Note:** When using the Breadth-first load balancing algorithm, the max session limit parameter is optional.
 
 1. On the **Session hosts** tab of the **Create a host pool** page, specify the following settings (leave other settings with their default values):
 
-    > **Note**: When setting the **Name prefix** value, switch to the Resources tab on the right side of the lab session window and identify the string of characters between *User1-* and the *@* character. Use this string to replace the *random* placeholder.
-
     |Setting|Value|
     |---|---|
-    |Add virtual machines|**Yes** (1)|
-    |Resource group|**Defaulted to same as host pool** (2)|
-    |Name prefix|**sh0<inject key="DeploymentID" enableCopy="false"/>** (3)|
-    |Virtual machine type|**Azure virtual machine** (4)|
-    |Virtual machine location|**<inject key="Region" enableCopy="false" />** (5)|
-    |Availability options|**No infrastructure redundancy required** (6)|
-    |Security type|**Trusted launch virtual machines** (7)|
+    |Add virtual machines|**Yes (1)**|
+    |Resource group|**Defaulted to same as host pool (2)**|
+    |Name prefix|**sh0<inject key="DeploymentID" enableCopy="false"/> (3)**|
+    |Virtual machine type|**Azure virtual machine (4)**|
+    |Virtual machine location|**<inject key="Region" enableCopy="false" /> (5)**|
+    |Availability options|**No infrastructure redundancy required (6)**|
+    |Security type|**Trusted launch virtual machines (7)**|
 
     ![](Media/7-35.png)
 
@@ -457,32 +483,32 @@ In this task, you deploy new Azure Virtual Desktop session hosts using your cust
 
     |Setting|Value|
     |---|---|
-    |Virtual machine size|**Standard DC2s_v3** (10)|
-    |Number of VMs|**1** (11)|
-    |OS disk type|**Standard SSD** (12)|
+    |Virtual machine size|**Standard DC2s_v3 (10)**|
+    |Number of VMs|**1 (11)**|
+    |OS disk type|**Standard SSD (12)**|
     |OS disk size|**Default size**|
-    |Boot Diagnostics|**Enable with managed storage account (recommended)** (13)|
-    |Virtual network|Select **az140-vnet15d** (15)|
-    |Subnet|**hp1-Subnet** (16)|
-    |Network security group|**Basic** (17)|
-    |Public inbound ports|**No** (18)|
-    |Select which directory you would like to join|**Microsoft Entra ID** (19)|
-    |Enroll VM with Intune|**No** (20)|
-    |User name|**Student** (21)|
-    |Password|Any sufficiently complex string of characters that will be used as the password for the built-in administrator account|
-    |Confirm password|The same string of characters you specified previously|
+    |Boot Diagnostics|**Enable with managed storage account (recommended) (13)**|
+    |Virtual network|Select **az140-vnet15d (15)**|
+    |Subnet|**hp1-Subnet (16)**|
+    |Network security group|**Basic (17)**|
+    |Public inbound ports|**No (18)**|
+    |Select which directory you would like to join|**Microsoft Entra ID (19)**|
+    |Enroll VM with Intune|**No (20)**|
+    |User name|**Student (21)**|
+    |Password|**Password.1!! (22)**|
+    |Confirm password|**Password.1!! (23)**|
 
     ![](Media/7-37.png)
 
     ![](Media/7-38.png)
 
-    > **Note**: The password should be at least 12 characters in length and consist of a combination of lower-case characters, upper-case characters, digits, and special characters. For details, refer to the information about [the password requirements when creating an Azure VM](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm-).
+    > **Note:** The password should be at least 12 characters in length and consist of a combination of lower-case characters, upper-case characters, digits, and special characters. For details, refer to the information about [the password requirements when creating an Azure VM](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm-).
 
-1. On the **Workspace** tab of the **Create a host pool** page, confirm the following setting and select **Review + create**:
+1. On the **Workspace** tab of the **Create a host pool** page, confirm the following setting and select **Review + create (2)**:
 
     |Setting|Value|
     |---|---|
-    |Register desktop app group|**No**|
+    |Register desktop app group|**No (1)**|
 
     ![](Media/7-39.png)
 
@@ -491,6 +517,13 @@ In this task, you deploy new Azure Virtual Desktop session hosts using your cust
     ![](Media/7-40.png)
 
     > **Note:** Wait for the deployment to complete. This might take about 10-15 minutes.
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+<validation step="d0e8fe70-f56c-45cc-92ea-289b93274e28" />
 
 ### Summary
 

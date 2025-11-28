@@ -1,6 +1,6 @@
 # Lab 04- Connect to session hosts (Entra ID)
 
-## Estimated Duration: 20 Minutes
+## Estimated Duration: 45 Minutes
 
 ## Overview
 
@@ -137,6 +137,8 @@ In this task, you’ll subscribe to the Azure Virtual Desktop workspace using tw
 1. When prompted to sign in, in the **Windows Security** dialog box, enter the password and click **Ok**.
 
    ![](Media/lab4-11-15.png)
+
+   > **Note:** Use the **AzurePassword** you copied from the AzureCreds file in the earlier step.
 
    > **Note:** Azure Virtual Desktop doesn't support signing in to Microsoft Entra ID with one user account, then signing in to Windows with a separate user account. Signing in with two different accounts at the same time can lead to users reconnecting to the wrong session host, incorrect or missing information in the Azure portal, and error messages appearing while using app attach or MSIX app attach.
 

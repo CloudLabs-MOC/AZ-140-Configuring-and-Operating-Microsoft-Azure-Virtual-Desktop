@@ -1,6 +1,6 @@
 # Lab 05- Implement and monitor autoscaling of session hosts
 
-## Estimated Duration: 45 Minutes
+## Estimated Duration: 60 Minutes
 
 ## Overview
 
@@ -224,6 +224,13 @@ In this task, you build a scaling plan with schedules and assign it to the host 
 
     > **Note:** Wait for autoscale configuration to complete. This typically takes just a few seconds.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+<validation step="913c1668-aa24-42a5-8661-96f96fc0190f" />
+
 ### Task 5: Evaluate the autoscaling functionality
 
 In this task, you simulate user load to observe how autoscale reacts scaling out additional session hosts when capacity is exceeded, then scaling them back in during ramp-down.
@@ -252,7 +259,7 @@ In this task, you simulate user load to observe how autoscale reacts scaling out
 
      ![](Media/lab5-11-18.png)
 
-1. On the lab VM, in the **Remote Desktop** client window, select **Subscribe** and, when prompted, sign in with the credentials of the `User2` Entra ID user account which you can locate on the **Resources** tab in the right pane of the lab interface window.
+1. On the lab VM, in the **Remote Desktop** client window, select **Subscribe** and, when prompted, sign in with the credentials of the `user2_avd` Entra ID user account which you can locate on the **Resources** tab in the right pane of the lab interface window.
 
      ![](Media/lab5-11-19.png)
 
@@ -262,7 +269,7 @@ In this task, you simulate user load to observe how autoscale reacts scaling out
 
      ![](Media/lab5-11-20.png)
 
-1. When prompted to sign in, in the **Windows Security** dialog box, enter the password of the Microsoft Entra user account (user2) you used to connect to the target Azure Virtual Desktop environment.
+1. When prompted to sign in, in the **Windows Security** dialog box, enter the password of the Microsoft Entra user account (user2_avd) you used to connect to the target Azure Virtual Desktop environment.
 
 1. Verify that a **Command Prompt** window appears shortly afterwards. 
 
@@ -334,7 +341,7 @@ In this task, you’ll disable autoscaling by unassigning the scaling plan from 
 
 1. In the **Unassign host pool** confirmation dialog, select **Unassign** to complete the action.
 
-     ![](Media/lab5-11-25.png)
+     ![](Media/lab5-11-30.png)
 
 ### Summary
 

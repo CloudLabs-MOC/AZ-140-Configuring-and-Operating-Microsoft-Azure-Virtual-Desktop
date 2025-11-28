@@ -1,6 +1,6 @@
 # Lab 02- Manage host pools and session hosts by using the Azure portal (Entra ID)
 
-## Estimated Duration: 30 Minutes
+## Estimated Duration: 50 Minutes
 
 ## Overview
 
@@ -78,8 +78,8 @@ In this task, you will deploy an additional session host to the existing Azure V
     |Select which directory you would like to join|**Microsoft Entra ID (16)**|
     |Enroll VM with Intune|**No (17)**|
     |User name|**Student (18)**|
-    |Password|The same password you used when deploying the session hosts in the lab *Deploy host pools and session hosts by using the Azure portal (Entra ID)* **(19)** 
-    |Confirm password|The same password you specified previously **(20)**|
+    |Password|**Password.1!! (19)**|
+    |Confirm password|**Password.1!! (20)**|
 
     ![](Media/lab2-11-6.png)
 
@@ -97,7 +97,7 @@ In this task, you will deploy an additional session host to the existing Azure V
 
 In this task, you will review and update key properties of the host pool, including load balancing behavior, session limits, and startup settings. You’ll adjust these configurations to optimize how session hosts are allocated and powered on.
 
-1. In the Azure portal, search for and select **Azure Virtual Desktop**, on the **Azure Virtual Desktop** page, in the **Manage** section of the vertical navigation menu, select **Host pools** and, on the **Azure Virtual Desktop \| Host pools** page, select **az140-21-hp1**.
+1. In the Azure portal, search for and select **Azure Virtual Desktop**, on the **Azure Virtual Desktop** page, in the **Manage** section of the vertical navigation menu, select **Host pools (1)** and, on the **Azure Virtual Desktop \| Host pools** page, select **az140-21-hp1 (2)**.
 
     ![](Media/lab2-11-1.png)
 

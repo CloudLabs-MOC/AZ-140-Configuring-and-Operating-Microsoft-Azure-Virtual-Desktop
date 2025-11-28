@@ -1,6 +1,6 @@
 # Lab 03- Implement monitoring by using Azure Virtual Desktop Insights
 
-## Estimated Duration: 25 Minutes
+## Estimated Duration: 55 Minutes
 
 ## Overview
 
@@ -67,6 +67,13 @@ In this task, you will create a Log Analytics workspace that will store diagnost
 
      > **Note:** Next, you need to enable data collection in the newly provisioned Log Analytics workspace of diagnostics from the Azure Virtual Desktop environment, performance counters from the session hosts, and Windows Event Logs from the Azure Virtual Desktop session hosts.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+<validation step="5dc47e14-96f4-479c-bab7-939345d4fbdd" />
+
 ### Task 3: Set up the Virtual Desktop Insights configuration workbook
 
 In this task, you will configure the Virtual Desktop Insights workbook by enabling diagnostic settings, creating a data collection rule, and applying it to your host pool and workspace. You’ll also install the Azure Monitor extension so AVD can start sending monitoring data into Log Analytics.
@@ -75,7 +82,7 @@ In this task, you will configure the Virtual Desktop Insights workbook by enabli
 
 1. In the Azure portal, search for and select **Azure Virtual Desktop** and, on the **Azure Virtual Desktop** page, in the vertical navigation menu, in the **Monitoring (1)** section, select **Workbooks (2)**.
 
-1. In the list of **Windows Virtual Desktop** workbooks, in the **Windows Virtual Desktop** section, select the **Insights (3)** workbook.
+1. In the list of **Windows Virtual Desktop** workbooks, in the **Azure Virtual Desktop** section, select the **Insights (3)** workbook.
 
      ![](Media/lab3-11-6.png)
 
