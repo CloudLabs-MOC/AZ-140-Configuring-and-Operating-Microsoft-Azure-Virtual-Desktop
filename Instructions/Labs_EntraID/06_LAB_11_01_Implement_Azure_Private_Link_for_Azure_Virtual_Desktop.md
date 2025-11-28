@@ -2,21 +2,21 @@
 
 ## Estimated Duration: 60 Minutes
 
-## Lab scenario
+## Overview
 
-You have an existing Azure Virtual Desktop environment. You need to implement connection to the environment by using Azure Private Link. 
+In this lab, you’ll use Azure Private Link to secure all Azure Virtual Desktop traffic by routing feed discovery, feed downloads, and session connections through private endpoints. You’ll create dedicated subnets, configure private endpoints for each AVD workflow, and update DNS integration for private resolution. Finally, you’ll validate private-only access from a VM inside the VNet and re-enable public access after testing.
 
 **Info**  
 Azure Virtual Desktop includes three workflows that can be configured using Private Endpoints. Each workflow corresponds to a specific resource type:
 
-- **Initial feed discovery** – Enables RDP clients to discover all workspaces assigned to a user.  
+- **Initial feed discovery** - Enables RDP clients to discover all workspaces assigned to a user.  
   To implement this workflow using Private Link, create **one** private endpoint to the *global* sub-resource in **any** workspace within your deployment.  
   **Note:** Only **one** private endpoint for initial feed discovery is allowed per Azure Virtual Desktop deployment.
 
-- **Feed download** – Allows RDP clients to download connection details for workspaces containing the user’s application groups.  
+- **Feed download** - Allows RDP clients to download connection details for workspaces containing the user’s application groups.  
   To implement this workflow using Private Link, create a private endpoint to the *feed* sub-resource for **each workspace** that should be accessible privately.
 
-- **Connections to host pools** – Enables RDP clients and session hosts to connect to a host pool.  
+- **Connections to host pools** - Enables RDP clients and session hosts to connect to a host pool.  
   To implement this workflow using Private Link, create a private endpoint to the *connection* sub-resource for **each host pool** that needs private access.
 
 **Info**  
@@ -28,7 +28,7 @@ These workflows can be combined using any of the following routing arrangements:
 - All components use **public routes**, without using Private Link.
 
 **Info**  
-In this lab, you will implement **the first arrangement**, where all components—initial feed discovery, feed download, and remote session connections—are fully configured to use **private routes** via Private Link.
+In this lab, you will implement **the first arrangement**, where all components initial feed discovery, feed download, and remote session connections are fully configured to use **private routes** via Private Link.
 
 ## Lab Objectives
   
@@ -50,17 +50,21 @@ In this lab, you will complete the following tasks:
 
 ### Task 1: Re-register the Azure Virtual Desktop resource provider
 
-> **Note**: Before you can use Private Link with Azure Virtual Desktop, you should re-register the **Microsoft.DesktopVirtualization** resource provider. 
+In this task, you re-register the AVD resource provider so your environment can support Private Link features.
+
+> **Note:** Before you can use Private Link with Azure Virtual Desktop, you should re-register the **Microsoft.DesktopVirtualization** resource provider. 
 
 1. In the Azure portal, search for and select **Subscriptions**, on the **Subscriptions** page, select the Azure subscription you are using in this lab, and, in the vertical navigation menu, in the **Settings** section, select **Resource providers**.
 
 1. On the **Resource providers** tab, in the search text box, enter **Microsoft.DesktopVirtualization**, in the list of results, select the small circle to the left of the **Microsoft.DesktopVirtualization** entry, and then select **Re-register**.
 
-    > **Note**: Wait for the re-registration process to complete. This typically takes less than 1 minute.
+    > **Note:** Wait for the re-registration process to complete. This typically takes less than 1 minute.
 
-#### Task 2: Create an Azure virtual network subnet
+### Task 2: Create an Azure virtual network subnet
 
-> **Note**: You could use an existing subnet of an Azure virtual network to implement private endpoints in the lab scenario, but it is a common practice to use a dedicated subnet for this purpose.
+In this task, you will create a dedicated subnet in the Azure virtual network to support the Private Endpoints used by Azure Virtual Desktop.
+
+> **Note:** You could use an existing subnet of an Azure virtual network to implement private endpoints in the lab scenario, but it is a common practice to use a dedicated subnet for this purpose.
 
 1. In the Azure portal, search for and select **Virtual networks** and, on the **Virtual networks** page, select **az140-vnet11e**.
 
@@ -80,7 +84,9 @@ In this lab, you will complete the following tasks:
 
     ![](Media/7-43.png)
 
-#### Task 3: Implement a private endpoint for connections to a host pool
+### Task 3: Implement a private endpoint for connections to a host pool
+
+In this task, you will create a private endpoint for the host pool, configure networking and DNS integration, and finalize the setup required for secure Private Link access to Azure Virtual Desktop
 
 1. From the lab computer, in the web browser displaying the Azure portal, search for and select **Azure Virtual Desktop**, on the **Azure Virtual Desktop** page, in the **Manage** section of the vertical navigation menu, select **Host pools** and, on the **Azure Virtual Desktop \| Host pools** page, select **az140-21-hp1**. 
 
@@ -141,11 +147,13 @@ In this lab, you will complete the following tasks:
 
     ![](Media/7-49.png)
 
-    > **Note**: Wait for the deployment to complete. The deployment might take about 3 minutes.
+    > **Note:** Wait for the deployment to complete. The deployment might take about 3 minutes.
 
-    > **Note**: You would need to create a private endpoint for the connection sub-resource for each host pool you want to use with Private Link.
+    > **Note:** You would need to create a private endpoint for the connection sub-resource for each host pool you want to use with Private Link.
 
 ### Task 4: Implement a private endpoint for feed download
+
+In this task, you will create a private endpoint for feed download on the workspace, configuring networking and DNS integration to enable secure Private Link access for Azure Virtual Desktop feeds.
 
 1. In the Azure portal, search for and select **Azure Virtual Desktop** and, on the **Azure Virtual Desktop** page, select **Workspaces** under **Manage (1)** section.
 
@@ -214,6 +222,8 @@ In this lab, you will complete the following tasks:
 
 ### Task 5: Implement a private endpoint for initial feed discovery
 
+In this task, you will create a private endpoint for initial feed discovery, set up required DNS integration, and restart session hosts so the new Private Link configuration takes effect.
+
 1. In the Azure portal, search for and select **Azure Virtual Desktop** and, on the **Azure Virtual Desktop** page, select **Workspaces**.
 
 1. On the **Azure Virtual Desktop \| Workspaces** page, select **az140-21-ws1**.
@@ -223,6 +233,7 @@ In this lab, you will complete the following tasks:
     ![](Media/7-57.png)
 
 1. On the **az140-21-ws1 \| Networking** page, select the **Private endpoint connections (3)** tab and then, select **+ New private endpoint (4)**.
+
 1. On the **Basics** tab of the **Create a private endpoint** page, specify the following settings and select **Next : Resource > (5)**:
 
     |Setting|Value|
@@ -267,6 +278,7 @@ In this lab, you will complete the following tasks:
     > **Note**: This step will will result in creation of a private DNS zone named **privatelink-global.wvd.microsoft.com**.
 
 1. On the **Tags** tab of the **Create a private endpoint** page, select **Next : Review + create**.
+
 1. On the **Review + create** tab the **Create a private endpoint** page, select **Create**.
 
     ![](Media/7-61.png)
@@ -285,11 +297,13 @@ In this lab, you will complete the following tasks:
 
 1. In the list of session hosts, ** (3)** to the left of each session host and then select **Restart (4)** in the toolbar.
 
-    > **Note**: Wait until all session hosts are in the **Running** state. 
+    > **Note:** Wait until all session hosts are in the **Running** state. 
 
-#### Task 6: Validate the private endpoint functionality
+### Task 6: Validate the private endpoint functionality
 
-> **Note**: By default, connectivity to Azure Virtual Desktop workspaces and host pools is allowed from public networks. You will start by changing the default settings and enforcing private access.
+In this task, you will disable public access for the workspace and host pool, then set up a test VM inside the private network to verify that Azure Virtual Desktop access works only through the private endpoints. You’ll confirm connectivity by subscribing to the feed from the VM and launching a RemoteApp session
+
+> **Note:** By default, connectivity to Azure Virtual Desktop workspaces and host pools is allowed from public networks. You will start by changing the default settings and enforcing private access.
 
 1. From the lab computer, in the web browser displaying the Azure portal, search for and select **Azure Virtual Desktop** and, on the **Azure Virtual Desktop** page, select **Workspaces**.
 
@@ -311,9 +325,10 @@ In this lab, you will complete the following tasks:
 
 1. On the **az140-21-hp1 \| Networking** page, on the **Public access (3)** tab, select the option **Disable public access and use private access (4)**, and then select **Save (5)**.
 
-    > **Note**: To validate the private endpoint functionality, an RDP client needs to be connected to a network that has private connectivity to the Azure virtual network containing subnet hosting the private endpoints you created earlier in this lab. To simulate this scenario, you will create another subnet in the same virtual network used to create private endpoints and deploy an Azure VM running Windows 11 into that subnet.
+    > **Note:** To validate the private endpoint functionality, an RDP client needs to be connected to a network that has private connectivity to the Azure virtual network containing subnet hosting the private endpoints you created earlier in this lab. To simulate this scenario, you will create another subnet in the same virtual network used to create private endpoints and deploy an Azure VM running Windows 11 into that subnet.
 
 1. In the Azure portal, search for and select **Virtual networks** and, on the **Virtual networks** page, select **az140-vnet11e**.
+
 1. On the **az140-vnet11e** page, in the **Settings** section of the vertical navigation menu, select **Subnets**.
 
 1. On the **az140-vnet11e \| Subnets** page, select **+ Subnet**.
@@ -354,7 +369,7 @@ In this lab, you will complete the following tasks:
 
     ![](Media/7-69.png)    
 
-    > **Note**: The password should be at least 12 characters in length and consist of a combination of lower-case characters, upper-case characters, digits, and special characters. For details, refer to the information about [the password requirements when creating an Azure VM](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm-).
+    > **Note:** The password should be at least 12 characters in length and consist of a combination of lower-case characters, upper-case characters, digits, and special characters. For details, refer to the information about [the password requirements when creating an Azure VM](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm-).
 
 1. On the **Disks** tab of the **Create a virtual machine** page, set the **OS disk type** to **Standard HDD (locally-redundant storage) (1)** and select **Next : Networking > (2)**.
 
@@ -370,8 +385,11 @@ In this lab, you will complete the following tasks:
     |NIC network security group|**Advanced**|
 
 1. On the **Networking** tab of the **Create a virtual machine** page, next to the **Configure network security group** drop-down list, select **Create new**.
+
 1. On the **Create network security group** page, delete the pre-created inbound rule **1000: default-allow-rdp** and then select **+ Add an inbound rule**.
+
 1. In the **Add inbound security rule** pane, in the **Source** drop-down list, select **My IP address** to identify the public IP address representing your connection to the internet.
+
 1. In the **Add inbound security rule** pane, specify the following settings (leave other settings with their default values), and then select **Add**:
 
     |Setting|Value|
@@ -439,17 +457,23 @@ In this lab, you will complete the following tasks:
 
 1. Within the Remote Desktop session to **az140-111e-vm0**, in the **Remote Desktop** client window, select **Subscribe** and, when prompted, sign in with the credentials of the `User2` Entra ID user account which you can locate on the **Resources** tab in the right pane of the lab interface window.
 
-   > **Note**: Select the user account which is the member of the Entra group with the **AVD-RemoteApp** prefix.
+   > **Note:** Select the user account which is the member of the Entra group with the **AVD-RemoteApp** prefix.
 
 1. Ensure that the **Remote Desktop** page displays four icons, including Command Prompt, Microsoft Word, Microsoft Excel, Microsoft PowerPoint. 
+
 1. Double-click the Command Prompt icon. 
+
 1. When prompted to sign in, in the **Windows Security** dialog box, enter the password of the same Microsoft Entra user account you used to connect to the target Azure Virtual Desktop environment.
+
 1. Verify that a **Command Prompt** window appears shortly afterwards. 
+
 1. At the Command Prompt, type **logoff** and press the **Enter** key to log off from the current Remote App session.
 
-   > **Note**: Optionally, you might consider attempting to subscribe to the feed and connect to The Azure Virtual Desktop workspace from the lab computer to validate that this connection will fail. 
+   > **Note:** Optionally, you might consider attempting to subscribe to the feed and connect to The Azure Virtual Desktop workspace from the lab computer to validate that this connection will fail. 
 
-#### Task 7: Allow public network access to a host pool and workspace
+### Task 7: Allow public network access to a host pool and workspace
+
+In this task, you will re-enable public network access on both the workspace and host pool to restore connectivity from any network.
 
 1. From the lab computer, in the web browser displaying the Azure portal, search for and select **Azure Virtual Desktop** and, on the **Azure Virtual Desktop** page, select **Workspaces**.
 
@@ -466,6 +490,8 @@ In this lab, you will complete the following tasks:
 1. On the **az140-21-hp1 \| Networking** page, on the **Public access** tab, select the option **Enable public access from all networks**, and then select **Save**.
 
 ### Summary
+
+In this lab, you secured Azure Virtual Desktop by routing all traffic feed discovery, feed downloads, and session connections through Private Link. You created dedicated subnets, configured private endpoints for each workflow, and integrated the necessary private DNS zones. Finally, you validated access using a VM inside the VNet and restored public access after testing.
 
 **You have successfully completed the lab. Click on Next >>**
 
