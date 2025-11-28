@@ -1,6 +1,6 @@
 # Lab 04- Connect to session hosts (Entra ID)
 
-## Estimated Duration: 45 Minutes
+## Estimated Duration: 30 Minutes
 
 ## Overview
 
@@ -92,7 +92,11 @@ In this task, you’ll subscribe to the Azure Virtual Desktop workspace using tw
 
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
+     ![](Media/odl-sigin.png)
+
    - **Temporary Access Pass:** <inject key="AzureAdUserPassword"></inject>
+
+      ![](Media/odl-sigin2.png)
 
      > **Note:** Select the user account which is the member of the Entra group with the **AVD-DAG** prefix.
 
@@ -166,9 +170,17 @@ In this task, you’ll subscribe to the Azure Virtual Desktop workspace using tw
 
    ![](Media/lab4-11-20.png)
 
-   > **Note:** If the **Update your password** prompt appears, create a new password, record it in a Notepad file for later use, and then select **Sign in** to continue.  
+   - **Email/Username:** <inject key="User 01 UPN" enableCopy="false"/>
 
-   > **Note:** Select the user account which is the member of the Entra group with the **AVD-RemoteApp** prefix.
+      ![](Media/21.png)
+
+   - **Password:** <inject key="User 01 Password" enableCopy="false"/>
+
+     ![](Media/22.png)
+
+     > **Note:** If the **Update your password** prompt appears, create a new password, record it in a Notepad file for later use, and then select **Sign in** to continue.  
+
+     > **Note:** Select the user account which is the member of the Entra group with the **AVD-RemoteApp** prefix.
 
 1. Ensure that the **Remote Desktop** page displays four icons, including `Command Prompt, Microsoft Word, Microsoft Excel, Microsoft PowerPoint`. 
 
@@ -184,7 +196,11 @@ In this task, you’ll subscribe to the Azure Virtual Desktop workspace using tw
 
     ![](Media/lab4-11-22.png)
 
-    > **Note:** If you updated the password in the earlier **Update your password** prompt, use the new password here.
+     - **Email/Username:** <inject key="User 01 UPN" enableCopy="false"/>
+
+     - **Password:** <inject key="User 01 Password" enableCopy="false"/>
+
+       > **Note:** If you updated the password in the earlier **Update your password** prompt, use the new password here to sigin.
 
 1. Verify that a **Command Prompt** window appears shortly afterwards. 
 

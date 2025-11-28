@@ -40,6 +40,7 @@ This architecture flow demonstrates how an end-to-end Azure Virtual Desktop envi
 
 ## Architecture Diagram
 
+![](../Labs_EntraID/Media/AZ-140-arch.png) 
 
 ## Explanation of Components
 
@@ -71,7 +72,7 @@ Welcome to your AZ-140: Configuring and Operating Microsoft Azure Virtual Deskto
 
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![](../Labs_EntraID/Media/lab1-11-g1.png) 
+![](../Labs_EntraID/Media/lab1-11-g0.png) 
 
 ## Lab Guide Zoom In/Zoom Out
 

@@ -1,6 +1,6 @@
 # Lab 01 - Deploy host pools and session hosts by using the Azure portal (Entra ID)
 
-## Estimated Duration: 75 Minutes
+## Estimated Duration: 60 Minutes
 
 ## Overview
 

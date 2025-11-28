@@ -1,6 +1,6 @@
 # Lab 07- Create custom session host images by using image templates
 
-## Estimated Duration: 105 Minutes
+## Estimated Duration: 90 Minutes
 
 ## Overview
 

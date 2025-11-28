@@ -1,6 +1,6 @@
 # Lab 05- Implement and monitor autoscaling of session hosts
 
-## Estimated Duration: 60 Minutes
+## Estimated Duration: 45 Minutes
 
 ## Overview
 
@@ -263,6 +263,14 @@ In this task, you simulate user load to observe how autoscale reacts scaling out
 
      ![](Media/lab5-11-19.png)
 
+     - **Email/Username:** <inject key="User 01 UPN" enableCopy="false"/>
+
+        ![](Media/21.png)
+
+     - **Password:** <inject key="User 01 Password" enableCopy="false"/>
+
+        ![](Media/22.png)
+
 1. Ensure that the **Remote Desktop** page displays four icons, including Microsoft Word, Microsoft Excel, Microsoft PowerPoint, and Command Prompt. 
 
 1. Double-click the Command Prompt icon. 
@@ -270,6 +278,14 @@ In this task, you simulate user load to observe how autoscale reacts scaling out
      ![](Media/lab5-11-20.png)
 
 1. When prompted to sign in, in the **Windows Security** dialog box, enter the password of the Microsoft Entra user account (user2_avd) you used to connect to the target Azure Virtual Desktop environment.
+
+    ![](Media/lab4-11-22.png)
+
+     - **Email/Username:** <inject key="User 01 UPN" enableCopy="false"/>
+
+     - **Password:** <inject key="User 01 Password" enableCopy="false"/>
+
+       >**Note:** If you have updated password use that password
 
 1. Verify that a **Command Prompt** window appears shortly afterwards. 
 

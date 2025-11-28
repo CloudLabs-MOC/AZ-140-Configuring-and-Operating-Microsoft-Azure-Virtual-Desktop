@@ -1,6 +1,6 @@
 # Lab 06- Implement Azure Private Link for Azure Virtual Desktop
 
-## Estimated Duration: 90 Minutes
+## Estimated Duration: 60 Minutes
 
 ## Overview
 
@@ -502,6 +502,14 @@ In this task, you will disable public access for the workspace and host pool, th
 
     ![](Media/lab4-11-10.png)
 
+     - **Email/Username:** <inject key="User 01 UPN" enableCopy="false"/>
+
+        ![](Media/21.png)
+
+     - **Password:** <inject key="User 01 Password" enableCopy="false"/>
+
+       ![](Media/22.png)
+
     > **Note:** Select the user account which is the member of the Entra group with the **AVD-RemoteApp** prefix.
 
 1. Ensure that the **Remote Desktop** page displays four icons, including Command Prompt, Microsoft Word, Microsoft Excel, Microsoft PowerPoint. 
@@ -515,6 +523,10 @@ In this task, you will disable public access for the workspace and host pool, th
 1. When prompted to sign in, in the **Windows Security** dialog box, enter the password of the same Microsoft Entra user account you used to connect to the target Azure Virtual Desktop environment and and click **OK**.
 
      ![](Media/lab4-11-22.png)
+
+      - **Email/Username:** <inject key="User 01 UPN" enableCopy="false"/>
+
+      - **Password:** <inject key="User 01 Password" enableCopy="false"/>
 
 1. Verify that a **Command Prompt** window appears shortly afterwards. 
 
