@@ -502,11 +502,11 @@ In this task, you will disable public access for the workspace and host pool, th
 
     ![](Media/lab4-11-10.png)
 
-     - **Email/Username:** <inject key="User 01 UPN" enableCopy="false"/>
+     - **Email/Username:** <inject key="User 01 UPN"></inject>
 
         ![](Media/21.png)
 
-     - **Password:** <inject key="User 01 Password" enableCopy="false"/>
+     - **Password:** <inject key="User 01 Password"></inject>
 
        ![](Media/22.png)
 
@@ -524,9 +524,9 @@ In this task, you will disable public access for the workspace and host pool, th
 
      ![](Media/lab4-11-22.png)
 
-      - **Email/Username:** <inject key="User 01 UPN" enableCopy="false"/>
+      - **Email/Username:** <inject key="User 01 UPN"></inject>
 
-      - **Password:** <inject key="User 01 Password" enableCopy="false"/>
+      - **Password:** <inject key="User 01 Password"></inject>
 
 1. Verify that a **Command Prompt** window appears shortly afterwards. 
 

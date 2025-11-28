@@ -263,11 +263,11 @@ In this task, you simulate user load to observe how autoscale reacts scaling out
 
      ![](Media/lab5-11-19.png)
 
-     - **Email/Username:** <inject key="User 01 UPN" enableCopy="false"/>
+     - **Email/Username:** <inject key="User 01 UPN"></inject>
 
         ![](Media/21.png)
 
-     - **Password:** <inject key="User 01 Password" enableCopy="false"/>
+     - **Password:** <inject key="User 01 Password"></inject>
 
         ![](Media/22.png)
 
@@ -281,9 +281,9 @@ In this task, you simulate user load to observe how autoscale reacts scaling out
 
     ![](Media/lab4-11-22.png)
 
-     - **Email/Username:** <inject key="User 01 UPN" enableCopy="false"/>
+     - **Email/Username:** <inject key="User 01 UPN"></inject>
 
-     - **Password:** <inject key="User 01 Password" enableCopy="false"/>
+     - **Password:** <inject key="User 01 Password"></inject>
 
        >**Note:** If you have updated password use that password
 

@@ -1,6 +1,6 @@
 # Getting Started with Your AZ-140: Configuring and Operating Microsoft Azure Virtual Desktop Workshop
 
-## Overall Estimated Duration: 8 hours
+## Overall Estimated Duration: 6 Hours
 
 ## Overview
 
