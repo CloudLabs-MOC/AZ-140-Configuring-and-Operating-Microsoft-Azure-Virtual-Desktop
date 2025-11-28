@@ -69,23 +69,23 @@ In this task, you will deploy an additional session host to the existing Azure V
     
     ![](Media/lab2-11-5.png)
 
-    >**Note:** In the Images section, click **See all images**, scroll down, click **Select (1)** under the Windows multi-session image tile, and choose **Windows 11 Enterprise multi-session, Version 23H2 + Microsoft 365 Apps (2)**.
+  1. In the Images section, click **See all images**, scroll down, click **Select (1)** under the Windows multi-session image tile, and choose **Windows 11 Enterprise multi-session, Version 23H2 + Microsoft 365 Apps (2)**.
 
      ![](Media/lab1-11-17.1.png)
     
-    |Setting|Value|
-    |---|---|
-    |Select which directory you would like to join|**Microsoft Entra ID (16)**|
-    |Enroll VM with Intune|**No (17)**|
-    |User name|**Student (18)**|
-    |Password|**Password.1!! (19)**|
-    |Confirm password|**Password.1!! (20)**|
+     |Setting|Value|
+     |---|---|
+     |Select which directory you would like to join|**Microsoft Entra ID (16)**|
+     |Enroll VM with Intune|**No (17)**|
+     |User name|**Student (18)**|
+     |Password|**Password.1!! (19)**|
+     |Confirm password|**Password.1!! (20)**|
 
-    ![](Media/lab2-11-6.png)
+     ![](Media/lab2-11-6.png)
 
-    > **Note:** The password should be at least 12 characters in length and consist of a combination of lower-case characters, upper-case characters, digits, and special characters. For details, refer to the information about [the password requirements when creating an Azure VM](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm-).
+     > **Note:** The password should be at least 12 characters in length and consist of a combination of lower-case characters, upper-case characters, digits, and special characters. For details, refer to the information about [the password requirements when creating an Azure VM](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm-).
 
-    > **Note:** As you likely noticed, it's possible to change the image and prefix of the VMs as you add session hosts to the existing pool. In general, this is not recommended unless you plan to replace all VMs in the pool. 
+     > **Note:** As you likely noticed, it's possible to change the image and prefix of the VMs as you add session hosts to the existing pool. In general, this is not recommended unless you plan to replace all VMs in the pool. 
 
 1. On the **Review + create** tab of the **Add virtual machines to a host pool** page, select **Create**
 
