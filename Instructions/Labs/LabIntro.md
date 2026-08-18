@@ -88,19 +88,25 @@ Your virtual machine is your workhorse throughout the workshop. The guide is you
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
-![](../Labs_EntraID/Media/lab1-11-g2.png) 
+![](../Labs_EntraID/Media/envtab.png) 
  
 ## Utilizing the Split Window Feature
  
 For convenience, you can open the guide in a separate window by selecting the **Split Window** button from the top right corner.
  
-![](../Labs_EntraID/Media/lab1-11-g3.png) 
+![](../Labs_EntraID/Media/splittab.png) 
  
 ## Managing Your Virtual Machine
  
 Feel free to **Start, Stop, or Restart (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
  
 ![](../Labs_EntraID/Media/lab1-11-g4.png) 
+
+## Lab Progress
+
+You can use the **Progress** tab to track your progress while working on the lab. A score will be provided after successful validation.
+
+![](../Labs_EntraID/Media/progresstab.png)
 
 ## Let's Get Started with Azure Portal
  
@@ -124,9 +130,9 @@ Feel free to **Start, Stop, or Restart (2)** your virtual machine as needed from
 
     ![](../Labs_EntraID/Media/lab1-11-g6.png) 
  
-5. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel**.
+5. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Maybe later**.
 
-    ![](../Labs_EntraID/Media/lab1-11-g7.png) 
+    ![](../Labs_EntraID/Media/maybelater.png) 
    
 Now you're all set to explore the powerful world of technology. Feel free to reach out if you have any questions along the way. Enjoy your workshop!
 
